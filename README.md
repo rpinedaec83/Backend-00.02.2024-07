@@ -23,8 +23,5 @@ Deivid
 Emanuel
 Aaron
 Ethan
-<<<<<<< HEAD
 junior Hayacc
-=======
 
->>>>>>> 8ddee8b211a0dadb4ebf4c96ffade21264644a4b
