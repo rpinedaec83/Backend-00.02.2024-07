@@ -7,6 +7,6 @@ Proceso Ejercicio34
 			Escribir i, " x " , j ," = ", i*j;
 		FinPara
 	Escribir "";
-
+FinPara
 	
 FinProceso

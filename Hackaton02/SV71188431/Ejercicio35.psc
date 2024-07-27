@@ -16,5 +16,5 @@ Proceso Ejercicio35
 		FinSi
 	FinPara
 	Escribir "El numero mayor es: ", mayor;
-	Escribir "El numero mayor es: ", menor;
+	Escribir "El numero menor es: ", menor;
 FinProceso
