@@ -203,3 +203,251 @@ Proceso Ejercicio13
 	FinSi
 	
 FinProceso
+
+Proceso Ejercicio24
+Definir rpta, contador Como Entero;
+contador<-0;
+suma<-0;
+Para contador<-2 Hasta 1000 Con Paso 2 Hacer
+	suma<-suma+contador;
+Fin Para
+Escribir "La suma de todos los numeros pares hasta 1000 es:", suma;
+
+FinProceso
+
+Proceso Ejercicio25
+	Definir n, contador, factorial Como Entero;
+	Escribir "Ingrese el número para calcular el factorial de un número de una forma distinta"
+	Leer n;
+	contador<-1;
+	factorial<-1;
+	Mientras contador <= n Hacer
+		factorial<-factorial*contador;
+		contador<-contador+1;
+	Fin Mientras
+	Escribir "El Factorial de: ",n,"es: ",factorial; 
+	
+	
+FinProceso
+
+
+Proceso Ejercicio26
+	Definir dividendo, divisor, cociente, resto Como Entero;
+	Escribir "Ingresa el dividendo:";
+	Leer dividendo;
+	Escribir "Ingresa el divisor:";
+	Leer divisor;
+	cociente <- 0;
+	resto <- dividendo;
+	Mientras resto >= divisor Hacer
+		resto<-resto - divisor;
+		cociente<- cociente + 1;
+	FinMientras
+	Escribir "El cociente es: ", cociente, " y el resto es: ", resto;
+FinProceso
+
+Proceso Ejercicio27
+	Definir suma, contador, num, media Como Real;
+	suma<-0; 
+	contador<-0;
+	Escribir "Ingrese un número positivo";
+	Leer num;
+	Mientras num>=0 Hacer
+		suma<-suma+num;
+		contador<-contador+1;
+		Escribir "Ingrese otro número positivo o negativo";
+		Leer num;
+		FinMientras
+		Si contador>0 Entonces
+			media<-suma/contador;
+		SiNo
+			Escribir "No se ingresaron números positivos";
+		FinSi
+FinProceso
+
+
+Proceso Ejercicio28
+	Definir suma, contador Como Entero;
+	suma<-0;
+	contador<-1;
+	Repetir
+		suma<-suma+contador;
+		contador<-contador+1;
+	Hasta Que contador>100;
+	Escribir "La suma de los primeros 100 numeros es: ", suma;
+	
+FinProceso
+
+Proceso Ejercicio29
+	Definir suma,contador Como Entero;
+	suma<-0;
+	contador<-1;
+	Mientras contador<=100 Hacer
+		suma<-suma+contador;
+		contador<-contador+1;
+		FinMientras
+	Escribir "La suma de los primeros cien numeros es: ", suma;
+FinProceso
+
+
+Proceso Ejercicio30
+	Definir i, suma Como Entero;
+	suma<-0;
+	i<-1;
+	Para i<-1 Hasta 100 Con Paso 1 Hacer
+		suma<-suma+i;
+	FinPara
+	Escribir "La suma de los primeros cien números es de: ", suma;
+	
+FinAlgoritmo
+
+
+Proceso Ejercicio31
+	Definir i, num, sumapares, sumaimpares, contadorpares, contadorimpares Como Entero;
+	Definir mediapares, mediaimpares Como Real;
+	sumapares<-0;
+	sumaimpares<-0;
+	contadorimpares<-0;
+	contadorpares<-0;
+	Para i<-1 Hasta 10 Con Paso 1 Hacer
+		Escribir "Ingrese un número";
+		Leer num;
+		Si num%2 = 0 Entonces
+			sumapares<-sumapares+num;
+			contadorpares<-contadorpares+1;
+		SiNo
+			sumaimpares<-sumaimpares+num;
+			contadorimpares<-contadorimpares+1;
+		FinSi
+		Si contadorpares>0 Entonces
+			mediapares<-sumapares/contadorpares;
+		SiNo
+			mediapares<-0;
+		FinSi
+		Si contadorimpares>0 Entonces
+			mediaimpares<-sumaimpares/contadorimpares;
+		SiNo
+			mediaimpares<-0;
+		FinSi
+	FinPara
+	Escribir "La media de los numeros pares es: ", mediapares;
+	Escribir "La media de los números impares es: ", mediaimpares;
+	
+FinProceso
+
+
+Proceso Ejercicio34
+Definir i, j Como Entero;
+Para i<-1 Hasta 9 Con Paso 1 Hacer
+	Escribir "Tabla de multiplicar del ", i, ":";
+	Para j<-1 Hasta 12 Con Paso 1 Hacer
+		Escribir i," x ", j ," = ", i*j;
+	FinPara
+	Escribir "";
+FinPara
+
+FinProceso
+
+
+Proceso Ejercicio35
+	Definir num, i, mayor, menor Como Entero;
+	Escribir "Ingrese los numeros";
+	Leer num;
+	mayor<-num;
+	menor<-num;
+	Para i<-1 Hasta 20 Con Paso 1 Hacer
+		Escribir "Ingrese el numero ", i, ":";
+		Leer num;
+		Si num>mayor Entonces
+			mayor<-num;
+		FinSi
+		Si num<menor Entonces
+			menor<-num;
+		FinSi
+	FinPara
+	Escribir "El número mayor es: ", mayor;
+	Escribir "El número menor es: ", menor;
+		
+FinProceso
+
+
+Proceso Ejercicio36
+	Definir a, b, n, c, i Como Entero;
+	a <-0;
+    b <-1;
+	Escribir "Ingrese el número de términos de la serie Fibonacci";
+	Leer n;
+    Escribir a;
+    Escribir b;
+    Para i<-3 Hasta n Hacer;
+        c<-a + b;
+        Escribir c;
+        a<-b;
+        b<-c;
+    FinPara
+
+FinProceso
+
+
+Definir a, b, temp Como Entero;
+	
+    Escribir "Ingrese el primer número: ";
+    Leer a;
+    Escribir "Ingrese el segundo número: ";
+    Leer b;
+	
+    Si a < 0 Entonces
+        a <- -a;
+    FinSi
+    Si b < 0 Entonces
+        b <- -b;
+    FinSi
+	
+    Mientras b <> 0 Hacer
+        temp <- b;
+        b <- a % b;
+        a <- temp;
+    FinMientras
+	
+    Escribir "El M.C.D. de los dos números es: ", a;
+FinProceso
+
+
+Proceso Ejercicio38
+	Definir numero, suma, i Como Entero;
+    Escribir "Ingrese un número: ";
+    Leer numero;
+    suma <- 0;
+    Para i <- 1 Hasta numero-1 Hacer
+        Si numero % i = 0 Entonces
+            suma <- suma + i;
+        FinSi
+    FinPara
+    Si suma = numero Entonces
+        Escribir numero, " es un número perfecto.";
+    Sino
+        Escribir numero, " no es un número perfecto.";
+    FinSi
+FinAlgoritmo
+
+
+Proceso Ejercicio39
+	Definir n, i Como Entero;
+    Definir PY, termino Como Real;
+	
+    Escribir "Ingrese la cantidad de términos para la aproximación: ";
+    Leer n;
+	
+    PY <- 0;
+	
+    Para i <- 0 Hasta n-1 Hacer
+        Si i % 2 = 0 Entonces
+            termino <- 4 / (2 * i + 1);
+        Sino
+            termino <- -4 / (2 * i + 1);
+        FinSi
+        PY <- PY + termino;
+    FinPara
+	
+    Escribir "La aproximación de pi con ", n, " términos es: ", PY;
+FinProceso
