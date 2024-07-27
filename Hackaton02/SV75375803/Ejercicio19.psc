@@ -1,16 +1,16 @@
 Proceso Ejercicio19
-	//19. Hacer un algoritmo en Pseint para una heladería se tienen 4 tipos de empleados ordenados de la siguiente forma con su 
-	//número identificador y salario diario correspondiente:
+	//19. Hacer un algoritmo en Pseint para una heladeria se tienen 4 tipos de empleados ordenados de la siguiente forma con su 
+	//numero identificador y salario diario correspondiente:
 	
-    //Cajero (56$/día).
+    //Cajero (56$/dia).
 	
-    //Servidor (64$/día).
+    //Servidor (64$/dia).
 	
-    //Preparador de mezclas (80$/día).
+    //Preparador de mezclas (80$/dia).
 	
-    //Mantenimiento (48$/día).
+    //Mantenimiento (48$/dia).
 	
-    //El dueño de la tienda desea tener un programa donde sólo ingrese dos números enteros que representen al número identificador del empleado y la cantidad de días que trabajó en la semana (6 días máximos). Y el programa le mostrará por pantalla la cantidad de dinero que el dueño le debe pagar al empleado que ingresó
+    //El dueno de la tienda desea tener un programa donde solo ingrese dos numeros enteros que representen al numero identificador del empleado y la cantidad de dias que trabaja en la semana (6 dias maximos). Y el programa le mostrara por pantalla la cantidad de dinero que el dueno le debe pagar al empleado que ingresï¿½
 	
 	Definir identificador Como Entero
 	Definir cargo Como Caracter
@@ -18,7 +18,7 @@ Proceso Ejercicio19
 	Definir Salariodiario Como Entero
 	Definir PagoTotal Como Entero
 	
-	Escribir "Escribir n° identificador, 1 para Cajero, 2 para Servidor, 3 para Preparador de mezclas y 4 para Mantenimiento"
+	Escribir "Escribir nro identificador, 1 para Cajero, 2 para Servidor, 3 para Preparador de mezclas y 4 para Mantenimiento"
 	leer identificador
 	
 	Si	identificador = 1 Entonces
@@ -46,13 +46,13 @@ Proceso Ejercicio19
 	Leer diassalario
 	
 	Si	diassalario > 6 Entonces
-		Escribir "Días superiores a la semana, por favor, reiniciar el sistema"
+		Escribir "Dias superiores a la semana, por favor, reiniciar el sistema"
 		Escribir diassalario
 		continuar <- Falso
 	FinSi
 	
 	PagoTotal <- diassalario * Salariodiario
 	
-	Escribir "El cargo seleccionado fue: " cargo " y su salario según los " diassalario " días de trabajo fue $" PagoTotal
+	Escribir "El cargo seleccionado fue: " cargo " y su salario segun los " diassalario " dias de trabajo fue $" PagoTotal
 	
 FinProceso
