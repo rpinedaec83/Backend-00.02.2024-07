@@ -1,5 +1,5 @@
 Proceso Ejercicio30
-	//30. Hacer un algoritmo en PSeInt para calcular la suma de los primeros cien números con un ciclo para.
+	//30. Hacer un algoritmo en PSeInt para calcular la suma de los primeros cien numeros con un ciclo para.
     Definir suma, i Como Entero
     
     suma = 0
@@ -8,5 +8,5 @@ Proceso Ejercicio30
         suma = suma + i
     FinPara
     
-    Escribir "La suma de los primeros cien números es: ", suma
+    Escribir "La suma de los primeros cien numeros es: ", suma
 FinProceso

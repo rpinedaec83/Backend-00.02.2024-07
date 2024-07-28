@@ -4,9 +4,9 @@ Proceso Ejercicio14
 		Escribir "Ingrese un numero positivo del 1 al 10:"
 		Leer numeroIngresado
 		
-		// Validación del número ingresado
+		// Validaciï¿½n del nï¿½mero ingresado
 		Mientras numeroIngresado < 1 O numeroIngresado > 10 Hacer
-			Escribir "Numero inválido. Ingrese un número positivo del 1 al 10:"
+			Escribir "Numero invï¿½lido. Ingrese un nï¿½mero positivo del 1 al 10:"
 			Leer numeroIngresado
 		FinMientras
 		

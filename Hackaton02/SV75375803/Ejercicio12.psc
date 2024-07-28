@@ -1,8 +1,8 @@
 Proceso Ejercicio12
-	//12. Hacer un algoritmo en Pseint que lea dos números y diga cuál es el mayor.
+	//12. Hacer un algoritmo en Pseint que lea dos nï¿½meros y diga cuï¿½l es el mayor.
 	Definir a,b,c Como Entero
 	
-	Escribir "Ingresa 2 números"
+	Escribir "Ingresa 2 nï¿½meros"
 	
 	leer a,b
 	
@@ -10,17 +10,17 @@ Proceso Ejercicio12
 		
 		si a > b Entonces
 				
-			Escribir "El número mayor es ", a
+			Escribir "El nï¿½mero mayor es ", a
 				
 			SiNo
 				
-			Escribir "El número mayor es: ", b
+			Escribir "El nï¿½mero mayor es: ", b
 				
 		FinSi
 		
 		SiNo
 		
-		Escribir "Ingresa 2 números diferentes"
+		Escribir "Ingresa 2 nï¿½meros diferentes"
 		
 	FinSi
 	

@@ -22,8 +22,8 @@ Proceso Ejercicio27
     
     Si contador > 0 Entonces
         media = suma / contador
-        Escribir "La media de los números ingresados es: ", media
+        Escribir "La media de los numeros ingresados es: ", media
     SiNo
-        Escribir "No se ingresaron números positivos."
+        Escribir "No se ingresaron numeros positivos."
     FinSi
 FinProceso

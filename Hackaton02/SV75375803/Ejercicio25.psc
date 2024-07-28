@@ -1,10 +1,10 @@
 Proceso Ejercicio25
-	//25.Hacer un algoritmo en Pseint para calcular el factorial de un número de una forma distinta.
+	//25.Hacer un algoritmo en Pseint para calcular el factorial de un numero de una forma distinta.
     Definir n, f, i Como Entero
     f = 1
     i = 1
 	
-    Escribir "Ingrese un número"
+    Escribir "Ingrese un numero"
     Leer n
 	
     Mientras i <= n Hacer

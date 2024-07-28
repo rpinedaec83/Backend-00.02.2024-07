@@ -1,5 +1,5 @@
 Proceso Ejercicio28
-	//28. Hacer un algoritmo en PSeInt para calcular la suma de los primeros cien números con un ciclo repetir.
+	//28. Hacer un algoritmo en PSeInt para calcular la suma de los primeros cien numeros con un ciclo repetir.
     Definir suma, i Como Entero
     
     suma = 0
@@ -10,5 +10,5 @@ Proceso Ejercicio28
         i = i + 1
     Hasta Que i > 100
     
-    Escribir "La suma de los primeros cien números es: ", suma
+    Escribir "La suma de los primeros cien numeros es: ", suma
 FinProceso
