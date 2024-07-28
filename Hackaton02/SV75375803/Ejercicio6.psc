@@ -1,6 +1,6 @@
 Proceso Ejercicio6
 	//6. Hacer un algoritmo en Pseint para ayudar a un trabajador a saber cual sera su sueldo semanal, se sabe que si trabaja 40 horas o menos, 
-	//se le pagara $20 por hora, pero si trabaja m�s de 40 horas entonces las horas extras se le pagaran a $25 por hora.
+	//se le pagara $20 por hora, pero si trabaja mas de 40 horas entonces las horas extras se le pagaran a $25 por hora.
 	Definir horashombre Como Entero
 	Definir sueldo Como Entero
 	

@@ -10,7 +10,7 @@ Proceso Ejercicio19
 	
     //Mantenimiento (48$/dia).
 	
-    //El dueno de la tienda desea tener un programa donde solo ingrese dos numeros enteros que representen al numero identificador del empleado y la cantidad de dias que trabaja en la semana (6 dias maximos). Y el programa le mostrara por pantalla la cantidad de dinero que el dueno le debe pagar al empleado que ingres�
+    //El dueno de la tienda desea tener un programa donde solo ingrese dos numeros enteros que representen al numero identificador del empleado y la cantidad de dias que trabaja en la semana (6 dias maximos). Y el programa le mostrara por pantalla la cantidad de dinero que el dueno le debe pagar al empleado que ingres?
 	
 	Definir identificador Como Entero
 	Definir cargo Como Caracter
