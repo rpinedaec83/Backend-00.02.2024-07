@@ -3,5 +3,15 @@ Proceso Ejercicio38
 	Definir numero, suma, i Como Entero;
 	Escribir "Ingrese un numero: ";
 	Leer numero;
-	
-FinProceso
+	suma <- 0;
+	Para i <- 1 Hasta numero-1 Hacer;
+		Si numero % i = 0 Entonces
+			suma <- suma + 1;
+		FinSi
+	FinPara
+	Si suma = numero Entonces
+		Escribir numero, " es un numero perfecto.";
+	SiNo
+		Escribir numero, " no es un numero perfecto.";
+	FinSi
+FinAlgoritmo

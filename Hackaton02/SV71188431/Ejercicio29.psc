@@ -6,6 +6,6 @@ Proceso Ejercicio29
 	Mientras contador<=100 Hacer
 		suma<-suma+contador;
 		contador<-contador+1;
-	FinMientras
+		FinMientras
 	Escribir "La suma de los primeros cien numeros es: ", suma;
 FinProceso

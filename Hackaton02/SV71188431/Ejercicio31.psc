@@ -17,10 +17,17 @@ Para i<-1 Hasta 10 Con Paso 1 Hacer
 		contadorimpares<-contadorimpares+1;
 	FinSi
 	Si contadorpares>0 Entonces
-		mediaimpares<-sumaimpares/contadorimpares;
+		mediapares<-sumapares/contadorpares;
 	SiNo
 		mediapares<-0;
 	FinSi
+	Si contadorimpares>0 Entonces
+		mediaimpares<-sumaimpares/contadorimpares;
+	SiNo
+		mediaimpares<-0;
+	FinSi
 	
-	FinPara
+FinPara
+Escribir "La media de los numeros pares es: ", mediapares;
+Escribir "La media de los numeros pares es: ", mediaimpares;
 FinProceso

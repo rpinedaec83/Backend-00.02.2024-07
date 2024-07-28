@@ -5,7 +5,7 @@ Proceso Ejercicio30
 	i<-1;
 	Para i<-1 Hasta 100 Con Paso 1 Hacer
 		suma<-suma+i;
-		contador<-contador+1;
 	FinPara
 	Escribir "La suma de los primeros cien numeros es de: ", suma;
-FinProceso
+	
+FinAlgoritmo
