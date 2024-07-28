@@ -9,6 +9,6 @@ Proceso Ejercicio25
 		factorial<-factorial*contador;
 		contador<-contador+1;
 	FinMientras
-	Escribir "El factorial del: " ,n, "es: ",factorial;
+	Escribir "El factorial de " ,n, " es: ",factorial;
 	
 FinProceso

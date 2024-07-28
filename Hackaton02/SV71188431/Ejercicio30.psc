@@ -6,6 +6,6 @@ Proceso Ejercicio30
 	Para i<-1 Hasta 100 Con Paso 1 Hacer
 		suma<-suma+i;
 	FinPara
-	Escribir "La suma de los primeros cien numeros es de: ", suma;
+	Escribir "La suma de los cien primeros numeros es: ", suma;
 	
-FinAlgoritmo
+FinProceso
