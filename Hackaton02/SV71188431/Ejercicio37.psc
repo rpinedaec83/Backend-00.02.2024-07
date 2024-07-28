@@ -1,24 +1,25 @@
 //37. Hacer un algoritmo en Pseint para conseguir el M.C.D de un número por medio del algoritmo de Euclides.
 Proceso Ejercicio37
-	Definir a, b, temp Como Entero;
+	Definir numero1, numero2, residuo Como Entero;
 	
     Escribir "Ingrese el primer número: ";
-    Leer a;
+    Leer numero1;
     Escribir "Ingrese el segundo número: ";
-    Leer b;
+    Leer numero2;
 	
-    Si a < 0 Entonces
-        a <- -a;
+    Si numero1 < 0 Entonces
+        numero1 <- -numero1;
     FinSi
-    Si b < 0 Entonces
-        b <- -b;
+    Si numero2 < 0 Entonces
+        numero2 <- -numero2;
     FinSi
 	
-    Mientras b <> 0 Hacer
-        temp <- b;
-        b <- a % b;
-        a <- temp;
+    Mientras numero2 <> 0 Hacer
+        residuo <- numero2;
+        numero2 <- numero1 % numero2;
+        numero1 <- residuo;
     FinMientras
 	
-    Escribir "El M.C.D. de los dos números es: ", a;
+    Escribir "El M.C.D. de los dos números es: ", numero1;
+	
 FinProceso

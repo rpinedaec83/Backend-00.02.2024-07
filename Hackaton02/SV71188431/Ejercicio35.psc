@@ -1,12 +1,12 @@
 //35. Hacer un algoritmo en Pseint que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números.
 Proceso Ejercicio35
-	Definir num, i, mayor, menor Como Entero;
+	Definir num, x, mayor, menor Como Entero;
 	Escribir "Ingrese los numeros";
 	Leer num;
 	mayor<-num;
 	menor<-num;
-	Para i<-1 Hasta 20 Con Paso 1 Hacer
-		Escribir "Ingrese el numero " , i, ";";
+	Para x<-1 Hasta 20 Con Paso 1 Hacer
+		Escribir "Ingrese el numero " , x, ";";
 		Leer num;
 		Si num>mayor Entonces
 			mayor<-num;
