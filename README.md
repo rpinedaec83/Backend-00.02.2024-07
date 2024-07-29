@@ -1,6 +1,6 @@
 # Backend-00.02.2024-07
-Repo de 00.02.2024-07
 
+Repo de 00.02.2024-07
 
 git remote add fuentes https://github.com/rpinedaec83/Backend-00.02.2024-07.git
 
@@ -8,24 +8,20 @@ git fetch fuentes
 
 git merge fuentes/main main
 
+Jose Luis hernandez
 
-
-Roberto Pineda 
+Roberto Pineda
 
 Alex
 
-
 Deivid
 
-Roberto Castillejo 
+Roberto Castillejo
 Kabir
 
 Andrew
 
-
-
 Kabir
-
 
 Emanuel
 
@@ -33,11 +29,8 @@ Aaron
 
 Ethan
 
-
-
 Diego
 
 Edgar
-
 
 David
