@@ -55,6 +55,16 @@ for (let index = 0; index < 100; index++) {
     console.log(index);
 }
 
+for (const key in objPersona) {
+    if (Object.hasOwnProperty.call(objPersona, key)) {
+        const element = objPersona[key];
+        console.log(element);
+    }
+}
+
+arrNumeros.forEach(element => {
+    console.log(element);
+});
 
 let bandera = false;
 
@@ -117,3 +127,6 @@ Digita 0 para salir`)
 //         bandera = false;
 //     }
 // }
+
+
+// Realizar el codigo de verificacion del DNI
