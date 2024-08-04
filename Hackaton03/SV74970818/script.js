@@ -479,3 +479,167 @@ function ejercicio12() {
       alert("Alguno de los valores ingresados NO es un numero");
     }
   }
+
+  function ejercicio21() {
+    console.log("Ejercicio 21");
+    let strNum1 = prompt("Digite un numero");
+    let num = parseInt(strNum1);
+    let factorial = 1;
+
+    if (!isNaN(num)) {
+      if (num != 0) {
+        for (let i = 1; i <= num; i++) factorial = factorial * i;
+      }
+      alert("El factorial de " + num + " es: " + factorial);
+    } else {
+      alert("El valor ingresado NO es valido");
+    }
+  }
+
+  function ejercicio22() {
+    console.log("Ejercicio 22");
+    let strNum1 = prompt("Digite un numero");
+    let num = parseInt(strNum1);
+    let suma = 0;
+
+    if (!isNaN(num)) {
+      for (let i = 1; i <= num; i++) suma = suma + i;
+
+      alert("La suma de los " + num + " primeros numeros es: " + suma);
+    } else {
+      alert("El valor ingresado NO es valido");
+    }
+  }
+
+  function ejercicio23() {
+    console.log("Ejercicio 23");
+    let strNum1 = prompt("Digite un numero");
+    let num = parseInt(strNum1);
+    let suma = 0;
+
+    if (!isNaN(num)) {
+      for (let i = 1; i <= num; i++) {
+        if (i % 2 != 0) suma = suma + i;
+      }
+      alert(
+        "la suma de los numeros impares menores o iguales a " +
+          num +
+          " es: " +
+          suma
+      );
+    } else {
+      alert("El valor ingresado NO es valido");
+    }
+  }
+
+  function ejercicio24() {
+    console.log("Ejercicio 24");
+    let suma = 0;
+
+    for (let i = 1; i <= 1000; i++) {
+      if (i % 2 == 0) suma = suma + i;
+    }
+    alert("la suma de los numeros pares hasta 1000 es: " + suma);
+  }
+
+  function ejercicio25() {
+    console.log("Ejercicio 25");
+    let strNum1 = prompt("Digite un numero");
+    let num = parseInt(strNum1);
+
+    if (!isNaN(num)) {
+      let fact = factorial(num);
+      alert("El factorial de " + num + " es: " + fact);
+    } else {
+      alert("El valor ingresado NO es valido");
+    }
+  }
+
+  function factorial(n) {
+    if (n == 0 || n == 1) return 1;
+    else return n * factorial(n - 1);
+  }
+
+  function ejercicio26() {
+    console.log("Ejercicio 26");
+    let strNum1 = prompt("Digite el numero dividendo");
+    let num1 = parseInt(strNum1);
+    let strNum2 = prompt("Digite el numero divisor");
+    let num2 = parseInt(strNum2);
+    let cociente = 0;
+    let resto = num1;
+
+    if (!isNaN(num1) && !isNaN(num2)) {
+      for (let i = 1; i <= num1; i = i + num2) {
+        if (resto >= num2) {
+          resto = resto - num2;
+          cociente = cociente + 1;
+        }
+      }
+      alert("El cociente es: " + cociente);
+      alert("El resto es: " + resto);
+    } else {
+      alert("Alguno de los valores ingresados NO es un numero");
+    }
+  }
+
+  function ejercicio27() {
+    console.log("Ejercicio 27");
+    let bandera = true;
+    let suma = 0;
+    let contador = 0;
+    while (bandera) {
+      let strNum1 = prompt(
+        "Ingrese un numero positivo (si ingresa un numero negativo se termina el programa)"
+      );
+      let num = parseInt(strNum1);
+
+      if (!isNaN(num)) {
+        if (num < 0) bandera = false;
+        else {
+          suma = suma + num;
+          contador = contador + 1;
+        }
+      } else {
+        alert("El valor ingresado NO es valido");
+      }
+    }
+    let prom = suma / contador;
+    alert(
+      "La media de la lista de " + contador + " numeros positivos: " + prom
+    );
+  }
+
+  function ejercicio28() {
+    console.log("Ejercicio 28");
+    let n = 100;
+    let suma = 0;
+    
+    do {
+      suma = suma + n;
+      n = n - 1;
+    } while (n != 0);
+    alert("La suma de los primeros cien numeros es: " + suma);
+  }
+
+  function ejercicio29() {
+    console.log("Ejercicio 29");
+    let n = 100;
+    let suma = 0;
+
+    while (n != 0) {
+      suma = suma + n;
+      n = n - 1;
+    }
+    alert("La suma de los primeros cien numeros es: " + suma);
+  }
+
+  function ejercicio30() {
+    console.log("Ejercicio 30"); 
+    let suma = 0;
+
+    for (let i = 1; i <= 100; i ++) {
+      suma=suma+i
+      }
+    alert("La suma de los primeros cien numeros es: " + suma);
+  }
