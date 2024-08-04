@@ -16,4 +16,41 @@ function ejercicio1() {
 
 function ejercicio2() {
   console.log("Ejercicio 2");
+  let numero = parseInt (prompt("Digite un numero"));
+  if (numero < 0) {
+    alert(numero + " Es un numero negativo");
+  }
+  else if (numero > 0) {
+    alert(numero + " No es un numero negativo");
+  }else{
+    alert(numero + " No es un numero");
+  } 
+  
+}
+
+function ejercicio3() {
+  console.log("Ejercicio 3");
+
+}
+
+function ejercicio4() {
+  console.log("Ejercicio 4");
+
+  let numero1 = parseInt (prompt("Digite primer numero"));
+  let numero2 = parseInt (prompt("Digite segundo numero"));
+  let numero3 = parseInt (prompt("Digite tercer numero"));
+  
+  if (numero1 > numero2) {
+     (numero1 > numero3)
+  } else alert (numero1)
+
+  if (numero2 > numero1) {
+     (numero2 > numero3)
+  } else alert (numero2)
+
+  if (numero3 > numero1) {
+     (numero3 > numero2)
+  } else alert (numero3)
+
+ 
 }
