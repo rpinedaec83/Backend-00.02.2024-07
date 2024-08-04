@@ -206,3 +206,276 @@ function ejercicio10() {
     alert("No es un numero");
   }
 }
+
+function ejercicio11() {
+  console.log("Ejercicio 11");
+  let strNum1 = prompt("Digite el primer numero");
+  let num1 = parseFloat(strNum1);
+  let strNum2 = prompt("Digite el segundo numero");
+  let num2 = parseFloat(strNum2);
+  let strNum3 = prompt("Digite el tercer numero");
+  let num3 = parseFloat(strNum3);
+
+  if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3)) {
+    var mayor = 0;
+    if (num1 > num2 && num1 > num3) mayor = num1;
+    else if (num2 > num1 && num2 > num3) mayor = num2;
+    else if (num3 > num1 && num3 > num2) mayor = num3;
+    alert("El numero mayor es: " + mayor);
+  } else {
+    alert("Alguno de los valores ingresados NO es un numero");
+  }
+}
+
+function ejercicio12() {
+    console.log("Ejercicio 12");
+    let strNum1 = prompt("Digite el primer numero");
+    let num1 = parseFloat(strNum1);
+    let strNum2 = prompt("Digite el segundo numero");
+    let num2 = parseFloat(strNum2);
+  
+    if (!isNaN(num1) && !isNaN(num2)) {
+      var mayor = 0;
+      if (num1 > num2) mayor = num1;
+      else mayor = num2;
+      alert("El numero mayor es: " + mayor);
+    } else {
+      alert("Alguno de los valores ingresados NO es un numero");
+    }
+  }
+
+  function ejercicio13() {
+    console.log("Ejercicio 13");
+    let letra = prompt("Digite una letra (a-z)");
+
+    if (
+      letra == "a" ||
+      letra == "e" ||
+      letra == "i" ||
+      letra == "o" ||
+      letra == "u"
+    )
+      alert("El caracter SI es una vocal");
+    else alert("El caracter NO es una vocal");
+  }
+
+  function ejercicio14() {
+    console.log("Ejercicio 14");
+    let strNum = prompt("Digite un numero del 1 al 10:");
+    let num = parseInt(strNum);
+    let contador = 0;
+
+    if (!isNaN(num)) {
+      if (num >= 1 && num <= 10) {
+        for (let i = 0; i <= num; i++) {
+          if (num % i == 0) contador = contador + 1;
+        }
+        if (contador == 2) alert("El numero SI es primo");
+        else alert("El numero NO es primo");
+      } else alert("El numero debe estar entre 1 y 10");
+    } else {
+      alert("No es un numero");
+    }
+  }
+
+  function ejercicio15() {
+    console.log("Ejercicio 15");
+    let strNum1 = prompt("Ingrese los centimetros a convertir: ");
+    let cent = parseFloat(strNum1);
+    let strNum2 = prompt("Ingrese las libras a convertir: ");
+    let lib = parseFloat(strNum2);
+
+    if (!isNaN(cent) && !isNaN(lib)) {
+      let pulg = cent / 2.54;
+      let kg = lib / 2.205;
+      alert(cent + " centimetros son " + pulg + " pulgadas");
+      alert(lib + " libras son " + kg + " kilogramos");
+    } else {
+      alert("Alguno de los valores ingresados NO es un numero");
+    }
+  }
+
+  function ejercicio16() {
+    console.log("Ejercicio 16");
+    let strNum1 = prompt("Ingrese un numero del 1 al 7: ");
+    let num = parseInt(strNum1);
+
+    switch (num) {
+      case 1:
+        alert("El dia correspondiente es Lunes");
+        break;
+      case 2:
+        alert("El dia correspondiente es Martes");
+        break;
+      case 3:
+        alert("El dia correspondiente es Miercoles");
+        break;
+      case 4:
+        alert("El dia correspondiente es Jueves");
+        break;
+      case 5:
+        alert("El dia correspondiente es Viernes");
+        break;
+      case 6:
+        alert("El dia correspondiente es Sabado");
+        break;
+      case 7:
+        alert("El dia correspondiente es Domingo");
+        break;
+      default:
+        alert("El caracter ingresado NO es valido");
+        break;
+    }
+  }
+
+  function ejercicio17() {
+    console.log("Ejercicio 17");
+    let strNum1 = prompt("Ingrese la hora 0-23(hh): ");
+    let hora = parseInt(strNum1);
+    let strNum2 = prompt("Ingrese los minutos 0-59(mm): ");
+    let min = parseInt(strNum2);
+    let strNum3 = prompt("Ingrese los segundos 0-59(ss): ");
+    let seg = parseInt(strNum3);
+    let hora2 = 0;
+    let min2 = 0;
+    let seg2 = 0;
+
+    if (!isNaN(hora) && !isNaN(min) && !isNaN(seg)) {
+      if (seg + 1 == 60) {
+        seg2 = 0;
+        if (min + 1 == 60) {
+          min2 = 0;
+          if (hora + 1 == 24) hora2 = 0;
+          else hora2 = hora + 1;
+        } else {
+          min2 = min + 1;
+          hora2 = hora;
+        }
+      } else {
+        seg2 = seg + 1;
+        min2 = min;
+        hora2 = hora;
+      }
+      alert(
+        "La hora dentro de un segundo es: " + hora2 + ":" + min2 + ":" + seg2
+      );
+    } else {
+      alert("Alguno de los valores ingresados NO es un numero");
+    }
+  }
+
+  function ejercicio18() {
+    console.log("Ejercicio 18");
+    let strNum1 = prompt("Ingrese la cantidad de CD a vender:");
+    let num = parseInt(strNum1);
+    let total = 0;
+
+    if (!isNaN(num)) {
+      if (num <= 9) total = num * 10;
+      else if (num >= 10 && num <= 99) total = num * 8;
+      else if (num >= 100 && num <= 499) total = num * 7;
+      else if (num >= 500) total = num * 6;
+      let ganancia = total * 0.0825;
+      alert("El precio total es: " + total);
+      alert("La ganacia para el vendedor es: " + ganancia);
+    } else {
+      alert("El valor ingresado NO es valido");
+    }
+  }
+
+  function ejercicio19() {
+    console.log("Ejercicio 19");
+    let strNum1 = prompt(
+      "Ingrese cuantos dias trabajo el empleado en la semana (6 dias max): "
+    );
+    let dias = parseInt(strNum1);
+
+    if (!isNaN(dias)) {
+      if (dias < 0 || dias > 6)
+        alert(
+          "La cantidad de dias trabajados no es valida. Debe ser un numero entre 0 y 6."
+        );
+      else {
+        let id = prompt(
+          "Ingrese los dos digitos numericos del identificador del empleado \n a. Cajero (11): \n b. Servidor (12): \n c. Preparador de mezclas (13): \n d. Mantenimiento (14): "
+        );
+
+        let pago = 0;
+        switch (id) {
+          case "11":
+            pago = dias * 56;
+            break;
+          case "12":
+            pago = dias * 64;
+            break;
+          case "13":
+            pago = dias * 80;
+            break;
+          case "14":
+            pago = dias * 48;
+            break;
+          default:
+            alert("Opcion no valida");
+            break;
+        }
+        alert("El pago al empleado es de: " + pago);
+      }
+    } else {
+        alert("El valor ingresado NO es valido");
+    }
+  }
+
+  function ejercicio20() {
+    console.log("Ejercicio 20");
+    let strNum1 = prompt("Digite el primer numero");
+    let num1 = parseInt(strNum1);
+    let strNum2 = prompt("Digite el segundo numero");
+    let num2 = parseInt(strNum2);
+    let strNum3 = prompt("Digite el tercer numero");
+    let num3 = parseInt(strNum3);
+    let strNum4 = prompt("Digite el cuarto numero");
+    let num4 = parseInt(strNum4);
+    let contadorPar = 0;
+    let mayor = 0;
+    let cuadrado = 0;
+    let media = 0;
+    let suma = 0;
+
+    if (!isNaN(num1) && !isNaN(num2) && !isNaN(num3) && !isNaN(num4)) {
+      // Cuantos numeros son Pares?
+      if (num1 % 2 == 0) contadorPar = contadorPar + 1;
+      if (num2 % 2 == 0) contadorPar = contadorPar + 1;
+      if (num3 % 2 == 0) {
+        contadorPar = contadorPar + 1;
+        cuadrado = num2 * num2;
+      }
+      if (num4 % 2 == 0) contadorPar = contadorPar + 1;
+      alert("La cantidad de pares es: " + contadorPar);
+
+      // Cual es el mayor de todos?
+      if (num1 >= num2 && num1 >= num3 && num1 >= num4) mayor = num1;
+      else if (num2 >= num1 && num2 >= num3 && num2 >= num4) mayor = num2;
+      else if (num3 >= num1 && num3 >= num2 && num3 >= num4) mayor = num3;
+      else if (num4 >= num1 && num4 >= num2 && num4 >= num3) mayor = num4;
+      alert("El mayor de todos es: " + mayor);
+
+      //Si el tercero es par, calcular el cuadrado del segundo.\
+      if (cuadrado != 0) alert("El cuadrado del segundo es: " + cuadrado);
+
+      //Si el primero es menor que el cuarto, calcular la media de los 4 n�meros.
+      if (num1 < num4) {
+        media = (num1 + num2 + num3 + num4) / 4;
+        alert("La media de los 4 numeros es: " + media);
+      }
+
+      // Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condici�n, calcular la suma de los 4 n�meros.
+      if (num2 > num3) {
+        if (num3 >= 50 && num3 <= 70) {
+          suma = num1 + num2 + num3 + num4;
+          alert("La suma de los 4 numeros es: " + suma);
+        }
+      }
+    } else {
+      alert("Alguno de los valores ingresados NO es un numero");
+    }
+  }
