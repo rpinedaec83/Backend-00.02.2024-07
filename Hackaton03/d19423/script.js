@@ -24,13 +24,45 @@ function ejercicio2() {
     alert(numero + " No es un numero negativo");
   }else{
     alert(numero + " No es un numero");
-  } 
-  
+  }  
 }
+
 
 function ejercicio3() {
   console.log("Ejercicio 3");
+  const input3 = document.getElementById("input3")
+  const btn3 = document.getElementById("btn3")
+  const result3 = document.getEelementById("result3")
 
+  const terminaen4 = (cadena) => {
+    let caracteres = cadena.toString()
+
+    console.log(cadena.slice())
+    return cadena.chartAt(cadena.legth - 1) === "4"
+  }
+
+  btn3.addEventListener("click"), () => {
+    const valor = parseInt(input3.value)
+    alert("ingrese solo numeros")
+    if (typeof valor !== "number") {
+      return alert("ingrese solo numeros")
+    }
+
+
+    console. log(terminaen4(valor .toString()))
+    // const cadena = valor toString()
+    if (terminaen4(valor.toString()) ) {
+        const result = "Termina en 4"
+        result3.classList.remove("hidden")
+        result.innerHTML = result
+    } else {
+      const result = "No termina en 4"
+      result3.classList.remove("hidden")
+      result3.innerHTML = result
+    }
+
+ }
+    
 }
 
 function ejercicio4() {
