@@ -34,6 +34,7 @@ function ejercicio2() {
 
 
 function ejercicio3() {
+<<<<<<< HEAD
   console.log("Ejercicio 3");
   console.log("Ejercicio 3");
     let strNumero = prompt("Digita un número");
@@ -52,11 +53,13 @@ function ejercicio3() {
       throw "No es un número"
     }
     
+=======
+
+>>>>>>> dba57c60c3dbe450a3f78c299f038ce835dfa7a2
 }
 
-function ejercicio4() {
-  console.log("Ejercicio 4");
 
+<<<<<<< HEAD
    let strNumero1 = prompt("Digita el primer número ");
    let strNumero2 = prompt("Digita el segundo número ");
    let strNumero3 = prompt("Digita el tercer número ");
@@ -122,3 +125,5 @@ function ejercicio7() {
 }
 
 
+=======
+>>>>>>> dba57c60c3dbe450a3f78c299f038ce835dfa7a2
