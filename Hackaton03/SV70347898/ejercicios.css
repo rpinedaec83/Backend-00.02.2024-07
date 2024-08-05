@@ -1,0 +1,19 @@
+h1{
+    color:azure;
+    background-color: dimgray;
+}
+
+h2{
+    color:rgb(241, 240, 255);
+    background-color: rgba(231, 0, 0, 0.726);
+}
+
+h3{
+    color:rgb(237, 223, 14);
+    background-color: rgba(15, 63, 234, 0.726);
+}
+
+h4{
+    color:rgb(241, 23, 12);
+    background-color: rgba(190, 230, 13, 0.726);
+}
