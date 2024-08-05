@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackaton 03</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <h1>HACKATON SEMANA #03</h1>
+    <h2>Lista de ejercicios asignados.</h2>
+
+    <li>1. Presionar el Boton del ejercicio  : <button onclick="showPrompt01()">Iniciar Ejercicio 01</button></li> 
+    
+    <div id="customPrompt01" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea un número por el teclado y determinar si tiene tres dígitos</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput" placeholder="Número">
+           <button onclick="ejercicio01()">Aceptar</button>
+           <button onclick="hidePrompt01()">Cancelar</button>
+       </div>
+   </div>
+    
+   <li>2. Presionar el Boton del ejercicio  : <button onclick="showPrompt02()">Iniciar Ejercicio 02</button></li> 
+    
+    <div id="customPrompt02" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea un número entero por el teclado y determinar si es negativo</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput02" placeholder="Número">
+           <button onclick="ejercicio02()">Aceptar</button>
+           <button onclick="hidePrompt02()">Cancelar</button>
+       </div>
+   </div>
+
+   <li>3. Presionar el Boton del ejercicio  : <button onclick="showPrompt03()">Iniciar Ejercicio 03</button></li> 
+    
+    <div id="customPrompt03" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea un número y determinar si termina en 4</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput03" placeholder="Número">
+           <button onclick="ejercicio03()">Aceptar</button>
+           <button onclick="hidePrompt03()">Cancelar</button>
+       </div>
+   </div>
+   
+    <li>4. Presionar el Boton del ejercicio  : <button onclick="showPrompt04()">Iniciar Ejercicio 04</button></li>
+
+    <div id="customPrompt04" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea tres números enteros y los muestre de menor a mayor</h3>
+           <p>Por favor ingresar tres números: </p>
+           <input type="text" id="exc4Input1" placeholder="Número">
+           <input type="text" id="exc4Input2" placeholder="Número">
+           <input type="text" id="exc4Input3" placeholder="Número">
+           <button onclick="ejercicio04()">Aceptar</button>
+           <button onclick="hidePrompt04()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>5. Presionar el Boton del ejercicio  : <button onclick="showPrompt05()">Iniciar Ejercicio 05</button></li>
+
+    <div id="customPrompt05" class="modal">
+        <div class="modal-content"> 
+           <h4>Hacer un algoritmo en JavaScript para una tienda de zapatos que tiene una promoción de descuento para vender al mayor, esta dependerá del número de zapatos que se compren. El precio de cada zapato es de $80.</h4> 
+           <h4><li>Si son más de diez, se les dará un 10% de descuento sobre el total de la compra</li>
+            <li>Si el número de zapatos es mayor de veinte pero menor de treinta, se le otorga un 20% de descuento</li> 
+            <li>Si son más treinta zapatos se otorgará un 40% de descuento</li></h4>
+           <p>Por favor ingresar cantidad de zapatos: </p>
+           <input type="text" id="userInput5" placeholder="Cantidad de zapatos">
+           <button onclick="ejercicio05()">Aceptar</button>
+           <button onclick="hidePrompt05()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>6. Presionar el Boton del ejercicio  : <button onclick="showPrompt06()">Iniciar Ejercicio 06</button></li>
+
+    <div id="customPrompt06" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para ayudar a un trabajador a saber cuál será su sueldo semanal, se sabe que si trabaja 40 horas o menos, se le pagará $20 por hora, pero si trabaja más de 40 horas entonces las horas extras se le pagarán a $25 por hora</h3>
+           <p>Por favor ingresar el número de horas: </p>
+           <input type="text" id="userInput6" placeholder="Número de horas">
+           <button onclick="ejercicio06()">Aceptar</button>
+           <button onclick="hidePrompt06()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>7. Presionar el Boton del ejercicio  : <button onclick="showPrompt07()">Iniciar Ejercicio 07</button></li>
+
+    <div id="customPrompt07" class="modal">
+        <div class="modal-content"> 
+           <h4>Hacer un algoritmo en JavaScript para una tienda de helado que da un descuento por compra a sus clientes con membresía dependiendo de su tipo, sólo existen tres tipos de membresía, tipo A, tipo B y tipo C. Los descuentos son los siguientes:</h4>
+            <h4><li>Tipo A 10% de descuento</li>
+            <li>Tipo B 15% de descuento</li>
+            <li>Tipo C 20% de descuento</li></h4>          
+           <p>Por favor ingresar el tipo de Cliente: </p>
+           <input type="text" id="userInput7" placeholder="Tipo de cliente">
+           <button onclick="ejercicio07()">Aceptar</button>
+           <button onclick="hidePrompt07()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>8. Presionar el Boton del ejercicio  : <button onclick="showPrompt08()">Iniciar Ejercicio 08</button></li>
+
+    <div id="customPrompt08" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular el promedio de tres notas y determinar si el estudiante aprobó o no</h3>
+           <p>Por favor ingresar las notas del estudiante: </p>
+           <input type="text" id="excer8Input1" placeholder="Nota 01">
+           <input type="text" id="excer8Input2" placeholder="Nota 02">
+           <input type="text" id="excer8Input3" placeholder="Nota 03">
+           <button onclick="ejercicio08()">Aceptar</button>
+           <button onclick="hidePrompt08()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>9. Presionar el Boton del ejercicio  : <button onclick="showPrompt09()">Iniciar Ejercicio 09</button></li>
+
+    <div id="customPrompt09" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para determinar el aumento de un trabajador, se debe tomar en cuenta que si ganaba más de $2000 tendrá un aumento del 5%, si generaba menos de $2000 su aumento será de un 10%</h3>
+           <p>Por favor ingresar salario actual: </p>
+           <input type="text" id="userInput9" placeholder="Salario">
+           <button onclick="ejercicio09()">Aceptar</button>
+           <button onclick="hidePrompt09()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>10. Presionar el Boton del ejercicio : <button onclick="showPrompt10()">Iniciar Ejercicio 10</button></li>
+
+    <div id="customPrompt10" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que diga si un número es par o impar</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput10" placeholder="Número">
+           <button onclick="ejercicio10()">Aceptar</button>
+           <button onclick="hidePrompt10()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>11. Presionar el Boton del ejercicio : <button onclick="showPrompt11()">Iniciar Ejercicio 11</button></li>
+
+    <div id="customPrompt11" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea tres números y diga cuál es el mayor</h3>
+           <p>Por favor ingresar tres números: </p>
+           <input type="text" id="excer11Input1" placeholder="Número">
+           <input type="text" id="excer11Input2" placeholder="Número">
+           <input type="text" id="excer11Input3" placeholder="Número">
+           <button onclick="ejercicio11()">Aceptar</button>
+           <button onclick="hidePrompt11()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>12. Presionar el Boton del ejercicio : <button onclick="showPrompt12()">Iniciar Ejercicio 12</button></li>
+
+    <div id="customPrompt12" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea dos números y diga cuál es el mayor</h3>
+           <p>Por favor ingresar dos números: </p>
+           <input type="text" id="excer12Input1" placeholder="Número">
+           <input type="text" id="excer12Input2" placeholder="Número">
+           <button onclick="ejercicio12()">Aceptar</button>
+           <button onclick="hidePrompt12()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>13. Presionar el Boton del ejercicio : <button onclick="showPrompt13()">Iniciar Ejercicio 13</button></li>
+
+    <div id="customPrompt13" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea una letra y diga si es una vocal</h3>
+           <p>Por favor ingresar una letra: </p>
+           <input type="text" id="userInput13" placeholder="Ingresar letra">
+           <button onclick="ejercicio13()">Aceptar</button>
+           <button onclick="hidePrompt13()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>14. Presionar el Boton del ejercicio : <button onclick="showPrompt14()">Iniciar Ejercicio 14</button></li>
+
+    <div id="customPrompt14" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea un entero positivo del 1 al 10 y determine si es un número primo</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput14" placeholder="Número">
+           <button onclick="ejercicio14()">Aceptar</button>
+           <button onclick="hidePrompt14()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>15. Presionar el Boton del ejercicio : <button onclick="showPrompt15()">Iniciar Ejercicio 15</button></li>
+
+    <div id="customPrompt15" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que convierta centímetros a pulgadas y libras a kilogramos</h3>
+           <p>Por favor ingrese la cantidad de centímetros a convertir: </p>
+           <input type="text" id="excer15Input1" placeholder="Centimetros">
+           <p>Por favor ingrese la cantidad de libras a convertir: </p>
+           <input type="text" id="excer15Input2" placeholder="Libras">
+           <button onclick="ejercicio15()">Aceptar</button>
+           <button onclick="hidePrompt15()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>16. Presionar el Boton del ejercicio : <button onclick="showPrompt16()">Iniciar Ejercicio 16</button></li>
+
+    <div id="customPrompt16" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que lea un número y según ese número, indique el día que corresponde</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput16" placeholder="Número">
+           <button onclick="ejercicio16()">Aceptar</button>
+           <button onclick="hidePrompt16()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>17. Presionar el Boton del ejercicio : <button onclick="showPrompt17()">Iniciar Ejercicio 17</button></li>
+
+    <div id="customPrompt17" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript donde se ingrese una hora y nos calcule la hora dentro de un segundo</h3>
+           <p>Por favor, ingresar la hora en formato hh24:mm:ss</p>
+           <input type="text" id="userInput17" placeholder="Número">
+           <button onclick="ejercicio17()">Aceptar</button>
+           <button onclick="hidePrompt17()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>18. Presionar el Boton del ejercicio : <button onclick="showPrompt18()">Iniciar Ejercicio 18</button></li>
+
+    <div id="customPrompt18" class="modal">
+        <div class="modal-content"> 
+           <h5>Hacer un algoritmo en JavaScript para una empresa se encarga de la venta y distribución de CD vírgenes. Los clientes pueden adquirir los artículos (supongamos un único producto de una única marca) por cantidad. Los precios son:
+            <li>$10. Si se compran unidades separadas hasta 9</li>
+            <li>$8. Si se compran entre 10 unidades hasta 99</li>
+            <li>$7. Entre 100 y 499 unidades</li>
+            <li>$6. Para mas de 500 unidades</li>
+           La ganancia para el vendedor es de 8,25% de la venta. Realizar un algoritmo en JavaScript que dado un número de CDs a vender calcule el precio total para el cliente y la ganancia para el vendedor</h5>
+           <p>Por favor ingresar la cantidad de CDs a vender: </p>
+           <input type="text" id="userInput18" placeholder="Número de CDs">
+           <button onclick="ejercicio18()">Aceptar</button>
+           <button onclick="hidePrompt18()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>19. Presionar el Boton del ejercicio : <button onclick="showPrompt19()">Iniciar Ejercicio 19</button></li>
+
+    <div id="customPrompt19" class="modal">
+        <div class="modal-content"> 
+           <h5>Hacer un algoritmo en JavaScript para una heladería se tienen 4 tipos de empleados ordenados de la siguiente forma con su número identificador y salario diario correspondiente
+           <li>01 = Cajero (56$/día)</li>
+           <li>02 = Servidor (64$/día)</li>
+           <li>03 = Preparador de mezclas (80$/día)</li>
+           <li>04 = Mantenimiento (48$/día)</li>
+           El dueño de la tienda desea tener un programa donde sólo ingrese dos números enteros que representen al número identificador del empleado y la cantidad de días que trabajó en la semana (6 días máximos). Y el programa le mostrará por pantalla la cantidad de dinero que el dueño le debe pagar al empleado que ingresó</h5>
+           <p>Por favor ingresar el identificador del empleado: </p>
+           <input type="text" id="excer19Input1" placeholder="Codigo Empleado"> 
+           <p>Por favor ingresar la cantidad de días que trabajo en la semana: </p>
+           <input type="text" id="excer19Input2" placeholder="Cantidad de días">
+           <button onclick="ejercicio19()">Aceptar</button>
+           <button onclick="hidePrompt19()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>20. Presionar el Boton del ejercicio : <button onclick="showPrompt20()">Iniciar Ejercicio 20</button></li>
+
+    <div id="customPrompt20" class="modal">
+        <div class="modal-content"> 
+           <h5>Hacer un algoritmo en JavaScript que lea 4 números enteros positivos y verifique y realice las siguientes operaciones
+           <li>Ope1. ¿Cuántos números son Pares?</li>
+           <li>Ope2. ¿Cuál es el mayor de todos?</li>
+           <li>Ope3. Si el tercero es par, calcular el cuadrado del segundo</li>
+           <li>Ope4. Si el primero es menor que el cuarto, calcular la media de los 4 números</li>
+           <li>Ope5. Si el segundo es mayor que el tercero, verificar si el tercero esta comprendido entre los valores 50 y 700. Si cumple se cumple la segunda condición, calcular la suma de los 4 números</li></h5>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="excer20Input1" placeholder="Número">
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="excer20Input2" placeholder="Número">
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="excer20Input3" placeholder="Número">
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="excer20Input4" placeholder="Número">
+           <button onclick="ejercicio20()">Aceptar</button>
+           <button onclick="hidePrompt20()">Cancelar</button>
+       </div>
+   </div>
+
+
+   <li>21. Presionar el Boton del ejercicio : <button onclick="showPrompt21()">Iniciar Ejercicio 21</button></li>
+    
+    <div id="customPrompt21" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que permita calcular el factorial de un número</h3>
+           <p>Por favor ingresar el número a factorizar: </p>
+           <input type="text" id="userInput21" placeholder="Número">
+           <button onclick="ejercicio21()">Aceptar</button>
+           <button onclick="hidePrompt21()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>22. Presionar el Boton del ejercicio : <button onclick="showPrompt22()">Iniciar Ejercicio 22</button></li>
+    
+    <div id="customPrompt22" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular la suma de los n primeros números</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput22" placeholder="Número">
+           <button onclick="ejercicio22()">Aceptar</button>
+           <button onclick="hidePrompt22()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>23. Presionar el Boton del ejercicio : <button onclick="showPrompt23()">Iniciar Ejercicio 23</button></li>
+    
+    <div id="customPrompt23" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular la suma de los números impares menores o iguales a n</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput23" placeholder="Número">
+           <button onclick="ejercicio23()">Aceptar</button>
+           <button onclick="hidePrompt23()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>24. Presionar el Boton del ejercicio : <button onclick="showPrompt24()">Iniciar Ejercicio 24</button></li>
+    
+    <div id="customPrompt24" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para realizar la suma de todos los números pares hasta el 1000</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput24" placeholder="Número">
+           <button onclick="ejercicio24()">Aceptar</button>
+           <button onclick="hidePrompt24()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>25. Presionar el Boton del ejercicio : <button onclick="showPrompt25()">Iniciar Ejercicio 25</button></li>
+    
+    <div id="customPrompt25" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular el factorial de un número de una forma distinta</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput25" placeholder="Número">
+           <button onclick="ejercicio25()">Aceptar</button>
+           <button onclick="hidePrompt25()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>26. Presionar el Boton del ejercicio : <button onclick="showPrompt26()">Iniciar Ejercicio 26</button></li>
+    
+    <div id="customPrompt26" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular el resto y cociente por medio de restas sucesivas</h3>
+           <p>Por favor ingresar el dividendo: </p>
+           <input type="text" id="Excer26Input1" placeholder="Número">
+           <p>Por favor ingresar el divisor: </p>
+           <input type="text" id="Excer26Input2" placeholder="Número">
+           <button onclick="ejercicio26()">Aceptar</button>
+           <button onclick="hidePrompt26()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>27. Presionar el Boton del ejercicio : <button onclick="showPrompt27()">Iniciar Ejercicio 27</button></li>
+    
+    <div id="customPrompt27" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para determinar la media de una lista indefinida de números positivos, se debe acabar el programa al ingresar un número negativo</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput27" placeholder="Número">
+           <button onclick="ejercicio27()">Aceptar</button>
+           <button onclick="hidePrompt27()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>28. Presionar el Boton del ejercicio : <button onclick="showPrompt28()">Iniciar Ejercicio 28</button></li>
+    
+    <div id="customPrompt28" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo repetir</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput28" placeholder="Número">
+           <button onclick="ejercicio28()">Aceptar</button>
+           <button onclick="hidePrompt28()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>29. Presionar el Boton del ejercicio : <button onclick="showPrompt29()">Iniciar Ejercicio 29</button></li>
+    
+    <div id="customPrompt29" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo mientras</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput29" placeholder="Número">
+           <button onclick="ejercicio29()">Aceptar</button>
+           <button onclick="hidePrompt29()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>30. Presionar el Boton del ejercicio : <button onclick="showPrompt30()">Iniciar Ejercicio 30</button></li>
+    
+    <div id="customPrompt30" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular la suma de los primeros cien números con un ciclo para</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput30" placeholder="Número">
+           <button onclick="ejercicio30()">Aceptar</button>
+           <button onclick="hidePrompt30()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>31. Presionar el Boton del ejercicio : <button onclick="showPrompt31()">Iniciar Ejercicio 31</button></li>
+    
+    <div id="customPrompt31" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript parar calcular la media de los números pares e impares, sólo se ingresará diez números</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput31" placeholder="Número">
+           <button onclick="ejercicio31()">Aceptar</button>
+           <button onclick="hidePrompt31()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>32. Presionar el Boton del ejercicio : <button onclick="showPrompt32()">Iniciar Ejercicio 32</button></li>
+    
+    <div id="customPrompt32" class="modal">
+        <div class="modal-content"> 
+           <h3>Se quiere saber cuál es la ciudad con la población de más personas, son tres provincias y once ciudades, hacer un algoritmo en JavaScript que nos permita saber eso. (NO HAY DATOS SUFICIENTES)</h3>
+           <p>Por favor ingrese el nombre de la provincia número </p>
+           <input type="text" id="userInput32" placeholder="Nombre de Provincia">
+           <button onclick="ejercicio32()">Aceptar</button>
+           <button onclick="hidePrompt32()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>33. Presionar el Boton del ejercicio : <button onclick="showPrompt33()">Iniciar Ejercicio 33</button></li>
+    
+    <div id="customPrompt33" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que permita al usuario continuar con el programa</h3>
+           <p>Confirmar, ¿Sí desea continuar con el programa? (S/N): </p>
+           <input type="text" id="userInput33" placeholder="S para continuar, N para cerrar">
+           <button onclick="ejercicio33()">Aceptar</button>
+           <button onclick="hidePrompt33()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>34. Presionar el Boton del ejercicio : <button onclick="showPrompt34()">Iniciar Ejercicio 34</button></li>
+    
+    <div id="customPrompt34" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que imprima la tabla de multiplicar de los números del uno al nueve</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput34" placeholder="Número">
+           <button onclick="ejercicio34()">Aceptar</button>
+           <button onclick="hidePrompt34()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>35. Presionar el Boton del ejercicio : <button onclick="showPrompt35()">Iniciar Ejercicio 35</button></li>
+    
+    <div id="customPrompt35" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que nos permita saber cuál es el número mayor y menor, se debe ingresar sólo veinte números</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput35" placeholder="Número">
+           <button onclick="ejercicio35()">Aceptar</button>
+           <button onclick="hidePrompt35()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>36. Presionar el Boton del ejercicio : <button onclick="showPrompt36()">Iniciar Ejercicio 36</button></li>
+    
+    <div id="customPrompt36" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para calcular la serie de Fibonacci</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput36" placeholder="Número">
+           <button onclick="ejercicio36()">Aceptar</button>
+           <button onclick="hidePrompt36()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>37. Presionar el Boton del ejercicio : <button onclick="showPrompt37()">Iniciar Ejercicio 37</button></li>
+    
+    <div id="customPrompt37" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript para conseguir el M.C.D de un número por medio del algoritmo de Euclides</h3>
+           <p>Ingrese el primer número para hallar el MCD: </p>
+           <input type="text" id="excer37Input1" placeholder="Primer número">
+           <p>Ingrese el segundo número para hallar el MCD: </p>
+           <input type="text" id="excer37Input2" placeholder="Segundo número">
+           <button onclick="ejercicio37()">Aceptar</button>
+           <button onclick="hidePrompt37()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>38. Presionar el Boton del ejercicio : <button onclick="showPrompt38()">Iniciar Ejercicio 38</button></li>
+    
+    <div id="customPrompt38" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que nos permita saber si un número es un número perfecto</h3>
+           <p>Por favor ingresar un número: </p>
+           <input type="text" id="userInput38" placeholder="Número">
+           <button onclick="ejercicio38()">Aceptar</button>
+           <button onclick="hidePrompt38()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>39. Presionar el Boton del ejercicio : <button onclick="showPrompt39()">Iniciar Ejercicio 39</button></li>
+    
+    <div id="customPrompt39" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que cumpla con la aproximación del número pi con la serie de Gregory-Leibniz. La formula que se debe aplicar es:</h3>
+           <li>Pi = (4/1) - (4/3) + (4/5) - (4/7) + (4/9) - (4/11) + (4/13) - (4/15) ...</li>
+           <p>Por favor ingrese el número de terminos a sumar </p>
+           <input type="text" id="userInput39" placeholder="Número">
+           <button onclick="ejercicio39()">Aceptar</button>
+           <button onclick="hidePrompt39()">Cancelar</button>
+       </div>
+   </div>
+
+    <li>40. Presionar el Boton del ejercicio : <button onclick="showPrompt40()">Iniciar Ejercicio 40</button></li>
+    
+    <div id="customPrompt40" class="modal">
+        <div class="modal-content"> 
+           <h3>Hacer un algoritmo en JavaScript que cumpla con la aproximación del número pi con la serie de Nilakantha. La formula que se debe aplicar es:</h3>
+           <li>Pi = = 3 + 4/(2*3*4) - 4/(4*5*6) + 4/(6*7*8) - 4/(8*9*10) + 4/(10*11*12) - 4/(12*13*14) ...</li>
+           <p>Por favor ingrese el número de terminos a sumar </p>
+           <input type="text" id="userInput40" placeholder="Número">
+           <button onclick="ejercicio40()">Aceptar</button>
+           <button onclick="hidePrompt40()">Cancelar</button>
+       </div>
+   </div>
+    
+    <li></li>
+    <li></li>
+
+    <h3>Informacion del Estudiante</h3>
+    <h3>
+        <li>Nombre : Angel Joaquin Berrio Luque</li>
+        <li>Codigo : SV46429488</li>
+    </h3>
+
+
+</div> 
+
+    <script src="script.js"></script> 
+</body>
+</html>
