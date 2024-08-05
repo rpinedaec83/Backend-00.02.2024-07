@@ -35,59 +35,90 @@ function ejercicio2() {
 
 function ejercicio3() {
   console.log("Ejercicio 3");
-  const input3 = document.getElementById("input3")
-  const btn3 = document.getElementById("btn3")
-  const result3 = document.getEelementById("result3")
-
-  const terminaen4 = (cadena) => {
-    let caracteres = cadena.toString()
-
-    console.log(cadena.slice())
-    return cadena.chartAt(cadena.legth - 1) === "4"
-  }
-
-  btn3.addEventListener("click"), () => {
-    const valor = parseInt(input3.value)
-    alert("ingrese solo numeros")
-    if (typeof valor !== "number") {
-      return alert("ingrese solo numeros")
+  console.log("Ejercicio 3");
+    let strNumero = prompt("Digita un número");
+    let intNumero = parseInt(strNumero);
+    if (!isNaN(intNumero)) {
+      ultimoNumero = strNumero.substring(strNumero.length - 1, strNumero.length);
+      console.log(ultimoNumero);
+      if (ultimoNumero == "4") {
+        alert("El número termina en 4");
+      }
+      else {
+        alert("El número no termina en 4");
+      }
     }
-
-
-    console. log(terminaen4(valor .toString()))
-    // const cadena = valor toString()
-    if (terminaen4(valor.toString()) ) {
-        const result = "Termina en 4"
-        result3.classList.remove("hidden")
-        result.innerHTML = result
-    } else {
-      const result = "No termina en 4"
-      result3.classList.remove("hidden")
-      result3.innerHTML = result
+    else {
+      throw "No es un número"
     }
-
- }
     
 }
 
 function ejercicio4() {
   console.log("Ejercicio 4");
 
-  let numero1 = parseInt (prompt("Digite primer numero"));
-  let numero2 = parseInt (prompt("Digite segundo numero"));
-  let numero3 = parseInt (prompt("Digite tercer numero"));
-  
-  if (numero1 > numero2) {
-     (numero1 > numero3)
-  } else alert (numero1)
+   let strNumero1 = prompt("Digita el primer número ");
+   let strNumero2 = prompt("Digita el segundo número ");
+   let strNumero3 = prompt("Digita el tercer número ");
+    
+    let numero1 = parseInt(strNumero1, 10);
+    let numero2 = parseInt(strNumero2, 10);
+    let numero3 = parseInt(strNumero3, 10);
 
-  if (numero2 > numero1) {
-     (numero2 > numero3)
-  } else alert (numero2)
+     let numeros = [numero1, numero2, numero3];
+     numeros.sort(function(a, b) {
+     return a - b;
+     });
 
-  if (numero3 > numero1) {
-     (numero3 > numero2)
-  } else alert (numero3)
-
- 
+     console.log("" + numeros.join(" "));
+     alert("" + numeros.join(" "));
+    
 }
+
+function ejercicio5() {
+  console.log("Ejercicio 5");
+    let strNumero = prompt("Digite una cantidad de zapatos");
+    let intNumero = parseInt(strNumero);
+    let precio = 80;
+    let descuento = 0;
+    
+      if (!isNaN(intNumero)) {
+      if (intNumero > 30) {
+        descuento = 40;
+      }
+      else if (intNumero > 20) {
+        descuento = 20;
+      }
+      else if (intNumero > 10) {
+        descuento = 10;
+      }
+        total = intNumero * precio * (100 - descuento) / 100;
+        alert("El precio total a pagar es: " + total + " con un descuento del " + descuento + "%");
+    }
+
+}
+
+function ejercicio6() {
+  console.log("Ejercicio 6");
+  
+    let horasdeTrabajo = parseInt(prompt("Digite las horas trabajadas:"));
+    let sueldo;
+
+      if (horasdeTrabajo <= 40) {
+      sueldo = horasdeTrabajo * 20;
+      } else {
+      let horasExtras = horasdeTrabajo - 40;
+      sueldo = (40 * 20) + (horasExtras * 25);
+      }
+
+      alert("El sueldo semanal es: $" + sueldo);
+      
+}
+
+function ejercicio7() {
+  console.log("Ejercicio 7");
+  
+
+}
+
+
