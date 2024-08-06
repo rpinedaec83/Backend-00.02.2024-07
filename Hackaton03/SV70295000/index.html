@@ -4,18 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hackaton03</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #053d63;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr); /* 8 columnas */
+            gap: 10px; /* Espacio entre botones */
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .container button {
+            padding: 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
-
-
-    <button onclick="ejercicio01()">Ejercicio01</button>
-    <button onclick="ejercicio02()">Ejercicio02</button>
-    <button onclick="ejercicio03()">Ejercicio03</button>
-    <button onclick="ejercicio04()">Ejercicio04</button>
-    <button onclick="ejercicio05()">Ejercicio05</button>
-    <button onclick="ejercicio06()">Ejercicio06</button>
-    <button onclick="ejercicio07()">Ejercicio07</button>
+    <div class="container" id="buttonContainer">
+        <!-- Los botones se generarán aquí -->
+        <button onclick="ejercicio01()">Ejercicio01</button> 
+        <button onclick="ejercicio02()">Ejercicio02</button> 
+        <button onclick="ejercicio03()">Ejercicio03</button> 
+        <button onclick="ejercicio04()">Ejercicio04</button> 
+        <button onclick="ejercicio05()">Ejercicio05</button> 
+        <button onclick="ejercicio06()">Ejercicio06</button>
+        <button onclick="ejercicio07()">Ejercicio07</button> 
+        <button onclick="ejercicio08()">Ejercicio08</button> 
+        <button onclick="ejercicio09()">Ejercicio09</button>
+        <button onclick="ejercicio10()">Ejercicio10</button>
+        <button onclick="ejercicio11()">ejercicio11</button> 
+        <button onclick="ejercicio12()">Ejercicio12</button>
+        <button onclick="ejercicio13()">Ejercicio13</button>
+        <button onclick="ejercicio14()">Ejercicio14</button>
+        <button onclick="ejercicio15()">Ejercicio15</button>
+        <button onclick="ejercicio16()">Ejercicio16</button>
+        <button onclick="ejercicio17()">Ejercicio17</button>
+        <button onclick="ejercicio18()">Ejercicio18</button>
+        <button onclick="ejercicio19()">Ejercicio19</button>
+        <button onclick="ejercicio20()">Ejercicio20</button>
+        <button onclick="ejercicio21()">Ejercicio21</button>
+        <button onclick="ejercicio22()">Ejercicio22</button>
+        <button onclick="ejercicio23()">Ejercicio23</button> 
+        <button onclick="ejercicio24()">Ejercicio24</button> 
+        <button onclick="ejercicio25()">Ejercicio25</button> 
+        <button onclick="ejercicio26()">Ejercicio26</button> 
+        <button onclick="ejercicio27()">Ejercicio27</button> 
+        <button onclick="ejercicio28()">Ejercicio28</button>
+        <button onclick="ejercicio29()">Ejercicio29</button>
+        <button onclick="ejercicio30()">Ejercicio30</button>
+        <button onclick="ejercicio31()">Ejercicio31</button>
+        <button onclick="ejercicio32()">Ejercicio32</button> 
+        <button onclick="ejercicio33()">Ejercicio33</button> 
+        <button onclick="ejercicio34()">Ejercicio34</button> 
+        <button onclick="ejercicio35()">Ejercicio35</button> 
+        <button onclick="ejercicio36()">Ejercicio36</button> 
+        <button onclick="ejercicio37()">Ejercicio37</button> 
+        <button onclick="ejercicio38()">Ejercicio38</button>
+        <button onclick="ejercicio39()">Ejercicio39</button>
+    </div>
+   
+ 
     <script src="ejercicios.js"></script>
     
 </body>
