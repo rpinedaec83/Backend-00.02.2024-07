@@ -1,11 +1,11 @@
-//12 Hacer un algoritmo en Pseint que lea dos nÃºmeros y diga cuÃ¡l es el mayor.
+//12 Hacer un algoritmo en Pseint que lea dos números y diga cuál es el mayor.
 Algoritmo NumeroMayor
 	//Variables
 	Definir Numero1, numero2 Como Real
 	//Mumeros
-	Escribir "Primer NÃºmero"
+	Escribir "Primer Número"
 	Leer Numero1
-	Escribir "Segungo NÃºmero"
+	Escribir "Segungo Número"
 	Leer numero2
 	//Logica
 	Si numero2<Numero1 Entonces

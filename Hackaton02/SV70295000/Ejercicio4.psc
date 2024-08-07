@@ -1,5 +1,5 @@
 Proceso Ejercicio04
-	//Hacer un algoritmo en Pseint que lea tres nÃºmeros enteros y los muestre de menor a mayor.
+	//Hacer un algoritmo en Pseint que lea tres números enteros y los muestre de menor a mayor.
 	Definir numero1,numero2, numero3 Como entero
 	Escribir "Ingrese primer numero"
 	Leer numero1

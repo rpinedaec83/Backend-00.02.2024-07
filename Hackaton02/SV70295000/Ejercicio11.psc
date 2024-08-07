@@ -1,5 +1,5 @@
 Proceso Ejercicio11
-	//Hacer un algoritmo en Pseint que lea tres nÃºmeros y diga cuÃ¡l es el mayor.
+	//Hacer un algoritmo en Pseint que lea tres números y diga cuál es el mayor.
 	Escribir "Ingrese 3 numeros a comparar"
 	Definir a, b, c Como Real
 	Leer a, b, c

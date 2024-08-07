@@ -1,5 +1,5 @@
 Proceso Ejercicio10
-	//Hacer un algoritmo en Pseint que diga si un nÃºmero es par o impar.
+	//Hacer un algoritmo en Pseint que diga si un número es par o impar.
 	x = entero
 	Escribir "Ingresa un numero:"
 	Leer  x
