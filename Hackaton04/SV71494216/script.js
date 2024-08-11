@@ -1,4 +1,4 @@
-//reto 1 
+//RETO 1 
 //Ejercicio 1
 function sumar(a, b) 
 {
