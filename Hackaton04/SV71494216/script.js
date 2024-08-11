@@ -1,4 +1,4 @@
-//RETO 1 
+//RETO 1 - PREGUNTAS
 //Ejercicio 1
 function sumar(a, b) 
 {
