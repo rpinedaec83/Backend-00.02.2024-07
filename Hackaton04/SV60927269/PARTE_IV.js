@@ -134,3 +134,4 @@ const findNemo = (sentence) => {
 // Función que capitaliza la última letra de cada palabra
 const capLast = (str) => 
     str.split(" ").map(word => word.slice(0, -1) + word.slice(-1).toUpperCase()).join(" ");
+/* EJERCISIOS TERMINADOS*/
