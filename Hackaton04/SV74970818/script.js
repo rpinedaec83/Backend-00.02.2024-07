@@ -1,5 +1,4 @@
 function ejercicio1() {
-  console.log("Ejercicio 1");
   let strNum1 = prompt("Digite el primer numero");
   let num1 = parseFloat(strNum1);
   let strNum2 = prompt("Digite el segundo numero");
@@ -14,7 +13,6 @@ function ejercicio1() {
 }
 
 function ejercicio2() {
-  console.log("Ejercicio 2");
   let strNum1 = prompt("Digite el numero a potenciar");
   let num1 = parseFloat(strNum1);
   let strNum2 = prompt("Digite la potencia");
@@ -29,7 +27,6 @@ function ejercicio2() {
 }
 
 function ejercicio3() {
-  console.log("Ejercicio 3");
   let strNum = prompt("SUMA DE CUBOS \nCuantos numeros deseas sumar: ");
   let num = parseFloat(strNum);
 
@@ -51,7 +48,6 @@ function ejercicio3() {
 }
 
 function ejercicio4() {
-  console.log("Ejercicio 4");
   let strNum1 = prompt("Digite la base del triangulo: ");
   let num1 = parseFloat(strNum1);
   let strNum2 = prompt("Digite la altura del triangulo:");
@@ -66,7 +62,6 @@ function ejercicio4() {
 }
 
 function ejercicio5() {
-  console.log("Ejercicio 5");
   let strNum1 = prompt("Digite el primer numero");
   let num1 = parseFloat(strNum1);
   let strNum2 = prompt("Digite el segundo numero");
@@ -367,4 +362,122 @@ const multiplyByLength = (arr) => {
   for (let i = 0; i < length; i++) result.push(arr[i] * length);
   return result;
 };
- 
+
+////////////////////
+function reto16() {
+  let strNum1 = prompt("Digite un numero");
+  let num1 = parseFloat(strNum1);
+
+  if (!isNaN(num1)) {
+    alert("El resultado se imprime en consola");
+    console.log(countdown(num1));
+  } else {
+    alert("El valor ingresado NO es un numero");
+  }
+}
+const countdown = (n) => {
+  let result = [];
+  for (let i = n; i >= 0; i--) result.push(i);
+  return result;
+};
+
+////////////////////
+function reto17() {
+  let arr1 = [10, 4, 1, 4, -10, -50, 32, 21];
+  let arr2 = [3, 5, 1, 9, 2];
+  let arr3 = [-1, -5, -3, -4];
+  alert(
+    "El resultado para la matriz 10, 4, 1, 4, -10, -50, 32, 21] es:\n" +
+      diffMaxMin(arr1)
+  );
+  alert("El resultado para la matriz [3, 5, 1, 9, 2] es:\n" + diffMaxMin(arr2));
+  alert(
+    "El resultado para la matriz [-1, -5, -3, -4] es:\n" + diffMaxMin(arr3)
+  );
+}
+const diffMaxMin = (arr) => {
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+  return max - min;
+};
+
+////////////////////
+function reto18() {
+  let arr1 = [1, 2, 3, "x", "y", 10];
+  let arr2 = [5, "hello", 7, 8, "world"];
+  let arr3 = ["a", 2, "b", 3];
+  alert(
+    `El resultado para la matriz [1, 2, 3, "x", "y", 10] se imprime en consola`
+  );
+  console.log(filterList(arr1));
+  alert(
+    `El resultado para la matriz [5, "hello", 7, 8, "world"] se imprime en consola`
+  );
+  console.log(filterList(arr2));
+  alert(`El resultado para la matriz ["a", 2, "b", 3] se imprime en consola`);
+  console.log(filterList(arr3));
+}
+const filterList = (arr) => {
+  return arr.filter((item) => Number.isInteger(item));
+};
+
+////////////////////
+function reto19() {
+  let str = prompt("Digite el elemento");
+  let strNum2 = prompt("Digite el tiempo");
+  let num2 = parseFloat(strNum2);
+
+  if (!isNaN(num2)) {
+    alert(`El resultado se imprime en consola`);
+    console.log(repeat(str, num2));
+  } else {
+    alert("Alguno de los valores ingresados NO es un numero");
+  }
+}
+const repeat = (elemento, veces) => {
+  let resultado = [];
+  for (let i = 0; i < veces; i++) resultado.push(elemento);
+  return resultado;
+};
+
+////////////////////
+function reto20() {
+  let str1 = prompt("Digite una frase cadena");
+  let str2 = prompt("Digite la vocal que reemplazara a todas las vocales");
+
+  if (str2 == "a" || str2 == "e" || str2 == "i" || str2 == "o" || str2 == "u") {
+    alert("La nueva frase es:\n" + vreplace(str1, str2));
+  } else {
+    alert("Alguno de los valores ingresados NO es un numero");
+  }
+}
+const vreplace = (str, vocal) => {
+  return str.replace(/[aeiou]/g, vocal);
+};
+
+////////////////////
+function reto21() {
+  let str1 = prompt("Digite una frase que contenga Nemo");
+  alert(findNemo(str1));
+}
+const findNemo = (str) => {
+  const palabras = str.split(" ");
+  const index = palabras.indexOf("Nemo");
+  if (index !== -1)
+    return `En la frase "${str}"\nEncontre a Nemo en la posicion ${index + 1}!`;
+  else return "Nemo no se encontro";
+};
+
+////////////////////
+function reto22() {
+  let str1 = prompt("Digite una palabra");
+  alert(
+    "El resutado al capitalizar la ultima letra es el siguiente: " +
+      capLast(str1)
+  );
+}
+const capLast = (str) => {
+  const palabra = str.split("");
+  palabra[palabra.length - 1] = palabra[palabra.length - 1].toUpperCase();
+  return palabra.join("");
+};
