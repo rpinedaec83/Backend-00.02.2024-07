@@ -117,6 +117,7 @@ function teorica2() {
   );
 }
 
+////////////////////
 function reto1() {
   let nombre = prompt("Digite el nombre");
   let apellido = prompt("Digite el apellido");
@@ -126,6 +127,7 @@ function reto1() {
 const miNombre = (nombre, apellido, edad) =>
   alert(`Hola mi nombre es ${nombre} ${apellido} y mi edad ${edad}`);
 
+////////////////////
 const reto2 = () => {
   let strNum = prompt("SUMA DE CUBOS \nCuantos numeros deseas sumar: ");
   let num = parseFloat(strNum);
@@ -146,6 +148,7 @@ const reto2 = () => {
   }
 };
 
+////////////////////
 function reto3() {
   alert(`Se muestra en consola los valores`);
   console.log("42 => " + tipoJs(42)); // "number"
@@ -159,8 +162,11 @@ function reto3() {
 }
 const tipoJs = (valor) => typeof valor;
 
+////////////////////
 function reto4() {
   alert("La suma de 3 numeros 1,2,3 usando rest es: " + sumarN(1, 2, 3));
+  alert("La suma de 2 numeros 5,6,7 usando rest es: " + sumarN(5, 6, 7));
+  alert("La suma de 4 numeros -5,7,6 usando rest es: " + sumarN(-5, 7, 6));
 }
 const sumarN = (...numeros) => {
   suma = 0;
@@ -168,6 +174,7 @@ const sumarN = (...numeros) => {
   return suma;
 };
 
+////////////////////
 function reto5() {
   const valores = [1, "Hola", true, "Mundo", 42, "JavaScript", null];
   alert(
@@ -176,7 +183,187 @@ function reto5() {
     )}`
   );
 }
-
 const filtrarStrings = (valores) => {
   return valores.filter((valor) => typeof valor == "string");
+};
+
+////////////////////
+function reto6() {
+  alert(
+    `para el arreglo [1, 2, 3, 4, 5] el min y max son: [${minMax([
+      1, 2, 3, 4, 5,
+    ])}]`
+  );
+  alert(
+    `para el arreglo [10, -2, 34, 56, 0] el min y max son: [${minMax([
+      10, -2, 34, 56, 0,
+    ])}]`
+  );
+  alert(
+    `para el arreglo [7, 7, 7, 7] el min y max son: [${minMax([7, 7, 7, 7])}]`
+  );
+}
+const minMax = (numeros) => {
+  const minimo = Math.min(...numeros);
+  const maximo = Math.max(...numeros);
+  return [minimo, maximo];
+};
+
+////////////////////
+function reto7() {
+  arregloEnteros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  alert(
+    `para el arreglo [1,2,3,4,5,6,7,8,9,0] el formato de numero es: \n ${formatPhoneNumber(
+      arregloEnteros
+    )}`
+  );
+}
+const formatPhoneNumber = (numeros) => {
+  const numeroString = numeros.join("");
+  return `(${numeroString.slice(0, 3)} ${numeroString.slice(
+    3,
+    6
+  )}-${numeroString.slice(6, 10)})`;
+};
+
+////////////////////
+
+function reto8() {
+  matrizMatrices = [
+    [4, 2, 7, 1],
+    [20, 70, 40, 90],
+    [1, 2, 0],
+  ];
+  alert(
+    `para la matriz de matrices [[4, 2, 7, 1], [20, 70, 40, 90], [1, 2, 0]] los mayores son: \n [${findLargestNums(
+      matrizMatrices
+    )}]`
+  );
+}
+const findLargestNums = (matrices) => {
+  let resultados = [];
+  for (let i = 0; i < matrices.length; i++) {
+    const maximo = Math.max(...matrices[i]);
+    resultados.push(maximo);
+  }
+  return resultados;
+};
+
+////////////////////
+function reto9() {
+  let str1 = prompt("Ingrese la palabra");
+  let str2 = prompt("Ingrese el caracter");
+  let char = charIndex(str1, str2);
+  if (char)
+    alert(
+      `el primer caracter se encuentra en la posicion ${char[0]} y el ultimo en la posicion ${char[1]}`
+    );
+  else alert("El caracter no se encuentra en la palabra");
+}
+const charIndex = (palabra, caracter) => {
+  const primerIndice = palabra.indexOf(caracter);
+  const ultimoIndice = palabra.lastIndexOf(caracter);
+  if (primerIndice === -1) return null;
+  return [primerIndice, ultimoIndice];
+};
+
+////////////////////
+function reto10() {
+  alert("el objeto { a: 1, b: 2 } se imprime en consola como matriz");
+  console.log(toArray({ a: 1, b: 2 }));
+  alert(
+    "el objeto { name: 'Alice', age: 25 } se imprime en consola como matriz"
+  );
+  console.log(toArray({ name: "Alice", age: 25 }));
+  alert("el objeto {} se imprime en consola como matriz");
+  console.log(toArray({}));
+}
+const toArray = (obj) => {
+  return Object.entries(obj);
+};
+
+////////////////////
+function reto11() {
+  let personas = [
+    { name: "John", age: 21, budget: 23000 },
+    { name: "Steve", age: 32, budget: 40000 },
+    { name: "Martin", age: 16, budget: 2700 },
+  ];
+  alert(
+    "la suma de la matriz de objetos es la siguiente: " + getBudgets(personas)
+  );
+}
+const getBudgets = (personas) => {
+  let sumaPresupuestos = 0;
+  for (let i = 0; i < personas.length; i++) {
+    sumaPresupuestos += personas[i].budget;
+  }
+  return sumaPresupuestos;
+};
+
+////////////////////
+function reto12() {
+  let estudiantes = [{ name: "Becky" }, { name: "John" }, { name: "Steve" }];
+  alert(
+    "la matriz con nombres de estudiantes es: " + getStudentNames(estudiantes)
+  );
+}
+const getStudentNames = (estudiantes) => {
+  let nombres = [];
+  for (let i = 0; i < estudiantes.length; i++) {
+    nombres.push(estudiantes[i].name);
+  }
+  return nombres;
+};
+
+////////////////////
+function reto13() {
+  let social = {
+    likes: 2,
+    dislikes: 3,
+    followers: 10,
+  };
+  alert(
+    "el objeto {likes: 2,dislikes: 3,followers: 10} se imprime en consola como matriz"
+  );
+  console.log(toArray(social));
+}
+
+////////////////////
+function reto14() {
+  let strNum1 = prompt("Digite un numero");
+  let num1 = parseFloat(strNum1);
+
+  if (!isNaN(num1)) {
+    alert(
+      "La suma de los cuadrados de los n primeros numeros es: " +
+        squaresSum(num1)
+    );
+  } else {
+    alert("el valor ingresado NO es un numero");
+  }
+}
+const squaresSum = (n) => {
+  let suma = 0;
+  for (let i = 1; i <= n; i++) suma += i * i;
+  return suma;
+};
+
+////////////////////
+function reto15() {
+  let arr1 = [2, 3, 1, 0];
+  let arr2 = [4, 5, 6];
+  let arr3 = [1, 2, 3, 4, 5];
+  alert("El resultado para la matriz [2, 3, 1, 0] se imprime en consola");
+  console.log(multiplyByLength(arr1));
+  alert("El resultado para la matriz [4, 5, 6] se imprime en consola");
+  console.log(multiplyByLength(arr2));
+  alert("El resultado para la matriz [1, 2, 3, 4, 5] se imprime en consola");
+  console.log(multiplyByLength(arr3));
+}
+const multiplyByLength = (arr) => {
+  const length = arr.length;
+  let result = [];
+  for (let i = 0; i < length; i++) result.push(arr[i] * length);
+  return result;
 };
