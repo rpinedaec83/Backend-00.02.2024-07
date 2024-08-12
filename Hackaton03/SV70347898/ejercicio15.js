@@ -2,9 +2,7 @@
 
 function ejecutarEjercicio15() {
     alert("Ingrese el valor que desea convertir")
-    let input = prompt("Ingrese 1 para centimetros y 2 para libras");
-    let numero = parseInt(input);
-    console.log(typeof (numero))
+    let numero = parseInt(prompt("Ingrese 1 para centimetros y 2 para libras"));
 
     if (numero === 1) {
         let centimetros = parseInt(prompt("Ingrese los centimetros que desea transformar a pulgadas"));
