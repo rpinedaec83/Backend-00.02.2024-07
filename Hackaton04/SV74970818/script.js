@@ -367,3 +367,4 @@ const multiplyByLength = (arr) => {
   for (let i = 0; i < length; i++) result.push(arr[i] * length);
   return result;
 };
+ 
