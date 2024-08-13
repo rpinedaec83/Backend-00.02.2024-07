@@ -403,4 +403,5 @@ function ejercicio22(str) {
   const rpta4 = ejercicio22("aprendiendo a programar en javascript");
   console.log(rpta4);
 
+  //end
   
