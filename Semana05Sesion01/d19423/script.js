@@ -26,8 +26,6 @@ class Television{
 let miTV = new Television("LG", "STD2021", 43, "4K");
 let tv2 = new Television("Sony", "STK1000", 55, "8K");
 
-miTV = "OBJ"
-
 console.log(miTV.marca);
 
 miTV.marca = "Life Goods Electroncis"
