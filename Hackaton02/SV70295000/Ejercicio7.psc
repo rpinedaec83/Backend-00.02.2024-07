@@ -1,20 +1,19 @@
-//7 Hacer un algoritmo en Pseint para una tienda de helado que da un descuento por compra a sus clientes con membres√≠a dependiendo de su tipo, s√≥lo existen tres tipos de membres√≠a, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
+//7 Hacer un algoritmo en Pseint para una tienda de helado que da un descuento por compra a sus clientes con membresÌa dependiendo de su tipo, sÛlo existen tres tipos de membresÌa, tipo A, tipo B y tipo C. Los descuentos son los siguientes:
 
-//   Tipo A 10% de descuento
-//   Tipo B 15% de descuento
-//   Tipo C 20% de descuento
-
+Tipo A 10% de descuento
+Tipo B 15% de descuento
+Tipo C 20% de descuento
 Algoritmo DescuentoHelados
     Definir tipo_membresia Como Caracter
     Definir precio_original, precio_final, descuento Como Real
 	
     // Variavkes
-    Escribir "Ingrese el tipo de membres√≠a (A, B, C): "
+    Escribir "Ingrese el tipo de membresÌa (A, B, C): "
     Leer tipo_membresia
     Escribir "Ingrese el precio original del helado: "
     Leer precio_original
 	
-    // Seg√∫n el tipo de membres√≠a
+    // Seg˙n el tipo de membresÌa
     Segun tipo_membresia Hacer
         Caso "A":
             descuento = 0.10
@@ -23,7 +22,7 @@ Algoritmo DescuentoHelados
         Caso "C":
             descuento = 0.20
         De Otro Modo:
-            Escribir "Tipo de membres√≠a no v√°lido. No se aplicar√° descuento."
+            Escribir "Tipo de membresÌa no v·lido. No se aplicar· descuento."
             descuento = 0
     Fin Segun
 	

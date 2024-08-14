@@ -1,5 +1,5 @@
 Proceso Ejercicio03
-	//Hacer un algoritmo en Pseint que lea un nÃºmero y determinar si termina en 4.
+	//Hacer un algoritmo en Pseint que lea un número y determinar si termina en 4.
 	Escribir "Ingrese numero: "
 	Leer numero
 	//guardo el numero ingresado en una nueva variable
