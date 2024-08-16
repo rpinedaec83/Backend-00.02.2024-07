@@ -51,32 +51,32 @@
 
 const Reserva = (function () //a
 {
-  let Ciudad;
-  let Nombre;
-  let arrAviones = [];
-  function configurar() {
-    console.log("Iniciando la Configuracion");
-    $("#titulo").text(Nombre)
-    $("#ciudad").text(Ciudad);
-    $("#aerolinea").text(Nombre)
-    crearAviones();
-}
-function crearAviones() {
-    let objAvion = new Aviones("LIM-009", "Airbus 320 Neo", 196, 90);
-    arrAviones.push(objAvion);
-    let objAvion1 = new Aviones("UIO-011", "Airbus 319", 124, 62);
-    arrAviones.push(objAvion1);
-}
-function eventos() {
-    console.log("Escuchando los eventos")
-    $("#reservar").on("click", async function(){
-        $("#divReserva").hide();
-        console.log("Reservando Vuelo");
+    let Ciudad;
+    let Nombre;
+    let arrAviones = [];
+    function configurar() {
+        console.log("Iniciando la Configuracion");
+        $("#titulo").text(Nombre)
+        $("#ciudad").text(Ciudad);
+        $("#aerolinea").text(Nombre)
+        crearAviones();
+    }
+    function crearAviones() {
+        let objAvion = new Aviones("LIM-009", "Airbus 320 Neo", 196, 90);
+        arrAviones.push(objAvion);
+        let objAvion1 = new Aviones("UIO-011", "Airbus 319", 124, 62);
+        arrAviones.push(objAvion1);
+    }
+    function eventos() {
+        console.log("Escuchando los eventos")
+        $("#reservar").on("click", async function () {
+            $("#divReserva").hide();
+            console.log("Reservando Vuelo");
 
-        const { value: formValues } = await Swal.fire({
-            title: "Ingresa tus datos",
-            icon: "info",
-            html: `
+            const { value: formValues } = await Swal.fire({
+                title: "Ingresa tus datos",
+                icon: "info",
+                html: `
             <label class="col-md-4 control-label" for="textinput">Origen</label>  
             <input id="origen" class="swal2-input">
             <label class="col-md-4 control-label" for="textinput">Destino</label>  
@@ -86,58 +86,58 @@ function eventos() {
             <label class="col-md-4 control-label" for="textinput">Fecha de Retorno</label>  
             <input id="fechaRetorno" class="swal2-input">
             `,
-            showCloseButton: true,
-            showCancelButton: true,
-            confirmButtonText: "Guardar",
-            denyButtonText: `Cancelar`,
-            preConfirm: () => {
-                return {
-                    origen:  document.getElementById("origen").value,
-                    destino: document.getElementById("destino").value,
-                    fechaIda:  document.getElementById("fechaIda").value,
-                    fechaRegreso:  document.getElementById("fechaRetorno").value
-                };
+                showCloseButton: true,
+                showCancelButton: true,
+                confirmButtonText: "Guardar",
+                denyButtonText: `Cancelar`,
+                preConfirm: () => {
+                    return {
+                        origen: document.getElementById("origen").value,
+                        destino: document.getElementById("destino").value,
+                        fechaIda: document.getElementById("fechaIda").value,
+                        fechaRegreso: document.getElementById("fechaRetorno").value
+                    };
+                }
+            });
+            if (formValues) {
+                let reserva = new Reservas(formValues.origen, formValues.destino, formValues.fechaIda, formValues.fechaRegreso);
+                let objPasajero = agregarPasajeros().then(data => {
+                    reserva.asignarAvionIda(arrAviones[0]);
+                    reserva.asignarAvionVuelta(arrAviones[1]);
+                    reserva.avionIda.agregarPasajeros(data);
+                    reserva.avionVuelta.agregarPasajeros(data);
+                    dibujarReserva(reserva);
+                });
+
+
             }
         });
-        if (formValues) {
-            let reserva =new Reservas(formValues.origen, formValues.destino, formValues.fechaIda, formValues.fechaRegreso);
-            let objPasajero = agregarPasajeros().then(data =>{
-                reserva.asignarAvionIda(arrAviones[0]);
-                reserva.asignarAvionVuelta(arrAviones[1]);
-                reserva.avionIda.agregarPasajeros(data);
-                reserva.avionVuelta.agregarPasajeros(data);
-                dibujarReserva(reserva);
-            });
-            
-            
-        }
-    });
-}
-function dibujarReserva(reserva){
-    console.log(reserva);
-    $("#idaNombre").val(reserva.avionIda.arrPasajeros[0].nombres);
-    $("#idaApellido").val(reserva.avionIda.arrPasajeros[0].apellidos);
-    $("#idaFecha").val(reserva.fechaIda);
-    $("#idaVuelo").val(reserva.avionIda.matricula);
-    $("#idaOrigen").val(reserva.origen);
-    
+    }
+    function dibujarReserva(reserva) {
+        console.log(reserva);
+        $("#idaNombre").val(reserva.avionIda.arrPasajeros[0].nombres);
+        $("#idaApellido").val(reserva.avionIda.arrPasajeros[0].apellidos);
+        $("#idaFecha").val(reserva.fechaIda);
+        $("#idaVuelo").val(reserva.avionIda.matricula);
+        $("#idaOrigen").val(reserva.origen);
 
-    $("#retNombre").val(reserva.avionVuelta.arrPasajeros[0].nombres);
-    $("#retApellido").val(reserva.avionVuelta.arrPasajeros[0].apellidos);
-    $("#retFecha").val(reserva.fechaVuelta);
-    $("#retVuelo").val(reserva.avionVuelta.matricula);
-    $("#retDestino").val(reserva.destino);
-    
-    $("#divReserva").show();
 
-}
-async function agregarPasajeros() {
-    console.log("Agregar Pasajeros");
+        $("#retNombre").val(reserva.avionVuelta.arrPasajeros[0].nombres);
+        $("#retApellido").val(reserva.avionVuelta.arrPasajeros[0].apellidos);
+        $("#retFecha").val(reserva.fechaVuelta);
+        $("#retVuelo").val(reserva.avionVuelta.matricula);
+        $("#retDestino").val(reserva.destino);
 
-    const { value: formValues } = await Swal.fire({
-        title: "Ingresa los datos del pasajero",
-        icon: "info",
-        html: `
+        $("#divReserva").show();
+
+    }
+    async function agregarPasajeros() {
+        console.log("Agregar Pasajeros");
+
+        const { value: formValues } = await Swal.fire({
+            title: "Ingresa los datos del pasajero",
+            icon: "info",
+            html: `
         <label class="col-md-4 control-label" for="textinput">Nombre</label>  
         <input id="nombre" class="swal2-input">
         <label class="col-md-4 control-label" for="textinput">Apellido</label>  
@@ -146,33 +146,33 @@ async function agregarPasajeros() {
         <input id="documento" class="swal2-input">
         
         `,
-        showCloseButton: true,
-        showCancelButton: true,
-        confirmButtonText: "Guardar",
-        denyButtonText: `Cancelar`,
-        preConfirm: () => {
-            return {
-                nombre:  document.getElementById("nombre").value,
-                apellido: document.getElementById("apellido").value,
-                documento:  document.getElementById("documento").value
-            };
+            showCloseButton: true,
+            showCancelButton: true,
+            confirmButtonText: "Guardar",
+            denyButtonText: `Cancelar`,
+            preConfirm: () => {
+                return {
+                    nombre: document.getElementById("nombre").value,
+                    apellido: document.getElementById("apellido").value,
+                    documento: document.getElementById("documento").value
+                };
+            }
+        });
+        if (formValues) {
+            let pasajero = new Pasajeros(formValues.nombre, formValues.apellido, formValues.documento);
+            return pasajero;
         }
-    });
-    if (formValues) {
-        let pasajero =new Pasajeros(formValues.nombre, formValues.apellido, formValues.documento);
-        return pasajero;
     }
-}
 
-  return {
-    init: function (parametros) {
-      console.log(parametros);
-      Nombre = parametros.nombre;
-      Ciudad = parametros.ciudad;
-      configurar();
-      eventos();
-    },
-  };
+    return {
+        init: function (parametros) {
+            console.log(parametros);
+            Nombre = parametros.nombre;
+            Ciudad = parametros.ciudad;
+            configurar();
+            eventos();
+        },
+    };
 })();
 
 
@@ -212,8 +212,8 @@ class Reservas {
     }
 }
 
-class Pasajeros{
-    constructor(nombres, apellidos, nrodocumento){
+class Pasajeros {
+    constructor(nombres, apellidos, nrodocumento) {
         this.nombres = nombres;
         this.apellidos = apellidos;
         this.nrodocumento = nrodocumento
