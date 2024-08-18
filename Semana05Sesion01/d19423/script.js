@@ -8,76 +8,76 @@
 //resolucion
 //tecnologia
 
-class Electrodomesticos{
-    constructor(nombre,marca, modelo, color, precio, voltaje, conectividad){
+class Electrodomesticos {
+    constructor(nombre, marca, modelo, color, precio, voltaje, conectividad) {
         this.nombre = nombre;
         this.marca = marca;
-        this.modelo=modelo;
+        this.modelo = modelo;
         this.color = color;
         this.precio = precio;
         this.voltaje = voltaje;
         this.conectividad = conectividad;
     }
-    prender(){
-        if(this.voltaje !== 220){
+    prender() {
+        if (this.voltaje !== 220) {
             console.log(`verifique su sumistro de energia que sea de ${this.voltaje}`)
         }
         console.log(`El ${this.nombre} se esta encendiendo`)
     }
-    apagar(){
+    apagar() {
         console.log(`El ${this.nombre} se esta apagando`)
     }
-    conectar(medio){
+    conectar(medio) {
         const index = this.conectividad.indexOf(medio);
         console.log(index);
         if (index > -1) { // only splice array when item is found
-            console.log("Conectando al "+ medio)
+            console.log("Conectando al " + medio)
         }
-        else{
+        else {
             console.log(`Imposible conectar al ${medio} ya que solo se tienen la siguiente conectividad ${this.conectividad.join(",")}`)
-       
+
         }
     }
 }
 
-class LineaMarron extends Electrodomesticos{
-    constructor(nombre,marca, modelo, color, precio, voltaje, conectividad = null, audio, entradas){
-        super(nombre,marca, modelo, color, precio, voltaje, conectividad);
+class LineaMarron extends Electrodomesticos {
+    constructor(nombre, marca, modelo, color, precio, voltaje, conectividad = null, audio, entradas) {
+        super(nombre, marca, modelo, color, precio, voltaje, conectividad);
         this.audio = audio;
         this.entradas = entradas;
     }
-    ajustarVolumen(nivel){
+    ajustarVolumen(nivel) {
         console.log(`Ajustando el volumen al nivel ${nivel} del dispositivo ${this.audio}`)
     }
-    cambiarOrigen(origen = "HDMI 1"){
+    cambiarOrigen(origen = "HDMI 1") {
         const index = this.entradas.indexOf(origen);
         console.log(index);
         if (index > -1) { // only splice array when item is found
-            console.log("Conectando al "+ origen)
+            console.log("Conectando al " + origen)
         }
-        else{
+        else {
             console.log(`Imposible conectar al ${origen} ya que solo se tienen las siguientes entradas ${this.entradas.join(",")}`)
         }
     }
 }
 
+console.log(miTV.marca);
 
-
-class Television extends LineaMarron{
-    constructor(nombre,marca, modelo, color, precio, voltaje, conectividad, audio, entradas, tipoPantalla, tamaño, resolucion){
-        super(nombre,marca, modelo, color, precio, voltaje, conectividad, audio, entradas);
+class Television extends LineaMarron {
+    constructor(nombre, marca, modelo, color, precio, voltaje, conectividad, audio, entradas, tipoPantalla, tamaño, resolucion) {
+        super(nombre, marca, modelo, color, precio, voltaje, conectividad, audio, entradas);
         this.tipoPantalla = tipoPantalla;
         this.tamaño = tamaño;
         this.resolucion = resolucion;
     }
 
-    navegarInternet(url){
+    navegarInternet(url) {
         console.log(`Navegando en la pagina ${url}`)
     }
-    verStreaming(proveedor){
+    verStreaming(proveedor) {
         console.log(`Viendo ${proveedor} en la pantalla ${this.tipoPantalla} en resolucion ${this.resolucion}`)
     }
-    apagar(){
+    apagar() {
         console.log(`Desconectando los medios ${this.conectividad.join(',')}`);
         console.log(`El ${this.nombre} se esta apagando`)
     }
@@ -85,20 +85,20 @@ class Television extends LineaMarron{
 
 
 
-class EquipoSonido extends LineaMarron{
-    constructor(nombre,marca, modelo, color, precio, voltaje, conectividad, audio, entradas, salida){
-        super(nombre,marca, modelo, color, precio, voltaje, conectividad, audio, entradas);
+class EquipoSonido extends LineaMarron {
+    constructor(nombre, marca, modelo, color, precio, voltaje, conectividad, audio, entradas, salida) {
+        super(nombre, marca, modelo, color, precio, voltaje, conectividad, audio, entradas);
         this.salida = salida
     }
-    mezclar(nuevaCancion){
+    mezclar(nuevaCancion) {
         console.log(`Reproduciendo ${nuevaCancion} en ${this.audio}`)
     }
 }
 
 
 
-let tv1 = new Television("TV Dormitorio","LG","XXX3","Negro",900, 110, ["wifi", "lan", "BT"], "Dolby Atmos",["HDMI 1", "HDMI 2", "AV1"],"LED",42,"4K");
-let tv2 = new Television("TV Sala","LG","XXX3","Negro",900, 220, ["lan"], "Dolby Atmos",["HDMI 1", "HDMI 2", "AV1"],"LED",42,"4K");
+let tv1 = new Television("TV Dormitorio", "LG", "XXX3", "Negro", 900, 110, ["wifi", "lan", "BT"], "Dolby Atmos", ["HDMI 1", "HDMI 2", "AV1"], "LED", 42, "4K");
+let tv2 = new Television("TV Sala", "LG", "XXX3", "Negro", 900, 220, ["lan"], "Dolby Atmos", ["HDMI 1", "HDMI 2", "AV1"], "LED", 42, "4K");
 
 tv1.prender()
 tv2.prender()
@@ -117,7 +117,7 @@ tv2.verStreaming("HBO MAX")
 tv1.apagar()
 tv2.apagar()
 
-let equipo = new EquipoSonido("Equipo Sala","LG","XXX3","Negro",900, 220, ["lan"], "Dolby Atmos",["HDMI 1", "HDMI 2", "AV1"]);
+let equipo = new EquipoSonido("Equipo Sala", "LG", "XXX3", "Negro", 900, 220, ["lan"], "Dolby Atmos", ["HDMI 1", "HDMI 2", "AV1"]);
 equipo.apagar()
 
 
@@ -154,7 +154,7 @@ equipo.apagar()
 // tv2.apagar()
 
 
-class Persona{
+class Persona {
     constructor(nombre, apellido, edad, sexo) {
         this.nombre = nombre;
         this.apellido = apellido;
@@ -164,14 +164,14 @@ class Persona{
 }
 
 
-class Cliente extends Persona{
+class Cliente extends Persona {
     constructor(nombre, apellido, edad, sexo, codigoCliente) {
         super(nombre, apellido, edad, sexo)
         this.codigoCliente = codigoCliente
     }
 }
 
-class Proveedor extends Persona{
+class Proveedor extends Persona {
     constructor(nombre, apellido, edad, sexo, codigoProveedor) {
         super(nombre, apellido, edad, sexo)
         this.codigoProveedor = codigoProveedor
