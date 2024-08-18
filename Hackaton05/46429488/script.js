@@ -1,4 +1,4 @@
-const imeiBlacklist = ['999','998','993']
+const imeiBlacklist = ['999','998','993','9999']
 
 class equipo {
     constructor(serie, imei, marca) {
