@@ -18,7 +18,8 @@ class Telefono {
     this.estaBloqueado = listaDeBlqoueados.includes(this.imei);
     if (this.estaBloqueado) {
       return true;
-    } else {
+    }
+    else {
       return false;
     }
   }
@@ -26,7 +27,8 @@ class Telefono {
   autorizarRevision(autorizacionEscrita, abono) {
     if (!this.estaBloqueado && autorizacionEscrita && abono >= 50) {
       this.autorizacion = true;
-    } else {
+    }
+    else {
       console.log("Debe autorizar al reparacion");
     }
   }
@@ -46,7 +48,8 @@ class Tecnico {
   puedeReparar(marcaTelefono) {
     if (this.skills.includes(marcaTelefono)) {
       return this.nombre;
-    } else {
+    }
+    else {
       return `el tecnico ${this.nombre} no puede reparar este telefono.`;
     }
   }
@@ -66,7 +69,8 @@ class AreaDiagnostico {
       this.telefono.encargado = this.tecnico.puedeReparar(this.telefono.marca);
       this.telefono.area = 'Area diagnostico'
       this.telefono.estado = "Diagnosticado";
-    } else {
+    }
+    else {
       console.log("El telefono esta siendo revisado");
     }
   }
@@ -85,7 +89,8 @@ class AreaReparacion {
       this.telefono.encargado = this.tecnico.nombre
       this.telefono.repuestos.push(this.nombre);
       this.telefono.estado = "En reparacion";
-    } else {
+    }
+    else {
       console.log("Por favor autorizar reparacion.");
     }
   }
@@ -93,7 +98,8 @@ class AreaReparacion {
   finalizarReparacion() {
     if ((this.telefono.estado = "En reparacion")) {
       this.telefono.estado = "Finalizado";
-    } else {
+    }
+    else {
       console.log("La reparacion esta en curso");
     }
   }
