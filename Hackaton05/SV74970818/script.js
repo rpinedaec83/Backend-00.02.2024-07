@@ -27,10 +27,9 @@ class Telefono {
       this.estado = "Autorización concedida";
       mostrarEstado("Estado: " + telefono.estado);
     } else {
-      this.estado = "Autorización pendiente";
+      this.estado = "Autorización pendiente, Autorizacion escrita pendiente o no se realizo el abono del 50% ";
       mostrarEstado("Estado: " + telefono.estado);
     }
-    
   }
 
   agregarRepuesto(repuesto) {
@@ -95,15 +94,17 @@ class Sucursal {
   agregarTecnico(tecnico) {
     this.tecnicos.push(tecnico);
     mostrarEstado(
-        `Técnico agregado: ${tecnico.nombre + " [" + tecnico.skills + "]"}`
-      );
+      `Técnico agregado: ${tecnico.nombre + " [" + tecnico.skills + "]"}`
+    );
   }
 
   ingresarTelefono(telefono) {
     if (!this.listaDeImeiBloqueados.includes(telefono.imei)) {
       this.telefonos.push(telefono);
       telefono.actualizarEstado("Ingresado");
-      mostrarEstado(`Teléfono con serie ${telefono.serie}, marca ${telefono.marca} ingresado.`);
+      mostrarEstado(
+        `Teléfono con serie ${telefono.serie}, marca ${telefono.marca} ingresado.`
+      );
     } else {
       alert("El teléfono está reportado y no puede ser ingresado.");
     }
@@ -147,34 +148,32 @@ function ingresarTelefono() {
 
 function realizarDiagnostico() {
   let serie = prompt("Ingrese el numero de serie del telefono a diagnosticar");
-  let phone = [];
-  let encontrado = false;
-  for (let i = 0; i <= sucursal.telefonos.length - 1; i++) {
-    phone = sucursal.telefonos[i];
-    if (serie == phone.serie) {
-      let diagnostico = prompt("Ingrese el diagnostico");
-      phone.realizarDiagnostico(diagnostico);
-      encontrado = true;
-    }
-  }
-  if (!encontrado) {
+  let phone = encontrarTelefono(serie);
+  if (phone != null) {
+    let diagnostico = prompt("Ingrese el diagnostico");
+    phone.realizarDiagnostico(diagnostico);
+  } else {
     alert("Telefono no registrado, intente nuevamente");
   }
 }
 
 function autorizarReparacion() {
-    let serie = prompt("Ingrese el numero de serie del telefono a reparar");
-  let autorizacion = prompt(
-    "Ingrese el numero 1 SI cuenta con autorizacion escrita del cliente"
-  );
-  let auth = false;
-  if (autorizacion == "1") auth = true;
-  let costo = prompt("Ingrese el costo estimado");
-  let num1 = parseFloat(costo);
-  let abono = prompt("Ingrese el abono (min 50% del costo estimado)");
-  let num2 = parseFloat(abono);
-
-  telefono.autorizarRevision(auth, num1, num2);
+  let serie = prompt("Ingrese el numero de serie del telefono a reparar");
+  let phone = encontrarTelefono(serie);
+  if (phone != null) {
+    let autorizacion = prompt(
+      "Ingrese el numero 1 SI cuenta con autorizacion escrita del cliente"
+    );
+    let auth = false;
+    if (autorizacion == "1") auth = true;
+    let costo = prompt("Ingrese el costo estimado");
+    let num1 = parseFloat(costo);
+    let abono = prompt("Ingrese el abono (min 50% del costo estimado)");
+    let num2 = parseFloat(abono);
+    telefono.autorizarRevision(auth, num1, num2);
+  } else {
+    alert("Telefono no registrado, intente nuevamente");
+  }
 }
 
 function asignarTelefono() {
@@ -192,18 +191,18 @@ function mostrarEstado(mensaje) {
   outputDiv.innerHTML += `<p>${mensaje}</p>`;
 }
 
-function encontrarTelefono(serie){
-  let phone = null;
+function encontrarTelefono(serie) {
+  let phone;
   let encontrado = false;
   for (let i = 0; i <= sucursal.telefonos.length - 1; i++) {
     phone = sucursal.telefonos[i];
     if (serie == phone.serie) {
       encontrado = true;
-      return phone
+      return phone;
     }
   }
   if (!encontrado) {
-    return null
+    return null;
   }
 }
 /*
