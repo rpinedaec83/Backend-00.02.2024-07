@@ -16,7 +16,9 @@ class Telefono {
   realizarDiagnostico(diagnostico) {
     this.diagnostico = diagnostico;
     this.estado = "Diagnóstico realizado";
-    mostrarEstado("Diagnóstico realizado: " + telefono.diagnostico);
+    mostrarEstado(
+      "Diagnóstico realizado: " + this.serie + " " + this.diagnostico
+    );
   }
 
   autorizarRevision(autorizacionEscrita, costoEstimado, abono) {
@@ -25,19 +27,21 @@ class Telefono {
     if (autorizacionEscrita && abono >= costoEstimado * 0.5) {
       this.autorizacion = true;
       this.estado = "Autorización concedida";
-      mostrarEstado("Estado: " + telefono.estado);
+      mostrarEstado("Estado: " + this.estado);
     } else {
-      this.estado = "Autorización pendiente, Autorizacion escrita pendiente o no se realizo el abono del 50% ";
-      mostrarEstado("Estado: " + telefono.estado);
+      this.estado =
+        "Autorización pendiente, Autorizacion escrita pendiente o no se realizo el abono del 50% ";
+      mostrarEstado("Estado: " + this.estado);
     }
   }
 
   agregarRepuesto(repuesto) {
     if (this.autorizacion) {
       this.repuestos.push(repuesto);
-      this.estado = "Repuesto agregado";
+      this.estado = "Repuesto agregado - " + repuesto;
+      mostrarEstado("Estado: " + this.estado);
     } else {
-      console.log("Por favor autorizar reparacion.");
+      mostrarEstado("Por favor autorizar reparacion.");
     }
   }
 
@@ -55,8 +59,17 @@ class Tecnico {
 
   asignarTelefono(telefono) {
     if (this.skills.includes(telefono.marca)) {
-      this.telefonosAsignados.push(telefono);
-      telefono.actualizarEstado("Asignado a técnico");
+      if (!this.telefonosAsignados.includes(telefono)) {
+        this.telefonosAsignados.push(telefono);
+        telefono.actualizarEstado("Asignado a técnico");
+        mostrarEstado(
+          `Teléfono con serie ${telefono.serie} asignado a técnico: ${this.nombre}`
+        );
+      } else {
+        mostrarEstado(
+          `Teléfono con serie ${telefono.serie} ya se encuentra asignado al tecnico ${this.nombre}`
+        );
+      }
     } else {
       alert(
         `El técnico ${this.nombre} no tiene habilidades para reparar teléfonos de la marca ${telefono.marca}.`
@@ -67,6 +80,7 @@ class Tecnico {
   repararTelefono(telefono) {
     if (this.telefonosAsignados.includes(telefono) && telefono.autorizacion) {
       telefono.actualizarEstado("En reparación");
+      mostrarEstado("Estado del teléfono: " + telefono.estado);
     } else {
       alert(
         "No se puede reparar el teléfono. Autorización pendiente o teléfono no asignado."
@@ -76,7 +90,8 @@ class Tecnico {
 
   finalizarReparacion(telefono) {
     if ((telefono.estado = "En reparación")) {
-      telefono.actualizarEstado("Reparado");
+      telefono.actualizarEstado("Reparado y listo para entrega al cliente");
+      mostrarEstado("Estado del teléfono: " + telefono.estado);
     } else {
       console.log("La reparacion esta en curso");
     }
@@ -115,11 +130,14 @@ class Sucursal {
 let sucursal, tecnico, telefono;
 
 // Funciones para manejar el flujo
+
+// Crear sucursal
 function crearSucursal() {
   sucursal = new Sucursal("Reparaciones Cel SAC");
   mostrarEstado("Sucursal creada: " + sucursal.nombre);
 }
 
+// Agregar técnicos
 function agregarTecnicos() {
   let nombre = prompt("Indique el nombre del tecnico");
   let cantSkills = prompt("Cuantas marcas domina el tecnico?");
@@ -130,13 +148,14 @@ function agregarTecnicos() {
       let skill = prompt(`Ingrese el skill Nº${i} o marca que domina : `);
       skills.push(skill);
     }
+    tecnico = new Tecnico(nombre, skills);
+    sucursal.agregarTecnico(tecnico);
   } else {
     alert("El valor ingresado no es valido");
   }
-  tecnico = new Tecnico(nombre, skills);
-  sucursal.agregarTecnico(tecnico);
 }
 
+// Ingresar un teléfono serie, imei, marca
 function ingresarTelefono() {
   alert(`Se muestra la lista de Imei bloqueados: ${listaDeImeiBloqueados}`);
   let serie = prompt("Ingrese el numero de serie");
@@ -146,6 +165,7 @@ function ingresarTelefono() {
   sucursal.ingresarTelefono(telefono);
 }
 
+// Realizar diagnóstico
 function realizarDiagnostico() {
   let serie = prompt("Ingrese el numero de serie del telefono a diagnosticar");
   let phone = encontrarTelefono(serie);
@@ -157,6 +177,7 @@ function realizarDiagnostico() {
   }
 }
 
+// Autorizar reparación
 function autorizarReparacion() {
   let serie = prompt("Ingrese el numero de serie del telefono a reparar");
   let phone = encontrarTelefono(serie);
@@ -170,22 +191,64 @@ function autorizarReparacion() {
     let num1 = parseFloat(costo);
     let abono = prompt("Ingrese el abono (min 50% del costo estimado)");
     let num2 = parseFloat(abono);
-    telefono.autorizarRevision(auth, num1, num2);
+    phone.autorizarRevision(auth, num1, num2);
   } else {
     alert("Telefono no registrado, intente nuevamente");
   }
 }
 
+// Asignar repuestos al telefono
+function agregarRepuesto() {
+  let serie = prompt("Ingrese el numero de serie del telefono");
+  let phone = encontrarTelefono(serie);
+  let repuesto = prompt("Ingrese el repuesto para el telefono");
+  if (phone != null) {
+    phone.agregarRepuesto(repuesto);
+  } else {
+    alert("Telefono no registrado, intente nuevamente");
+  }
+}
+
+// Asignar teléfono a técnico
 function asignarTelefono() {
-  tecnico1.asignarTelefono(telefono);
-  mostrarEstado("Teléfono asignado a técnico: " + tecnico1.nombre);
+  let nombre = prompt("Ingrese el nombre del tecnico que hara el trabajo");
+  let tec = encontrarTecnico(nombre);
+  let serie = prompt("Ingrese el numero de serie del telefono");
+  let phone = encontrarTelefono(serie);
+  if (phone != null && tec != null) {
+    tec.asignarTelefono(phone);
+  } else {
+    alert("Telefono o Tecnico no registrado, intente nuevamente");
+  }
 }
 
+// Realizar reparación
 function repararTelefono() {
-  tecnico1.repararTelefono(telefono);
-  mostrarEstado("Estado del teléfono: " + telefono.estado);
+  let nombre = prompt("Ingrese el nombre del tecnico que hara el trabajo");
+  let tec = encontrarTecnico(nombre);
+  let serie = prompt("Ingrese el numero de serie del telefono");
+  let phone = encontrarTelefono(serie);
+  if (phone != null && tec != null) {
+    tec.repararTelefono(phone);
+  } else {
+    alert("Telefono o Tecnico no registrado, intente nuevamente");
+  }
 }
 
+// Finalizar reparación
+function finalizarReparacion() {
+  let nombre = prompt("Ingrese el nombre del tecnico que hara el trabajo");
+  let tec = encontrarTecnico(nombre);
+  let serie = prompt("Ingrese el numero de serie del telefono");
+  let phone = encontrarTelefono(serie);
+  if (phone != null && tec != null) {
+    tec.finalizarReparacion(phone);
+  } else {
+    alert("Telefono o Tecnico no registrado, intente nuevamente");
+  }
+}
+
+// Funciones extra
 function mostrarEstado(mensaje) {
   const outputDiv = document.getElementById("output");
   outputDiv.innerHTML += `<p>${mensaje}</p>`;
@@ -205,43 +268,18 @@ function encontrarTelefono(serie) {
     return null;
   }
 }
-/*
-// Crear sucursal
-const sucursal1 = new Sucursal('Reparaciones Cel');
 
-// Crear técnicos
-const tecnico1 = new Tecnico('Juan', ['Samsung', 'Huawei']);
-const tecnico2 = new Tecnico('Ana', ['iPhone', 'Xiaomi']);
-sucursal1.agregarTecnico(tecnico1);
-sucursal1.agregarTecnico(tecnico2);
-
-
-// Ingresar un teléfono serie, imei, marca
-const telefono = new Telefono('A111','9634' ,'Samsun');
-console.log(telefono.estado)
-sucursal1.ingresarTelefono(telefono);
-console.log(telefono.estado)
-
-// Realizar diagnóstico y autorizar reparación
-const consentimientoCliente=true
-telefono.realizarDiagnostico('Pantalla rota - se necesita cambio de pantalla');
-console.log(telefono.estado)
-telefono.autorizarRevision(consentimientoCliente,200, 100);
-console.log(telefono.estado)
-
-// Asignar teléfono a técnico
-tecnico1.asignarTelefono(telefono);
-console.log(telefono.estado)
-
-// Asignar repuestos al telefono
-telefono.agregarRepuesto("panatalla penkey")
-console.log(telefono.estado)
-
-// Realizar reparación
-tecnico1.repararTelefono(telefono);
-console.log(telefono.estado)
-tecnico1.finalizarReparacion(telefono);
-console.log(telefono.estado)
-
-console.log(telefono);
-*/
+function encontrarTecnico(nombre) {
+  let tecnico;
+  let encontrado = false;
+  for (let i = 0; i <= sucursal.tecnicos.length - 1; i++) {
+    tecnico = sucursal.tecnicos[i];
+    if (nombre == tecnico.nombre) {
+      encontrado = true;
+      return tecnico;
+    }
+  }
+  if (!encontrado) {
+    return null;
+  }
+}
