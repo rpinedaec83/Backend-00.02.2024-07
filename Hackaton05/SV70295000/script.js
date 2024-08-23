@@ -282,3 +282,4 @@ const repairStatus = new RepairStatus();
 document.getElementById('update-status-btn').addEventListener('click', function() {
     handleStatusUpdate(repairStatus);
 });
+
