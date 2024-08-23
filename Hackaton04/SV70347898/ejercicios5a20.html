@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon #4</title>
+    <link rel="stylesheet" href="ejercicios.css">
+
+</head>
+
+<body>
+    <img src="https://th.bing.com/th/id/OIP.PdnojUPV57ouFCEnVgHVQwHaLp?w=115&h=180&c=7&r=0&o=5&dpr=1.2&pid=1.7"
+        if="foto1" width="70">
+
+
+    <h1>"Ejercicio 1"</h1>
+    <h2>1. Crea una función que retorne la suma de dos números.</h2>
+    <button onclick="ejecutarEjercicio1()">Ejecutar Ejercicio 1</button>
+    <script src="ejercicio1.js"></script>
+
+    <h1>"Ejercicio 2"</h1>
+    <h2>2. Crea una función que retorne la potencia de un número dado, esta función deberá recibir la potencia y el
+        número a potenciar.</h2>
+    <button onclick="ejecutarEjercicio2()">Ejecutar Ejercicio 2</button>
+    <script src="ejercicio2.js"></script>
+
+    <h1>"Ejercicio 3"</h1>
+    <h2>3. Crea una función que tome 3 números y devuelva la suma de sus cubos.</h2>
+    <button onclick="ejecutarEjercicio3()">Ejecutar Ejercicio 3</button>
+    <script src="ejercicio3.js"></script>
+
+    <h1>"Ejercicio 4"</h1>
+    <h2>4. Escribe una función que tome la base y la altura de un triángulo y devuelva su área.</h2>
+    <button onclick="ejecutarEjercicio4()">Ejecutar Ejercicio 4</button>
+    <script src="ejercicio4.js"></script>
+
+    <h1>"Ejercicio 5"</h1>
+    <h2>5. Crea una función llamada calculator que recibe 3 parámetros, dos números y una operación matemática </h2>
+    <button onclick="agregarOperacion('*')">x</button>
+    <button onclick="agregarOperacion('/')">/</button>
+    <button onclick="agregarOperacion('+')">+</button>
+    <button onclick="agregarOperacion('-')">-</button>
+    <button onclick="agregarNumero( 1)">1</button>
+    <button onclick="agregarNumero( 2)">2</button>
+    <button onclick="agregarNumero( 3)">3</button>
+    <button onclick="agregarNumero( 4)">4</button>
+    <button onclick="agregarNumero( 5)">5</button>
+    <button onclick="agregarNumero( 6)">6</button>
+    <button onclick="agregarNumero( 7)">7</button>
+    <button onclick="agregarNumero( 8)">8</button>
+    <button onclick="agregarNumero( 9)">9</button>
+    <button onclick="agregarNumero( 10)">0</button>
+    <button onclick="calculator()">=</button>
+    <button onclick="limpiar()">CLEAR</button>
+
+
+
+    <p id="respuesta"></p>
+
+
+    <script>
+        let numeros = [];
+        let operaciones = [];
+
+
+        function agregarNumero(numero) {
+            numeros.push(numero);
+            document.getElementById("respuesta").innerHTML = numeros.join("");
+        }
+
+        function agregarOperacion(operacion) {
+            numeros.push(operacion);
+            document.getElementById("respuesta").innerHTML = numeros.join("");
+        }
+
+        function calculator() {
+            let respuestafinal = document.getElementById("respuesta").innerHTML;
+            let resultado = eval(respuestafinal);
+            alert("el resultado es: " + resultado);
+        }
+
+        function limpiar() {
+            document.getElementById("respuesta").innerHTML = "";
+        }
+
+    </script>
+
+    <h1>"Preguntas"</h1>
+    <h2>¿Cómo defines una función?</h2>
+    <h3>Una función se define con la palabra "function", y se puede hacer de dos maneas: declarada (como se ha venido
+        haciendo en el presente trabajo para los botones), y expresada (no se ha hecho en el presente trbaajo pero es
+        similar a inicializar una variables) y la función "arrow"</h3>
+
+    <h2>¿Cuántos argumentos puedes definir en una función?</h2>
+    <h3>Tantas como sea practicable</h3>
+
+
+    <h1>"Ejercicio 6"</h1>
+    <h2>6. Utilizando función arrow, crear una función que reciba como parámetros un nombre, apellido y edad y los
+        retorne en un string concatenado “Hola mi nombre es sebastián yabiku y mi edad 33 </h2>
+    <button onclick="Ejercicio6()">Ejercicio6</button>
+
+    <p id="saludo"></p>
+
+    <script>
+        let Ejercicio6 = () => {
+            let nombre1 = prompt("ingrese su nombre");
+            let apellido1 = prompt("ingrese su apellido");
+            let edad1 = prompt("ingrese su edad");
+            let saludo = "Hola, mi nombre es " + nombre1 + " mi apellido es " + apellido1 + ", y mi edad es " + edad1;
+            console.log(saludo);
+            document.getElementById("saludo").innerHTML = saludo;
+
+        }
+    </script>
+
+    <h1>"Ejercicio 7"</h1>
+    <h2>Se repite en el ejercicio 3</h2>
+
+    <h1>"Ejercicio 8"</h1>
+    <h2>Crear una funcion que me retorne el tipo de valor entregado, invocar la función para los distintos tipos de js
+    </h2>
+    <button onclick="Ejercicio8Numero()">Ejercicio8Numero</button>
+    <button onclick="Ejercicio8String()">Ejercicio8String</button>
+    <p id="valor"></p>
+    <script>
+        function Ejercicio8Numero() {
+            let numero = parseInt(prompt("Ingrese un numero para ejecutar la función"));
+            console.log = numero;
+            document.getElementById("valor").innerHTML = numero;
+        }
+        function Ejercicio8String() {
+            let tecla = (prompt("Ingrese un numero para ejecutar la función"));
+            console.log = tecla;
+            document.getElementById("valor").innerHTML = tecla;
+        }
+    </script>
+
+    <h1>"Ejercicio 9"</h1>
+    <h2>Crear una función que reciba n cantidad de argumentos y los sume (utilizar parametros rest)</h2>
+    <button onclick="Ejercicio9()">Ejercicio9</button>
+    <p id="suma"></p>
+    <script>
+        function Ejercicio9() {
+            let entrada = (prompt("Ingrese los números que desea sumar, separados por comas"));
+            let numeros = entrada.split(',').map(Number);
+            let suma = numeros.reduce((acumulador, valorActual) => acumulador + valorActual, 0);
+            document.getElementById("suma").innerHTML = suma;
+            console.log = suma;
+        }
+
+    </script>
+
+    <h1>"Ejercicio 10"</h1>
+    <h2>Crear una función que reciba un array de valores y filtre los valores que no son string</h2>
+    <button onclick="Ejercicio10()">Ejercicio10</button>
+    <p id="filtrado"></p>
+
+    <script>
+        function Ejercicio10() {
+            let entrada = prompt("Ingrese los valores o textos, separados por espacios");
+            let array = entrada.split(' ');
+            let filtrado = array.filter(item => isNaN(item));
+            document.getElementById("filtrado").innerHTML = filtrado.join(' ');
+        }
+    </script>
+
+    <h1>"Ejercicio 11"</h1>
+    <h2>Crear una función que ordene los numeros de menor a mayor</h2>
+    <button onclick="Ejercicio11()">Ejercicio11</button>
+    <p id="filtrado2"></p>
+
+    <script>
+        function Ejercicio11() {
+            let entrada = (prompt("Ingrese los numeros separados para ordenarlos de mayor a menor,"));
+            let array = entrada.split(' ');
+            let filtrado2 = array.sort((a, b) => a - b);
+            document.getElementById("filtrado2").innerHTML = filtrado2.join(' ');
+        }
+    </script>
+
+    <h1>"Ejercicio 12"</h1>
+    <h2>Escriba una función que tome una matriz de 10 enteros (entre 0 y 9) y devuelva una cadena en forma de un número
+        de teléfono.</h2>
+    <button onclick="Ejercicio12()">Ejercicio12</button>
+    <p id="filtrado3"></p>
+
+    <script>
+        function Ejercicio12() {
+            let codigo = prompt("ingrese 10 numeros enteros");
+            let numeros = codigo.split(' ').map(Number);
+            let ordenados = `(${numeros[0]}${numeros[1]}${numeros[2]}) ${numeros[3]}${numeros[4]}${numeros[5]}-${numeros[6]}${numeros[7]}${numeros[8]}${numeros[9]}`;
+            document.getElementById("filtrado3").innerHTML = ordenados;
+        }
+
+    </script>
+
+    <h1>"Ejercicio 13"</h1>
+    <h2>Cree una función que tome una matriz de matrices con números. Devuelve una nueva matriz (única) con el mayor
+        número de cada uno.</h2>
+    <button onclick="Ejercicio13()">Ejercicio13</button>
+    <p id="filtrado4"></p>
+
+    <script>
+        function Ejercicio13() {
+            let codigo1 = prompt("Ingrese los números de la primera matriz");
+            let codigo2 = prompt("Ingrese los números de la segunda matriz");
+            let codigo3 = prompt("Ingrese los números de la tercera matriz");
+            let matrices = [codigo1, codigo2, codigo3];
+            let maximos = matrices.map(matriz => Math.max(...matriz));
+            document.getElementById("filtrado4").innerHTML = maximos.join(' ');
+        }
+
+
+    </script>
+
+    <h1>"Ejercicio 14"</h1>
+    <h2>Dada una palabra, escriba una función que devuelva el primer índice y el último índice de un carácter.</h2>
+    <button onclick="Ejercicio14()">Ejercicio14</button>
+
+    <script>
+        function Ejercicio14() {
+            let resultado = {};
+            let palabra = prompt("Ingrese una palabra");
+
+            for (let i = 0; i < palabra.length; i++) {
+                if (!resultado.hasOwnProperty(palabra[i])) {
+                    resultado[palabra[i]] = [i];
+                } else {
+                    resultado[palabra[i]][1] = i;
+                }
+            }
+
+            for (let letra in resultado) {
+                if (resultado[letra].length == 1) {
+                    resultado[letra].push(resultado[letra][0]);
+                }
+            }
+
+            console.log(resultado);
+        }
+    </script>
+
+    <h1>"Ejercicio 15"</h1>
+    <h2>Escriba una función que convierta un objeto en una matriz, donde cada elemento representa un par clave-valor.
+    </h2>
+    <button onclick="Ejercicio15()">Ejercicio15</button>
+
+    <script>
+        function Ejercicio15() {
+            let resultado = {};
+            let palabra = prompt("Ingrese una palabra");
+
+            if (!resultado.hasOwnProperty(palabra[i])) {
+                resultado[palabra[i]] = [i];
+            } else {
+                resultado[palabra[i]][1] = i;
+            }
+        }
+
+        for (let letra in resultado) {
+            if (resultado[letra].length == 1) {
+                resultado[letra].push(resultado[letra][0]);
+            }
+        }
+
+        console.log(resultado);
+
+    </script>
+
+    <h1>"Ejercicio 16"</h1>
+    <h2>Cree la función que toma una matriz con objetos y devuelve la suma de los presupuestos de las personas.</h2>
+    <button onclick="Ejercicio16()">Ejercicio16</button>
+
+    <script>
+        function Ejercicio16() {
+
+            let personas = [];
+            let sumaPresupuesto = 0;
+
+            while (true) {
+                let nombre = prompt("Ingrese el nombre (o 'salir' para terminar)");
+                if (nombre.toLowerCase() === 'salir') break;
+
+                let edad = prompt("Ingrese la edad");
+                let presupuesto = parseInt(prompt("Ingrese el presupuesto"));
+
+                personas.push({ nombre: nombre, edad: edad, presupuesto: presupuesto });
+                sumaPresupuesto += presupuesto;
+            }
+
+            console.log("La suma total de los presupuestos es: " + sumaPresupuesto)
+
+        }
+    </script>
+
+<h1>"Ejercicio 17"</h1>
+<h2>Cree una función que tome una matriz de estudiantes y devuelva una matriz de nombres de estudiantes.</h2>
+<button onclick="Ejercicio17()">Ejercicio17</button>
+<p id="nombres2"></p>
+<script>
+    function Ejercicio17() {
+
+    let estudiantes = [];
+
+    while (true) {
+        let nombre = prompt("Ingrese el nombre del estudiante o escriba salir");
+        if (nombre.toLowerCase() === "salir") break; 
+
+        estudiantes.push(nombre);
+    }
+    document.getElementById("nombres2").innerHTML = estudiantes.join(', ');
+}
+</script>
+
+
+<h1>"Ejercicio 18"</h1>
+<h2>Escriba una función que convierta un objeto en una matriz de claves y valores.</h2>
+<button onclick="Ejercicio18()">Ejercicio18</button>
+<p id="nombres3"></p>
+
+<script>
+    function Ejercicio18() {
+
+let objeto = {};
+
+while (true) {
+    let palabra = prompt("Ingrese la palabras o escriba salir");
+    if (palabra.toLowerCase() === "salir") break; 
+
+    let numeroaleatorio = Math.floor(Math.random() * 100) + 1;
+    objeto[palabra] = numeroaleatorio;
+}
+
+let arrayFinal = Object.entries(objeto);
+document.getElementById("nombres3").innerHTML = JSON.stringify(arrayFinal);
+}
+</script>
+ 
+
+
+<h1>"Ejercicio 19"</h1>
+<h2>Cree una función donde, dado el número n, devuelva la suma de todos los números cuadrados  incluyendo n.</h2>
+<button onclick="Ejercicio19()">Ejercicio19</button>
+
+
+<script>
+    function Ejercicio19() {
+
+    let suma = 0;
+    
+    while (true) {
+        let numero = prompt("Ingrese los numeros o escriba 'salir'");
+        if (numero.toLowerCase() === "salir") break;        
+        
+        for (let i = 0; i < numero.length; i++) {
+            suma+= Math.pow(numero[i], 2);
+            
+
+       }       
+       console.log("La suma de los cuadrados es: " +suma);
+ 
+    }       
+
+    }
+</script>
+
+<h1>"Ejercicio 20"</h1>
+<h2>Cree una función para multiplicar todos los valores en una matriz por la cantidad de valores en la matriz dada</h2>
+<button onclick="Ejercicio20()">Ejercicio20</button>
+<p id="multiplicacion1"></p>
+
+<script>
+    function Ejercicio20() {
+
+    let numeros = [];
+    
+    while(true){
+        let numero = prompt("Ingrese un numero o escriba salir");
+        if (numero.toLowerCase()==="salir") break;
+
+        numeros.push(Number(numero));
+    }
+
+    let multiplicacion = numeros.map(num => num * numeros.length);
+    document.getElementById("multiplicacion1").innerHTML = multiplicacion.join(', ');
+
+    }
+
+</script>
+    
+</body>
+
+</html>
