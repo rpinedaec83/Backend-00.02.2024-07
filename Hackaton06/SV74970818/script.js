@@ -150,6 +150,8 @@ function agregarTecnicos() {
     }
     tecnico = new Tecnico(nombre, skills);
     sucursal.agregarTecnico(tecnico);
+    localStorage.setItem("tecnicos", JSON.stringify(sucursal.tecnicos));
+    actualizarTablaTecnicos();
   } else {
     alert("El valor ingresado no es valido");
   }
@@ -163,6 +165,8 @@ function ingresarTelefono() {
   let marca = prompt("Ingrese la marca");
   telefono = new Telefono(serie, imei, marca);
   sucursal.ingresarTelefono(telefono);
+  localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
+  actualizarTablaTelefonos();
 }
 
 // Realizar diagnóstico
@@ -172,6 +176,8 @@ function realizarDiagnostico() {
   if (phone != null) {
     let diagnostico = prompt("Ingrese el diagnostico");
     phone.realizarDiagnostico(diagnostico);
+    localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
+    actualizarTablaTelefonos();
   } else {
     alert("Telefono no registrado, intente nuevamente");
   }
@@ -192,6 +198,8 @@ function autorizarReparacion() {
     let abono = prompt("Ingrese el abono (min 50% del costo estimado)");
     let num2 = parseFloat(abono);
     phone.autorizarRevision(auth, num1, num2);
+    localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
+    actualizarTablaTelefonos();
   } else {
     alert("Telefono no registrado, intente nuevamente");
   }
@@ -204,6 +212,8 @@ function agregarRepuesto() {
   let repuesto = prompt("Ingrese el repuesto para el telefono");
   if (phone != null) {
     phone.agregarRepuesto(repuesto);
+    localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
+    actualizarTablaTelefonos();
   } else {
     alert("Telefono no registrado, intente nuevamente");
   }
@@ -217,6 +227,10 @@ function asignarTelefono() {
   let phone = encontrarTelefono(serie);
   if (phone != null && tec != null) {
     tec.asignarTelefono(phone);
+    localStorage.setItem("tecnicos", JSON.stringify(sucursal.tecnicos));
+    localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
+    actualizarTablaTecnicos();
+    actualizarTablaTelefonos();
   } else {
     alert("Telefono o Tecnico no registrado, intente nuevamente");
   }
@@ -230,6 +244,10 @@ function repararTelefono() {
   let phone = encontrarTelefono(serie);
   if (phone != null && tec != null) {
     tec.repararTelefono(phone);
+    localStorage.setItem("tecnicos", JSON.stringify(sucursal.tecnicos));
+    localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
+    actualizarTablaTecnicos();
+    actualizarTablaTelefonos();
   } else {
     alert("Telefono o Tecnico no registrado, intente nuevamente");
   }
@@ -243,6 +261,10 @@ function finalizarReparacion() {
   let phone = encontrarTelefono(serie);
   if (phone != null && tec != null) {
     tec.finalizarReparacion(phone);
+    localStorage.setItem("tecnicos", JSON.stringify(sucursal.tecnicos));
+    localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
+    actualizarTablaTecnicos();
+    actualizarTablaTelefonos();
   } else {
     alert("Telefono o Tecnico no registrado, intente nuevamente");
   }
@@ -283,3 +305,52 @@ function encontrarTecnico(nombre) {
     return null;
   }
 }
+
+function actualizarTablaTecnicos() {
+    const tabla = document.getElementById('tabla-tecnicos').getElementsByTagName('tbody')[0];
+    tabla.innerHTML = '';
+    sucursal.tecnicos.forEach(tecnico => {
+        let row = tabla.insertRow();
+        row.insertCell(0).textContent = tecnico.nombre;
+        row.insertCell(1).textContent = tecnico.skills.join(', ');
+    });
+}
+
+function actualizarTablaTelefonos() {
+    const tabla = document.getElementById('tabla-telefonos').getElementsByTagName('tbody')[0];
+    tabla.innerHTML = '';
+    sucursal.telefonos.forEach(telefono => {
+        let row = tabla.insertRow();
+        row.insertCell(0).textContent = telefono.serie;
+        row.insertCell(1).textContent = telefono.marca;
+        row.insertCell(2).textContent = telefono.diagnostico || 'N/A';
+        row.insertCell(3).textContent = telefono.estado;
+    });
+}
+
+window.onload = function () {
+  crearSucursal();
+  let tecs = localStorage.getItem("tecnicos");
+  if (tecs != null) {
+    let tecnicos = JSON.parse(tecs);
+    for (let i = 0; i <= tecnicos.length - 1; i++) {
+      sucursal.tecnicos.push(
+        Object.assign(new Tecnico(), tecnicos[i])
+      );
+    }
+    actualizarTablaTecnicos();
+    mostrarEstado("Tecnicos se cargaron correctamente");
+  }
+  let phones = localStorage.getItem("telefonos");
+  if (phones != null) {
+    let telefonos = JSON.parse(phones);
+    for (let i = 0; i <= telefonos.length - 1; i++) {
+      sucursal.telefonos.push(
+        Object.assign(new Telefono(), telefonos[i])
+      );
+    }
+    actualizarTablaTelefonos();
+    mostrarEstado("Telefonos se cargaron correctamente");
+  }
+  console.log(sucursal);
+};
