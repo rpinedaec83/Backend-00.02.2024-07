@@ -225,7 +225,7 @@ function asignarTelefono() {
   let tec = encontrarTecnico(nombre);
   let serie = prompt("Ingrese el numero de serie del telefono");
   let phone = encontrarTelefono(serie);
-  if (phone != null && tec != null) {
+  if (phone != null && tec != null && tec.telefonosAsignados.includes(phone)) {
     tec.asignarTelefono(phone);
     localStorage.setItem("tecnicos", JSON.stringify(sucursal.tecnicos));
     localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
@@ -242,7 +242,7 @@ function repararTelefono() {
   let tec = encontrarTecnico(nombre);
   let serie = prompt("Ingrese el numero de serie del telefono");
   let phone = encontrarTelefono(serie);
-  if (phone != null && tec != null) {
+  if (phone != null && tec != null && tec.telefonosAsignados.includes(phone)) {
     tec.repararTelefono(phone);
     localStorage.setItem("tecnicos", JSON.stringify(sucursal.tecnicos));
     localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
@@ -259,7 +259,7 @@ function finalizarReparacion() {
   let tec = encontrarTecnico(nombre);
   let serie = prompt("Ingrese el numero de serie del telefono");
   let phone = encontrarTelefono(serie);
-  if (phone != null && tec != null) {
+  if (phone != null && tec != null && tec.telefonosAsignados.includes(phone)) {
     tec.finalizarReparacion(phone);
     localStorage.setItem("tecnicos", JSON.stringify(sucursal.tecnicos));
     localStorage.setItem("telefonos", JSON.stringify(sucursal.telefonos));
@@ -307,25 +307,29 @@ function encontrarTecnico(nombre) {
 }
 
 function actualizarTablaTecnicos() {
-    const tabla = document.getElementById('tabla-tecnicos').getElementsByTagName('tbody')[0];
-    tabla.innerHTML = '';
-    sucursal.tecnicos.forEach(tecnico => {
-        let row = tabla.insertRow();
-        row.insertCell(0).textContent = tecnico.nombre;
-        row.insertCell(1).textContent = tecnico.skills.join(', ');
-    });
+  const tabla = document
+    .getElementById("tabla-tecnicos")
+    .getElementsByTagName("tbody")[0];
+  tabla.innerHTML = "";
+  sucursal.tecnicos.forEach((tecnico) => {
+    let row = tabla.insertRow();
+    row.insertCell(0).textContent = tecnico.nombre;
+    row.insertCell(1).textContent = tecnico.skills.join(", ");
+  });
 }
 
 function actualizarTablaTelefonos() {
-    const tabla = document.getElementById('tabla-telefonos').getElementsByTagName('tbody')[0];
-    tabla.innerHTML = '';
-    sucursal.telefonos.forEach(telefono => {
-        let row = tabla.insertRow();
-        row.insertCell(0).textContent = telefono.serie;
-        row.insertCell(1).textContent = telefono.marca;
-        row.insertCell(2).textContent = telefono.diagnostico || 'N/A';
-        row.insertCell(3).textContent = telefono.estado;
-    });
+  const tabla = document
+    .getElementById("tabla-telefonos")
+    .getElementsByTagName("tbody")[0];
+  tabla.innerHTML = "";
+  sucursal.telefonos.forEach((telefono) => {
+    let row = tabla.insertRow();
+    row.insertCell(0).textContent = telefono.serie;
+    row.insertCell(1).textContent = telefono.marca;
+    row.insertCell(2).textContent = telefono.diagnostico || "N/A";
+    row.insertCell(3).textContent = telefono.estado;
+  });
 }
 
 window.onload = function () {
@@ -334,9 +338,7 @@ window.onload = function () {
   if (tecs != null) {
     let tecnicos = JSON.parse(tecs);
     for (let i = 0; i <= tecnicos.length - 1; i++) {
-      sucursal.tecnicos.push(
-        Object.assign(new Tecnico(), tecnicos[i])
-      );
+      sucursal.tecnicos.push(Object.assign(new Tecnico(), tecnicos[i]));
     }
     actualizarTablaTecnicos();
     mostrarEstado("Tecnicos se cargaron correctamente");
@@ -345,9 +347,7 @@ window.onload = function () {
   if (phones != null) {
     let telefonos = JSON.parse(phones);
     for (let i = 0; i <= telefonos.length - 1; i++) {
-      sucursal.telefonos.push(
-        Object.assign(new Telefono(), telefonos[i])
-      );
+      sucursal.telefonos.push(Object.assign(new Telefono(), telefonos[i]));
     }
     actualizarTablaTelefonos();
     mostrarEstado("Telefonos se cargaron correctamente");
