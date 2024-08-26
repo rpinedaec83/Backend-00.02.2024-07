@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Reparaciones de celulares</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div>
+        <h1>Reparaciones de Celulares</h1>
+
+        <!-- ingresar teléfono -->
+        <h2>Ingresar Teléfono</h2>
+        <form id="formTelefono">
+            <label for="numeroSerie">Número de Serie:</label>
+            <input type="text" id="numeroSerie" required>
+            <label for="imei">IMEI:</label>
+            <input type="text" id="imei" required>
+            <button type="submit">Registrar Teléfono</button>
+        </form>
+
+        <!-- registrar técnico -->
+        <h2>Registrar Técnico</h2>
+        <form id="formTecnico">
+            <label for="nombreTecnico">Nombre del Técnico:</label>
+            <input type="text" id="nombreTecnico" required>
+            <label for="skillTecnico">Skill (Marca):</label>
+            <input type="text" id="skillTecnico">
+            <button type="submit">Registrar Técnico</button>
+        </form>
+
+        <!-- agregar repuesto -->
+        <h2>Agregar Repuesto</h2>
+        <form id="formRepuesto">
+            <label for="nombreRepuesto">Nombre del Repuesto:</label>
+            <input type="text" id="nombreRepuesto" required>
+            <label for="cantidadRepuesto">Cantidad:</label>
+            <input type="number" id="cantidadRepuesto" required>
+            <button type="submit">Agregar Repuesto</button>
+        </form>
+
+        <!--  registrar reparación -->
+        <h2>Registrar Reparación</h2>
+        <form id="formReparacion">
+            <label for="telefonoSerieReparacion">Número de Serie del Teléfono:</label>
+            <input type="text" id="telefonoSerieReparacion" required>
+            <label for="nombreTecnicoReparacion">Nombre del Técnico:</label>
+            <input type="text" id="nombreTecnicoReparacion" required>
+            <label for="nombreRepuestoReparacion">Nombre del Repuesto:</label>
+            <input type="text" id="nombreRepuestoReparacion" required>
+            <label for="cantidadRepuestoReparacion">Cantidad:</label>
+            <input type="number" id="cantidadRepuestoReparacion" required>
+            <button type="submit">Registrar Reparación</button>
+        </form>
+
+        
+        <!-- consultar datos del teléfono -->
+        <h2>Consultar Datos del Teléfono</h2>
+        <form id="formConsultaTelefono">
+            <label for="telefonoSerieConsulta">Número de Serie del Teléfono:</label>
+            <input type="text" id="telefonoSerieConsulta" required>
+            <button type="submit">Consultar Datos</button>
+        </form>
+        <div id="datosTelefono"></div>
+
+        <!-- cambiar estado del teléfono -->
+        <h2>Cambiar Estado del Teléfono</h2>
+        <form id="formCambioEstado">
+            <label for="telefonoSerieEstado">Número de Serie del Teléfono:</label>
+            <input type="text" id="telefonoSerieEstado" required>
+            <label for="nuevoEstado">Nuevo Estado:</label>
+            <select id="nuevoEstado" required>
+                <option value="Ingresado">Ingresado</option>
+                <option value="Revisado">Revisado</option>
+                <option value="Reparado">Reparado</option>
+                <option value="Entregado">Entregado</option>
+            </select>
+            <button type="submit">Actualizar Estado</button>
+        </form>
+
+
+        <!-- Sección para mostrar estado del teléfono -->
+        <h2>Estado del Teléfono</h2>
+        <button onclick="mostrarEstado()">Mostrar Estado</button>
+        <div id="estadoTelefono"></div>
+    </div>
+</body>
+</html>
