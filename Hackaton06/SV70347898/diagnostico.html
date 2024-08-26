@@ -1,0 +1,162 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zona de Diagnostico</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="text"], select {
+            width: 90%;
+            padding: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            margin-top: 10px;
+        }
+        #borrar-todos {
+            background-color: red;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Bienvenidos a la Zona de Diagnóstico</h1>
+<h2>Esta zona es solo para los técnicos de reparación</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Número de Serie</th>
+      <th>IMEI</th>
+      <th>Marca</th>
+      <th>Fecha de Recepción</th>
+      <th>Estado</th>
+      <th>Diagnóstico</th>
+      <th>Repuestos Necesarios</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody id="resultado">
+    <!-- Aquí se insertarán las filas de la tabla -->
+  </tbody>
+</table>
+
+<!-- Botón para borrar todos los registros -->
+<button id="borrar-todos" onclick="borrarTodos()">Borrar Todos los Registros</button>
+
+<script>
+    function mostrarDiagnostico() {
+        // Recuperar los datos de localStorage
+        let telefonos = JSON.parse(localStorage.getItem('telefonos')) || [];
+
+        // Referencia al cuerpo de la tabla
+        let resultado = document.getElementById('resultado');
+
+        // Limpiar cualquier contenido previo en el cuerpo de la tabla
+        resultado.innerHTML = '';
+
+        // Crear una fila para cada teléfono
+        telefonos.forEach((telefono, index) => {
+            let fila = document.createElement('tr');
+
+            // Verificar si los datos están guardados (es decir, si el diagnóstico ya tiene valor)
+            const isEditable = telefono.diagnostico ? "disabled" : "";
+
+            fila.innerHTML = `
+                <td>${telefono.numeroSerie}</td>
+                <td>${telefono.imei}</td>
+                <td>${telefono.marca}</td>
+                <td><input type="date" id="fecha-${index}" value="${telefono.fecha || ''}" placeholder="Fecha de Recepción" ${isEditable}></td>
+                <td>
+                    <select id="estado-${index}" ${isEditable}>
+                        <option value="Ingresado" ${telefono.estado === 'Ingresado' ? 'selected' : ''}>Ingresado</option>
+                        <option value="Reparado" ${telefono.estado === 'Reparado' ? 'selected' : ''}>Reparado</option>
+                    </select>
+                </td>
+                <td><input type="text" id="diagnostico-${index}" value="${telefono.diagnostico || ''}" placeholder="Ingrese diagnóstico" ${isEditable}></td>
+                <td><input type="text" id="repuestos-${index}" value="${telefono.repuestos.join(', ') || ''}" placeholder="Ingrese repuestos necesarios" ${isEditable}></td>
+                <td><button id="guardar-${index}" onclick="alternarGuardarModificar(${index})">${telefono.diagnostico ? 'Modificar' : 'Guardar'}</button></td>
+            `;
+
+            resultado.appendChild(fila);
+        });
+    }
+
+    function alternarGuardarModificar(index) {
+        // Referencia a los elementos de diagnóstico, repuestos y estado
+        let diagnosticoInput = document.getElementById(`diagnostico-${index}`);
+        let repuestosInput = document.getElementById(`repuestos-${index}`);
+        let estadoSelect = document.getElementById(`estado-${index}`);
+        let boton = document.getElementById(`guardar-${index}`);
+
+        if (boton.textContent === "Guardar") {
+            // Si el botón dice "Guardar", guardar los datos y bloquear los campos
+            guardarDatos(index);
+        } else {
+            // Si el botón dice "Modificar", desbloquear los campos para permitir la edición
+            diagnosticoInput.disabled = false;
+            repuestosInput.disabled = false;
+            estadoSelect.disabled = false;
+            boton.textContent = "Guardar";
+        }
+    }
+
+    function guardarDatos(index) {
+        // Recuperar los datos actuales del localStorage
+        let telefonos = JSON.parse(localStorage.getItem('telefonos')) || [];
+
+        // Obtener el diagnóstico, repuestos y estado ingresados
+        let diagnostico = document.getElementById(`diagnostico-${index}`).value;
+        let repuestos = document.getElementById(`repuestos-${index}`).value.split(',').map(item => item.trim());
+        let estado = document.getElementById(`estado-${index}`).value;
+
+        // Actualizar el objeto Telefono correspondiente
+        telefonos[index].diagnostico = diagnostico;
+        telefonos[index].repuestos = repuestos;
+        telefonos[index].estado = estado;
+
+        // Guardar los datos actualizados en el localStorage
+        localStorage.setItem('telefonos', JSON.stringify(telefonos));
+
+        // Desactivar los campos después de guardar
+        document.getElementById(`diagnostico-${index}`).disabled = true;
+        document.getElementById(`repuestos-${index}`).disabled = true;
+        document.getElementById(`estado-${index}`).disabled = true;
+
+        // Cambiar el botón a "Modificar"
+        document.getElementById(`guardar-${index}`).textContent = 'Modificar';
+
+        alert('Datos guardados correctamente');
+    }
+
+    function borrarTodos() {
+        if (confirm('¿Está seguro de que desea borrar todos los registros? Esta acción no se puede deshacer.')) {
+            // Borrar todos los datos del localStorage
+            localStorage.removeItem('telefonos');
+
+            // Actualizar la tabla
+            mostrarDiagnostico();
+
+            alert('Todos los registros han sido borrados.');
+        }
+    }
+
+    mostrarDiagnostico();
+</script>
+</body>
+</html>
