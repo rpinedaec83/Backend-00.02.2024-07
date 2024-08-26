@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Reparación de Celulares</title>
+</head>
+<body>
+  <h1>Bienvenido al Sistema de Reparación de Celulares</h1>
+  <h2>Ingrese los datos de su teléfono</h2>
+
+  <h3>Formulario de Teléfono</h3>
+
+  <form id="Formulario">
+    <label for="numeroSerie">Número de Serie:</label><br>
+    <input type="text" id="numeroSerie" name="numeroSerie"><br>
+    <label for="imei">IMEI:</label><br>
+    <input type="text" id="imei" name="imei"><br>
+    <label for="marca">Marca:</label><br>
+    <input type="text" id="marca" name="marca"><br>
+    <input type="submit" value="Submit" onclick="crearObjeto(event)">
+    <input type="button" value="Limpiar" onclick="LimpiarFormulario()"><br>
+    <br>
+    <br>
+    <button type="button" onclick="Diagnostico()">Diagnostico (Solo Empleados)</button>
+  </form>
+
+  <script>
+    function LimpiarFormulario() {
+      document.getElementById('numeroSerie').value = '';
+      document.getElementById('imei').value = '';
+      document.getElementById('marca').value = '';
+    }
+
+    const listaDeImeiBloqueados = ["943", "964", "912", "843", "754", "412"];
+
+    class Telefono {
+      constructor(numeroSerie, imei, marca) {
+        this.numeroSerie = numeroSerie;
+        this.imei = imei;
+        this.marca = marca;
+        this.estaBloqueado = listaDeImeiBloqueados.includes(this.imei);
+        this.diagnostico = null;
+        this.estado = "Ingresado";
+        this.autorizacion = false;
+        this.encargado = null;
+        this.area = null;
+        this.repuestos = [];
+      }
+    }
+
+    function crearObjeto(event) {
+      event.preventDefault(); 
+
+      let numeroSerie = document.getElementById('numeroSerie').value;
+      let imei = document.getElementById('imei').value;
+      let marca = document.getElementById('marca').value;
+
+      const telefono = new Telefono(numeroSerie, imei, marca);
+      console.log(telefono);
+
+      if (telefono.estaBloqueado) {
+        alert("Su IMEI está bloqueado");
+        return;
+      } else {
+        let autorizacion = prompt("¿Autoriza la reparación? (si/no)").toLowerCase();
+        if (autorizacion === "si") {
+          let adelanto = prompt("¿Autoriza adelanto del 50%? (si/no)").toLowerCase();
+          if (adelanto === "si") {
+            alert("Su telefono será ingresado a la Zona de Diagnóstico");
+
+            // Recuperar los teléfonos ya guardados en localStorage
+            let telefonos = JSON.parse(localStorage.getItem('telefonos')) || [];
+            
+            // Añadir el nuevo teléfono al array
+            telefonos.push(telefono);
+            
+            // Guardar el array actualizado en localStorage
+            localStorage.setItem('telefonos', JSON.stringify(telefonos));
+          } else {
+            alert("No podemos proceder con el servicio");
+          }
+        } else {
+          alert("No podemos proceder con el servicio");
+        }
+      }
+    }
+
+    function Diagnostico() {
+      window.open('diagnostico.html', '_blank');
+    }
+  </script>
+</body>
+</html>
