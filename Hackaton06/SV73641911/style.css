@@ -1,0 +1,34 @@
+body {
+    background-color: lightblue;
+}
+
+/* Container div */
+.container {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    overflow-x: auto;
+    border-top: 2px solid rebeccapurple;
+}
+
+/* tabla */
+.table {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    text-align: center;
+    background-color: bisque;
+    border: 1px solid black;
+}
+
+td {
+    text-align: left;
+    background-color: whitesmoke;
+    border: 1px solid black;
+}
