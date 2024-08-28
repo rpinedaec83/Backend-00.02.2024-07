@@ -78,8 +78,32 @@ const GundamStore = function () { //a
     }
     $table.bootstrapTable();
     $table.bootstrapTable('load', arrGundams);
-    //modificarCSS();
+    modificarCSS();
 }();
+
+function modificarCSS(){
+    let arrElementos = document.getElementsByClassName("subtitulo");
+    console.log(arrElementos)
+
+    for (let index = 0; index < arrElementos.length; index++) {
+        const element = arrElementos[index];
+        console.log(element)
+        element.innerText = "Subtitulo";
+        element.style.fontFamily = "Impact,Charcoal,sans-serif";
+        element.style.color = "Blue"
+        //element.style.display = "none";
+        
+    }
+
+    arrBotones = document.getElementsByTagName("a");
+    console.log(arrBotones)
+
+    let arrBotones2 = $("#btnAgregar");
+    console.log(arrBotones2)
+
+}
+
+
 
 $("#btnAgregar").on("click", function (event) {
     event.preventDefault();
