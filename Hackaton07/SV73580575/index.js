@@ -18,12 +18,12 @@ http.createServer(async function (req, res) {
 
     let strURL = req.url;
     if(strURL.includes("clima")){
-        var clima = url.parse(req.url, true).query;
-        console.log(clima.ciudad);
+        var q = url.parse(req.url, true).query;
+        console.log(q.ciudad);
 
         const options = {
             method: 'GET',
-            url: 'https://the-weather-api.p.rapidapi.com/api/weather/' +clima.ciudad,
+            url: 'https://the-weather-api.p.rapidapi.com/api/weather/' +q.ciudad,
             headers: {
               'x-rapidapi-key': 'b8d33cb0b9mshedb0f92908df8dep1130dcjsnd5a8a4703bf9',
               'x-rapidapi-host': 'the-weather-api.p.rapidapi.com'
