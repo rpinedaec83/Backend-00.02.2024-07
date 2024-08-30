@@ -11,10 +11,10 @@ http.createServer(async function (req, res) {
 
     res.writeHead(200, { 'Content-Type': 'application/json' });
     console.log(req.url)
-    let objPersona={
-        nombre:"Deivid",
-        apellido:"Eneque"
-    }
+    //let objPersona={
+      //  nombre:"Deivid",
+        //apellido:"Eneque"
+    //}
 
     let strURL = req.url;
     if(strURL.includes("clima")){
@@ -42,10 +42,10 @@ http.createServer(async function (req, res) {
 
 
 
-    res.write(JSON.stringify(objPersona));
+    //res.write(JSON.stringify(objPersona));
     //res.write("Hola prueba Hackatonh 07");
     //res.write(JSON.stringify({mensaje:"Cualquier Cosa"}));
-        res.end();
+       // res.end();
 
 
 }).listen(8080);
