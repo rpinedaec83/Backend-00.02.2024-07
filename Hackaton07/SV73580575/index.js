@@ -8,7 +8,6 @@ const axios = require('axios');
 //res.write(JSON.stringify({mensaje:"Estas en el clima de "+q.cuidad}));
 
 http.createServer(async function (req, res) {
-
     res.writeHead(200, { 'Content-Type': 'application/json' });
     console.log(req.url)
     //let objPersona={
