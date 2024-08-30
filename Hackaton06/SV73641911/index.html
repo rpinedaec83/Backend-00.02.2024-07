@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="ingresarTelefono">
+        <h1>Ingresar Telefono</h1>
+        <form id="form1">
+            <label>Numero de Serie:</label>
+            <input name="numeroSerie" autocomplete="off" placeholder="numero de serie" required>
+            <br>
+            <label>Imei:</label>
+            <input name="imei" autocomplete="off" placeholder="Imei" required>
+            <br>
+            <label>Marca:</label>
+            <input name="marca" autocomplete="off" placeholder="Marca" required>
+        </form> 
+        <button id="enviarTelefono">Enviar</button>
+    </div>
+    <div class="container" id="mostrarTelefonos">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Numero de Serie</th>
+                    <th>Imei</th>
+                    <th>Marca</th>
+                    <th>Bloqueo</th>
+                    <th>Diagnóstico</th>
+                    <th>Estado</th>
+                    <th>Autorización</th>
+                    <th>Encargado</th>
+                    <th>Área</th>
+                </tr>
+            </thead>
+            <tbody id="addRow">
+
+            </tbody>
+        </table>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

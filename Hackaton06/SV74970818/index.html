@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Reparación de Celulares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            width: 100%;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .columna {
+            width: 45%;
+            padding: 10px;
+        }
+
+        .acciones {
+            margin-bottom: 20px;
+        }
+
+        .tabla {
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .tabla th,
+        .tabla td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .tabla th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="columna">
+            <div class="acciones">
+                <h1>Sistema de Reparación de Celulares</h1>
+                <button onclick="agregarTecnicos()">1. Agregar Técnicos</button>
+                <button onclick="ingresarTelefono()">2. Ingresar Teléfono</button>
+                <button onclick="realizarDiagnostico()">3. Realizar Diagnóstico</button>
+                <button onclick="autorizarReparacion()">4. Autorizar Reparación</button>
+                <button onclick="agregarRepuesto()">5. Agregar Repuesto</button>
+                <button onclick="asignarTelefono()">6. Asignar Teléfono a Técnico</button>
+                <button onclick="repararTelefono()">7. Reparar Teléfono</button>
+                <button onclick="finalizarReparacion()">8. Finalizar Reparacion</button>
+            </div>
+            <div id="output"></div>
+        </div>
+        <div class="columna">
+            <h2>Técnicos</h2>
+            <table class="tabla" id="tabla-tecnicos">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Skills</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <h2>Teléfonos</h2>
+            <table class="tabla" id="tabla-telefonos">
+                <thead>
+                    <tr>
+                        <th>Serie</th>
+                        <th>Marca</th>
+                        <th>Diagnóstico</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
