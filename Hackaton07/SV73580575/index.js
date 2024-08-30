@@ -38,7 +38,36 @@ http.createServer(async function (req, res) {
           } catch (error) {
               console.error(error);
           }
+    }else{
+        res.write(JSON.stringify({mensaje:"No es ciudad"}));
+        res.end();
     }
+
+
+
+
+    if(strURL.includes("informacion")){
+        let config = {
+            method: 'get',
+            maxBodyLength: Infinity,
+            url: 'https://randomuser.me/api/',
+            headers: { }
+          };
+          
+          axios.request(config)
+          .then((response) => {
+            console.log(JSON.stringify(response.data));
+            res.write(JSON.stringify(response.data));
+            res.end();
+          })
+          .catch((error) => {
+            console.log(error);
+          });         
+    }else{
+        res.write(JSON.stringify({mensaje:"Cualquier Cosa"}));
+        res.end();
+    }
+
 
 
 
