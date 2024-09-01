@@ -49,6 +49,10 @@ app.use('/store', storeRoute);
 const pexelsRoute = require('./routes/pexels');
 app.use('/pexels', pexelsRoute);
 
+// Importar y usar la ruta de citas famosas
+const quoteRoute = require('./routes/quote');
+app.use('/quotes', quoteRoute);
+
 // Importar y usar la ruta de usuario ficticio
 const randomUserRoute = require('./routes/randomUser');
 app.use('/randomuser', randomUserRoute);
