@@ -23,7 +23,7 @@ loginform.addEventListener("submit",function login(e){
         else{
             sessionStorage.setItem("login", JSON.stringify({login:false}));
         }
-        window.location.replace("file:///Users/rpineda/Fuentes/Backend-00.02.2024-07/Semana06Sesion02/d19423/index.html");
+        window.location.replace(`C:\\Users\\ANDREA\\Downloads\\Clase 04\\Backend-00.02.2024-07\\Semana06Sesion02\\d19423\\index.html`);
     }
 
 });
