@@ -2,6 +2,12 @@ var http = require('http');
 var url = require('url');
 const axios = require('axios');
 
+const API_BASE_URL = 'https://rickandmortyapi.com/api';
+const COCKTAIL_API = 'https://www.thecocktaildb.com/api/json/v1/1';
+const FAKE_STORE_API = 'https://fakestoreapi.com/products';
+const TMDB_API_KEY = 'YOUR_API_KEY';
+const OMDB_API_KEY = 'YOUR_OMDB_API_KEY';
+
 //var q = url.parse(req.url, true).query;
 //console.log(q.cuidad);
 //console.log(q.cuidad);
@@ -15,7 +21,10 @@ http.createServer(async function (req, res) {
         //apellido:"Eneque"
     //}
 
+    const parsedUrl = url.parse(req.url, true);
+    const path = parsedUrl.pathname;
 
+    let strURL = req.url;
     //Consultar los datos de GitHub de un usuario especifico.
     if (strURL.startsWith("/github")) {
         var q = new URL(req.url, `http://${req.headers.host}`).searchParams;
@@ -51,7 +60,7 @@ http.createServer(async function (req, res) {
 
 
     //Consultar el Clima de una ciudad o ubicacion especifica 
-    let strURL = req.url;
+    
     if(strURL.includes("clima")){
         var clima = url.parse(req.url, true).query;
         console.log(clima.ciudad);
@@ -107,6 +116,8 @@ http.createServer(async function (req, res) {
     res.end();
     return;
 }
+
+    //Consultar los principales personajes de Rick and Morty
 
 
    //Consultar datos ficticios de un usuario 
@@ -181,8 +192,112 @@ http.createServer(async function (req, res) {
     return;
 }
 
-    res.write(JSON.stringify({ mensaje: "Ruta no reconocida" }));
-    res.end();
+
+
+        //Consultar los principales personajes de Rick and Morty
+        if (path.startsWith('/personajesR&M')) {
+            try {
+                let response;
+    
+                if (path === '/personajesR&M') {
+                    response = await axios.get(`${API_BASE_URL}/character`);
+                } else {
+                    // Obtener un personaje específico
+                    const id = path.split('/')[2];
+                    response = await axios.get(`${API_BASE_URL}/character/${id}`);
+                }
+    
+                res.write(JSON.stringify(response.data));
+            } catch (error) {
+                console.error(error);
+                res.write(JSON.stringify({ error: "Error al consultar la API de Rick and Morty" }));
+            }
+        } else {
+            res.write(JSON.stringify({ mensaje: "Ruta no reconocida R&M" }));
+        }
+        
+
+        //Consultar el top 10 de bebidas y cocteles
+        if (path === '/top10') {
+            try {
+                // Obtener los primeros 10 cócteles de la API de CocktailDB
+                const response = await axios.get(`${COCKTAIL_API}/filter.php?c=Cocktail`);
+                const drinks = response.data.drinks.slice(0, 10); // Seleccionar los primeros 10 cócteles
+                
+                res.write(JSON.stringify(drinks));
+            } catch (error) {
+                console.error(error);
+                res.write(JSON.stringify({ error: "Error al consultar la API de CocktailDB" }));
+            }
+        } else {
+          res.write(JSON.stringify({ mensaje: "Ruta no reconocida Cocteles" }));
+        }
+
+
+        //Consultar un listado de productos de una tienda
+        if (strURL === '/productostienda') {
+            try {
+                console.log('Consultando la API de Fake Store...');
+                const response = await axios.get(FAKE_STORE_API);
+                console.log('Datos recibidos:', response.data);
+                res.write(JSON.stringify(response.data));
+            } catch (error) {
+                console.error('Error al consultar la API:', error);
+                res.write(JSON.stringify({ error: "Error al consultar la API" }));
+            }
+        } else {
+            console.log('Ruta no reconocida');
+            res.write(JSON.stringify({ mensaje: "Ruta no reconocida" }));
+        }
+
+
+        //Consultar el top de peliculas de estreno   
+
+            if (pathname === '/estrenos') {
+                try {
+                    console.log('Consultando la API de OMDb para las películas de estreno...');
+                    const response = await axios.get('http://www.omdbapi.com/', {
+                        params: {
+                            apiKey: OMDB_API_KEY,
+                            s: 'movie', // Consulta general de películas
+                            type: 'movie', // Tipo de contenido
+                            y: new Date().getFullYear() // Año actual
+                        }
+                    });
+                    console.log('Datos recibidos:', response.data);
+                    res.write(JSON.stringify(response.data));
+                } catch (error) {
+                    console.error('Error al consultar la API:', error.message);
+                    res.write(JSON.stringify({ error: "Error al consultar la API" }));
+                }
+            } else if (pathname === '/detalle') {
+                if (!query.id) {
+                    res.write(JSON.stringify({ error: "Parámetro 'id' requerido" }));
+                    res.end();
+                    return;
+                }
+                try {
+                    console.log(`Consultando la API de OMDb para el detalle de la película con ID ${query.id}...`);
+                    const response = await axios.get('http://www.omdbapi.com/', {
+                        params: {
+                            apiKey: OMDB_API_KEY,
+                            i: query.id, // ID de la película
+                            plot: 'full' // Información completa
+                        }
+                    });
+                    console.log('Datos recibidos:', response.data);
+                    res.write(JSON.stringify(response.data));
+                } catch (error) {
+                    console.error('Error al consultar la API:', error.message);
+                    res.write(JSON.stringify({ error: "Error al consultar la API" }));
+                }
+            } else {
+                res.write(JSON.stringify({ mensaje: "Ruta no reconocida" }));
+            }
+        
+
+    //res.write(JSON.stringify({ mensaje: "Ruta no reconocida" }));
+    //res.end();
 
     //res.write(JSON.stringify(objPersona));
     //res.write("Hola prueba Hackatonh 07");
