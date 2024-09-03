@@ -1,0 +1,12 @@
+{
+  "name": "sv74970818",
+  "version": "1.0.0",
+  "description": "Hackaton07",
+  "main": "index.js",
+  "scripts": {
+    "prod": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edgar Ruiz",
+  "license": "ISC"
+}
