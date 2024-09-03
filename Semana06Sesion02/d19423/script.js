@@ -66,7 +66,7 @@ function borrarItem(row) {
 const GundamStore = function () { //a
     login = JSON.parse(sessionStorage.getItem("login"));
     if (login == null) {
-        window.location.replace("file:///Users/rpineda/Fuentes/Backend-00.02.2024-07/Semana06Sesion02/d19423/login.html");
+        window.location.replace(`C:\\Users\\ANDREA\\Downloads\\Clase 04\\Backend-00.02.2024-07\\Semana06Sesion02\\d19423\\login.html`);
     } else {
         if (!login.login)
             console.log("No se debe recordar las credenciales")
