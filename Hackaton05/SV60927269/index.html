@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Reparaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Gestión de Reparaciones de Celulares</h1>
+
+    <form id="repairForm">
+        <div>
+            <label for="serialNumber">Número de Serie:</label>
+            <input type="text" id="serialNumber" required>
+        </div>
+        <div>
+            <label for="imeiNumber">Número de IMEI:</label>
+            <input type="text" id="imeiNumber" required>
+        </div>
+        <div>
+            <label for="diagnosis">Primer Diagnóstico:</label>
+            <textarea id="diagnosis" required></textarea>
+        </div>
+        <div>
+            <label for="authorization">Autorización escrita del usuario:</label>
+            <input type="checkbox" id="authorization" required>
+        </div>
+        <div>
+            <label for="deposit">Abono del 50% de la reparación:</label>
+            <input type="checkbox" id="deposit" required>
+        </div>
+        <button type="submit">Agregar Reparación</button>
+    </form>
+
+    <h2>Estado del Equipo</h2>
+    <div id="repairStatus"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
