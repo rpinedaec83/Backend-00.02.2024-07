@@ -3,39 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de Reparaciones</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Gestión de Reparaciones de Celulares</title>
 </head>
 <body>
+
     <h1>Gestión de Reparaciones de Celulares</h1>
 
-    <form id="repairForm">
-        <div>
-            <label for="serialNumber">Número de Serie:</label>
-            <input type="text" id="serialNumber" required>
-        </div>
-        <div>
-            <label for="imeiNumber">Número de IMEI:</label>
-            <input type="text" id="imeiNumber" required>
-        </div>
-        <div>
-            <label for="diagnosis">Primer Diagnóstico:</label>
-            <textarea id="diagnosis" required></textarea>
-        </div>
-        <div>
-            <label for="authorization">Autorización escrita del usuario:</label>
-            <input type="checkbox" id="authorization" required>
-        </div>
-        <div>
-            <label for="deposit">Abono del 50% de la reparación:</label>
-            <input type="checkbox" id="deposit" required>
-        </div>
-        <button type="submit">Agregar Reparación</button>
-    </form>
+    <section id="telefono-info">
+        <h2>Información del Teléfono</h2>
+        <button id="agregar-telefono-btn">Agregar Teléfono</button>
+        <p id="telefono-message"></p>
+    </section>
 
-    <h2>Estado del Equipo</h2>
-    <div id="repairStatus"></div>
+    <section id="cliente-info">
+        <h2>Información del Cliente</h2>
+        <button id="agregar-cliente-btn">Agregar Cliente</button>
+        <p id="cliente-message"></p>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="autorizacion-info">
+        <h2>Autorización para Reparación</h2>
+        <button id="confirmar-autorizacion-btn">Confirmar Autorización</button>
+        <p id="autorizacion-message"></p>
+    </section>
+
+    <section id="tecnico-info">
+        <h2>Asignación de Técnicos y Repuestos</h2>
+        <button id="asignar-tecnico-btn">Asignar Técnico</button>
+        <p id="tecnico-message"></p>
+    </section>
+
+    <section id="estado-info">
+        <h2>Estado del Equipo</h2>
+        <button id="actualizar-estado-btn">Actualizar Estado</button>
+        <p id="estado-message"></p>
+    </section>
+
 </body>
 </html>
