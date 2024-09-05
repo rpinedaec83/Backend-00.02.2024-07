@@ -6,8 +6,8 @@ http
   .createServer(async function (req, res) {
     res.writeHead(200, { "Content-Type": "application/json" });
     let strURL = req.url;
-
     // Consultar los datos de GitHub de un usuario especifico.
+    // http://localhost:8900/github?usuario=EJRuizM
     if (strURL.includes("github")) {
       var q = url.parse(req.url, true).query;
       let config = {
@@ -25,9 +25,9 @@ http
       }
     }
     // Consultar el Clima de una ciudad o ubicacion especifica
+    // http://localhost:8900/clima?ciudad=quito
     else if (strURL.includes("clima")) {
       var q = url.parse(req.url, true).query;
-
       const options = {
         method: "GET",
         url: "https://the-weather-api.p.rapidapi.com/api/weather/" + q.ciudad,
@@ -45,9 +45,9 @@ http
         console.error(error);
       }
     } 
-    // Consultar el tipo de cambio del dolar en Peru    
+    // Consultar el tipo de cambio del dolar en Peru
+    // http://localhost:8900/cambio
     else if (strURL.includes("cambio")) {
-
       let config = {
         method: "get",
         maxBodyLength: Infinity,
@@ -64,7 +64,45 @@ http
       } catch (error) {
         console.error(error);
       }
-    } else if (strURL.includes("info")) {
+    } 
+    // Consultar la lista de Pokemones actual
+    // http://localhost:8900/pokemones
+    else if (strURL.includes("pokemones")) {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: 'https://pokeapi.co/api/v2/pokemon?limit=1302',
+        headers: {},
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.results));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    } 
+
+    // Consultar la lista de Pokemones actual
+    // http://localhost:8900/pokemones
+    else if (strURL.includes("pokemon")) {
+      var q = url.parse(req.url, true).query;
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: 'https://pokeapi.co/api/v2/pokemon/'+ q.nombre,
+        headers: {},
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.moves));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    } 
+    
+    else if (strURL.includes("info")) {
       let config = {
         method: "get",
         maxBodyLength: Infinity,
