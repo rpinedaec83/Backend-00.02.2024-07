@@ -8,12 +8,11 @@ http
     let strURL = req.url;
 
     if (strURL.includes("github")) {
-        const axios = require("axios");
-        const username = req.params.username;
+      var q = url.parse(req.url, true).query;
         let config = {
           method: "get",
           maxBodyLength: Infinity,
-          url: `https://api.github.com/users/${username}`,
+          url: 'https://api.github.com/users/' + q.usuario,
           headers: {},
         };
         axios
@@ -28,7 +27,6 @@ http
           });
       }
     else if (strURL.includes("info")) {
-      const axios = require("axios");
 
       let config = {
         method: "get",
