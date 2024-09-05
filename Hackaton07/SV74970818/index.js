@@ -44,7 +44,7 @@ http
       } catch (error) {
         console.error(error);
       }
-    } 
+    }
     // Consultar el tipo de cambio del dolar en Peru
     // http://localhost:8900/cambio
     else if (strURL.includes("cambio")) {
@@ -64,14 +64,14 @@ http
       } catch (error) {
         console.error(error);
       }
-    } 
+    }
     // Consultar la lista de Pokemones actual
     // http://localhost:8900/pokemones
     else if (strURL.includes("pokemones")) {
       let config = {
         method: "get",
         maxBodyLength: Infinity,
-        url: 'https://pokeapi.co/api/v2/pokemon?limit=1302',
+        url: "https://pokeapi.co/api/v2/pokemon?limit=1302",
         headers: {},
       };
       try {
@@ -81,16 +81,15 @@ http
       } catch (error) {
         console.error(error);
       }
-    } 
-
-    // Consultar la lista de Pokemones actual
-    // http://localhost:8900/pokemones
+    }
+    // Consultar los poderes de un pokemon especifico
+    // http://localhost:8900/pokemon?nombre=pikachu
     else if (strURL.includes("pokemon")) {
       var q = url.parse(req.url, true).query;
       let config = {
         method: "get",
         maxBodyLength: Infinity,
-        url: 'https://pokeapi.co/api/v2/pokemon/'+ q.nombre,
+        url: "https://pokeapi.co/api/v2/pokemon/" + q.nombre,
         headers: {},
       };
       try {
@@ -100,9 +99,43 @@ http
       } catch (error) {
         console.error(error);
       }
-    } 
-    
-    else if (strURL.includes("info")) {
+    }
+    // Consultar los principales personajes de Rick and Morty
+    // http://localhost:8900/rickandmorty
+    else if (strURL.includes("rickandmorty")) {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://rickandmortyapi.com/api/character",
+        headers: {},
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.results));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    // Consultar el detalle de cada personaje de Rick and Morty
+    // http://localhost:8900/rmchar?nombre=rick
+    else if (strURL.includes("rmchar")) {
+      var q = url.parse(req.url, true).query;
+      console.log(q);
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://rickandmortyapi.com/api/character?name=" + q.nombre,
+        headers: {},
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    } else if (strURL.includes("info")) {
       let config = {
         method: "get",
         maxBodyLength: Infinity,
