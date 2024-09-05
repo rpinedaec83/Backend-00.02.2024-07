@@ -121,7 +121,6 @@ http
     // http://localhost:8900/rmchar?nombre=rick
     else if (strURL.includes("rmchar")) {
       var q = url.parse(req.url, true).query;
-      console.log(q);
       let config = {
         method: "get",
         maxBodyLength: Infinity,
@@ -131,6 +130,27 @@ http
       try {
         const response = await axios.request(config);
         res.write(JSON.stringify(response.data));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    // Consultar el top 10 de bebidas y cocteles
+    // http://localhost:8900/bebidas
+    else if (strURL.includes("bebidas")) {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+        headers: {},
+      };
+      try {
+        let topBebidas = [];
+        for (let i = 0; i < 10; i++) {
+          let response = await axios.request(config);
+          topBebidas.push(response.data.drinks[0]);
+        }
+        res.write(JSON.stringify(topBebidas));
         res.end();
       } catch (error) {
         console.error(error);
