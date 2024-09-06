@@ -193,18 +193,17 @@ http
       } catch (error) {
         console.error(error);
       }
-    } 
-    // Consultar citas famosas  
+    }
+    // Consultar citas famosas
     // http://localhost:8900/citas
     else if (strURL.includes("citas")) {
-      var q = url.parse(req.url, true).query;
       let config = {
-        method: 'get',
+        method: "get",
         maxBodyLength: Infinity,
-        url: 'http://quotes.rest/qod.json?category=inspire',
-        headers: { 
-          'X-TheySaidSo-Api-Secret': 'MtdCjyz2wAuc53UPRQTConZaFeEaqWQDf5vfiWCW'
-        }
+        url: "http://quotes.rest/qod.json?category=inspire",
+        headers: {
+          "X-TheySaidSo-Api-Secret": "MtdCjyz2wAuc53UPRQTConZaFeEaqWQDf5vfiWCW",
+        },
       };
       try {
         const response = await axios.request(config);
@@ -214,24 +213,78 @@ http
         console.error(error);
       }
     }
-    else if (strURL.includes("info")) {
+    // Consultar datos ficticios de un usuario
+    // http://localhost:8900/usuario
+    else if (strURL.includes("usuario")) {
       let config = {
         method: "get",
         maxBodyLength: Infinity,
         url: "https://randomuser.me/api/",
         headers: {},
       };
-      axios
-        .request(config)
-        .then((response) => {
-          console.log(JSON.stringify(response.data));
-          res.write(JSON.stringify(response.data));
-          res.end();
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    } else {
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.results));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    // Consultar el top de peliculas de estreno
+    // http://localhost:8900/estreno
+    else if (strURL.includes("estreno")) {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://api.themoviedb.org/3/movie/popular?language=es&api_key=6f2c78bf63ebb81ab4116af2748552e3",
+        headers: {},
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.results));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    // Consultar el detalle de una pelicula especifica
+    // http://localhost:8900/pelicula?nombre=titanic
+    else if (strURL.includes("pelicula")) {
+      var q = url.parse(req.url, true).query;
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: `https://api.themoviedb.org/3/search/movie?language=es&query=${q.nombre}&api_key=6f2c78bf63ebb81ab4116af2748552e3`,
+        headers: {},
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.results));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    // Consultar datos especificos de Marte
+    // http://localhost:8900/marte
+    else if (strURL.includes("marte")) {
+      var q = url.parse(req.url, true).query;
+      let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1000&api_key=ln4GK6kSoFyFGIiV1hHOkjhykEfGBFqFo2mDubgz',
+        headers: { }
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.photos));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }  else {
       res.write(JSON.stringify({ mensaje: "cualquier cosa" }));
       res.end();
     }
