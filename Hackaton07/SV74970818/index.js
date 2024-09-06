@@ -155,7 +155,7 @@ http
       } catch (error) {
         console.error(error);
       }
-    } 
+    }
     // Consultar un listado de productos de una tienda
     // http://localhost:8900/productos
     else if (strURL.includes("productos")) {
@@ -178,16 +178,37 @@ http
     else if (strURL.includes("fotografias")) {
       var q = url.parse(req.url, true).query;
       let config = {
-        method: 'get',
+        method: "get",
         maxBodyLength: Infinity,
-        url: 'https://api.unsplash.com/search/photos?page=1&query=' + q.tema,
-        headers: { 
-          'Authorization': 'Client-ID B45RMkN_jbRgGxbF6JcVs_ZGbZxUeSH-uDlbFZtbYks'
-        }
+        url: "https://api.unsplash.com/search/photos?page=1&query=" + q.tema,
+        headers: {
+          Authorization:
+            "Client-ID B45RMkN_jbRgGxbF6JcVs_ZGbZxUeSH-uDlbFZtbYks",
+        },
       };
       try {
         const response = await axios.request(config);
         res.write(JSON.stringify(response.data.results));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    } 
+    // Consultar citas famosas  
+    // http://localhost:8900/citas
+    else if (strURL.includes("citas")) {
+      var q = url.parse(req.url, true).query;
+      let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'http://quotes.rest/qod.json?category=inspire',
+        headers: { 
+          'X-TheySaidSo-Api-Secret': 'MtdCjyz2wAuc53UPRQTConZaFeEaqWQDf5vfiWCW'
+        }
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data));
         res.end();
       } catch (error) {
         console.error(error);
