@@ -155,7 +155,45 @@ http
       } catch (error) {
         console.error(error);
       }
-    } else if (strURL.includes("info")) {
+    } 
+    // Consultar un listado de productos de una tienda
+    // http://localhost:8900/productos
+    else if (strURL.includes("productos")) {
+      let config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url: "https://fakestoreapi.com/products",
+        headers: {},
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    // Consultar y traer Fotografias con un determinado tema y tamaño
+    // http://localhost:8900/fotografias?tema=desk
+    else if (strURL.includes("fotografias")) {
+      var q = url.parse(req.url, true).query;
+      let config = {
+        method: 'get',
+        maxBodyLength: Infinity,
+        url: 'https://api.unsplash.com/search/photos?page=1&query=' + q.tema,
+        headers: { 
+          'Authorization': 'Client-ID B45RMkN_jbRgGxbF6JcVs_ZGbZxUeSH-uDlbFZtbYks'
+        }
+      };
+      try {
+        const response = await axios.request(config);
+        res.write(JSON.stringify(response.data.results));
+        res.end();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    else if (strURL.includes("info")) {
       let config = {
         method: "get",
         maxBodyLength: Infinity,
