@@ -90,7 +90,7 @@ document.getElementById('agregar-telefono-btn').addEventListener('click', () => 
         Swal.fire('Error', 'El teléfono está reportado y no puede acceder al servicio.', 'error');
     }
 });
-
+//APARTE DOCUMENTARIO
 document.getElementById('actualizar-estado-btn').addEventListener('click', () => {
     const reparacion = Reparacion.cargarDeStorage('ABC123XYZ');
     if (reparacion) {
