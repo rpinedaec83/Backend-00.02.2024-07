@@ -41,4 +41,4 @@ SUERTE!!!
 - El tiempo de cada presentación lo definirá el docente a cargo
 
 ### VII.	Feedback
-- El docente dará feedback a los estudiantes sobre los ejercicios realizados
+- El docente dará feedback a los estudiantes sobre los ejercicios realizados.
