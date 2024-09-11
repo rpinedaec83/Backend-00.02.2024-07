@@ -38,11 +38,14 @@ create table tblUsuario(
 
 
 
-insert into tblUsuario( username, password, email, usrCreacion, usrModificacion, fechaModificacion)
-values('jperez', 'qwerty', 'jprez@x-codec.net', 1, 4,CURRENT_TIMESTAMP);
+insert into tblUsuario( username, password, email, usrCreacion)
+values('rpineda', 'qwerty', 'rpineda@x-codec.net', 1);
 
 select * from tblUsuario;
 
-
+update tblUsuario set activo = 0,
+usrModificacion =1,
+fechaModificacion = CURRENT_TIMESTAMP
+  where id =2
 
 
