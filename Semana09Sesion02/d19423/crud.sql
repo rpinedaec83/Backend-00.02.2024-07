@@ -23,4 +23,4 @@ Select
 update tblVacunas set activo = 0
 where id in (1,2);
 
-delete from tblVacunas where id in (3,4);
+delete from tblVacunas where id = 6;
