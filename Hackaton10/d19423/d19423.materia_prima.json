@@ -1,0 +1,8 @@
+[{
+  "_id": {
+    "$oid": "66eceb95385f20bc12e92315"
+  },
+  "nombre": "Melamina",
+  "descripcion": "Madera de Melamina",
+  "cantidad": 10
+}]

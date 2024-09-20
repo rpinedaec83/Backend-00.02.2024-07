@@ -1,0 +1,5 @@
+use d19423
+
+db.createCollection(materia_prima)
+
+db.materia_prima.insertOne({nombre:"Melamina",descripcion:"Madera de Melamina",cantidad:10})
