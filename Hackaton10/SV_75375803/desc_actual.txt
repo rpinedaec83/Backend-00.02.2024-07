@@ -1,0 +1,63 @@
+Descuento de materia_prima
+
+// Armario grande
+db.materia_prima.updateOne({ _id: 1 }, { $inc: { cantidad: -100 } });  // Melamina
+db.materia_prima.updateOne({ _id: 3 }, { $inc: { cantidad: -50 } });   // Pino
+
+// Armario mediano
+db.materia_prima.updateOne({ _id: 2 }, { $inc: { cantidad: -80 } });   // Cedro
+db.materia_prima.updateOne({ _id: 4 }, { $inc: { cantidad: -40 } });   // Roble
+
+// Armario pequeño
+db.materia_prima.updateOne({ _id: 5 }, { $inc: { cantidad: -60 } });   // Nogal
+db.materia_prima.updateOne({ _id: 3 }, { $inc: { cantidad: -30 } });   // Pino
+
+// Armario modular
+db.materia_prima.updateOne({ _id: 1 }, { $inc: { cantidad: -120 } });  // Melamina
+db.materia_prima.updateOne({ _id: 5 }, { $inc: { cantidad: -80 } });   // Nogal
+
+
+Descuento de insumos
+// Armario grande
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -1000 } });  // Tachuelas
+db.insumos.updateOne({ _id: 2 }, { $inc: { cantidad: -300 } });   // Pegamento
+db.insumos.updateOne({ _id: 4 }, { $inc: { cantidad: -200 } });   // Bisagras
+
+// Armario mediano
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -800 } });   // Tachuelas
+db.insumos.updateOne({ _id: 3 }, { $inc: { cantidad: -200 } });   // Tornillos
+db.insumos.updateOne({ _id: 5 }, { $inc: { cantidad: -100 } });   // Manillas
+
+// Armario pequeño
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -500 } });   // Tachuelas
+db.insumos.updateOne({ _id: 2 }, { $inc: { cantidad: -150 } });   // Pegamento
+db.insumos.updateOne({ _id: 4 }, { $inc: { cantidad: -100 } });   // Bisagras
+
+// Armario modular
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -1000 } });  // Tachuelas
+db.insumos.updateOne({ _id: 3 }, { $inc: { cantidad: -400 } });   // Tornillos
+db.insumos.updateOne({ _id: 5 }, { $inc: { cantidad: -150 } });   // Manillas
+
+
+Actualización de horas de personal
+
+// Armario grande
+db.personal.updateOne({ _id: 2 }, { $inc: { horas_trabajadas: 2 } });  // Supervisor Miguel Soto
+db.personal.updateOne({ _id: 1 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Carlos Ramírez
+db.personal.updateOne({ _id: 3 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Ana Pérez
+
+// Armario mediano
+db.personal.updateOne({ _id: 5 }, { $inc: { horas_trabajadas: 3 } });  // Supervisor Lucía Gonzales
+db.personal.updateOne({ _id: 4 }, { $inc: { horas_trabajadas: 3 } });  // Carpintero Jorge Paredes
+db.personal.updateOne({ _id: 6 }, { $inc: { horas_trabajadas: 3 } });  // Carpintero Pedro Quispe
+
+// Armario pequeño
+db.personal.updateOne({ _id: 8 }, { $inc: { horas_trabajadas: 2 } });  // Supervisor Raúl Mejía
+db.personal.updateOne({ _id: 7 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Sofía Salazar
+db.personal.updateOne({ _id: 3 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Ana Pérez
+
+// Armario modular
+db.personal.updateOne({ _id: 2 }, { $inc: { horas_trabajadas: 4 } });  // Supervisor Miguel Soto
+db.personal.updateOne({ _id: 1 }, { $inc: { horas_trabajadas: 4 } });  // Carpintero Carlos Ramírez
+db.personal.updateOne({ _id: 6 }, { $inc: { horas_trabajadas: 4 } });  // Carpintero Pedro Quispe
+
