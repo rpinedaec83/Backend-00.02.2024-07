@@ -1,0 +1,10 @@
+{
+  "_id": {
+    "$oid": "66f08d0cca53185bdb0f1144"
+  },
+  "id": "1",
+  "inputName": "Chais",
+  "supplierId": "1",
+  "categoryId": "1",
+  "quantity": "100"
+}
