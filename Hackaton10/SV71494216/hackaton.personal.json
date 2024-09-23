@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "66f07e3e18fbfec4b18a8e13"
+  },
+  "id": "1",
+  "nombre": "Juan",
+  "area": "construccion",
+  "fecha_ingreso": "12-12-2023",
+  "salario": 1200,
+  "turno": "completo"
+},
+{
+  "_id": {
+    "$oid": "66f07e3e18fbfec4b18a8e14"
+  },
+  "id": "2",
+  "nombre": "Maria",
+  "area": "construccion",
+  "fecha_ingreso": "12-12-2023",
+  "salario": 1200,
+  "turno": "completo"
+}]
