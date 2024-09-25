@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "66f0606c7b733d6f9ced5b12"
+  },
+  "fecha_de_produccion": {
+    "$date": "2016-05-20T16:00:00.000Z"
+  },
+  "producto": "repostero",
+  "cantidad_producida": 1,
+  "personal_asignado": [
+    {
+      "$oid": "66f04ced7b733d6f9ced5b0f"
+    },
+    {
+      "$oid": "66f04ced7b733d6f9ced5b11"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "66f0606c7b733d6f9ced5b13"
+  },
+  "fecha_de_produccion": {
+    "$date": "2016-05-20T15:30:00.000Z"
+  },
+  "producto": "velador",
+  "cantidad_producida": 2,
+  "personal_asignado": [
+    {
+      "$oid": "66f04ced7b733d6f9ced5b10"
+    },
+    {
+      "$oid": "66f04ced7b733d6f9ced5b11"
+    }
+  ]
+}]
