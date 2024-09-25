@@ -1,0 +1,37 @@
+
+
+
+db.materia_prima.insertOne({
+    "nombre": "Madera",
+    "cantidad": 100,
+    "proveedor": "Proveedor A",
+    "fecha_compra": new Date("2024-01-15")
+  });
+
+  db.insumos.insertOne({
+    "nombre": "Tornillos",
+    "cantidad": 500,
+    "proveedor": "Proveedor B",
+    "fecha_compra": new Date("2024-01-20")
+  });
+
+  db.personal.insertOne({
+    "nombre": "Juan Pérez",
+    "rol": "Carpintero",
+    "fecha_ingreso": new Date("2023-02-01")
+  });
+
+  db.produccion.insertOne({
+    "modelo": "Armario Moderno",
+    "cantidad_producida": 30,
+    "fecha_produccion": new Date("2024-02-10"),
+    "personal_id": ObjectId("...") // Aquí debes colocar un ID existente
+  });
+
+  db.materia_prima.find().pretty();
+
+  db.insumos.find().pretty();
+
+  db.personal.find().pretty();
+
+  db.produccion.find().pretty();
