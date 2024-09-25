@@ -1,0 +1,110 @@
+use SV70295000
+
+switched to db SV70295000
+
+db.createCollection('materia_Prima')
+
+db.materia_Prima.insertOne({Fecha_de_Compra: ISODate("2016-05-18T16:00:00Z"),
+Provedor:"Fierros S.A.C",
+Materiales: [
+  {nombre_material: "Clavos de 3",
+	 cantidad: 2,
+	 precio: 4
+},
+  {nombre_material: "Clavos de 4",
+	 cantidad: 3,
+	 precio: 6	
+},
+],
+	"cantidad_total": 5,
+	"Precio_total": 10
+})
+
+db.materia_Prima.insertMany([
+  {
+	Fecha_de_Compra: ISODate("2016-05-18T14:00:00Z"),
+	Proveedor: "Todo Melamines S.A",
+	Materiales:{
+	nombre_material: "Tablas de Melamine",
+	cantidad: 4,
+	unidad: "m3",
+	precio_Unitario: 25
+},
+	Cantidad_Total: 4,
+	Precio_Total: 100
+},
+  {
+	Fecha_de_Compra: ISODate("2016-05-18T15:30:00Z"),
+	Proveedor: "Pinturas Peru S.R.L",
+	Materiales:{
+	nombre_material: "Barniz",
+	cantidad: 1,
+	unidad: "Lt",
+	precio_Unitario: 18
+},
+	Cantidad_Total: 1,
+	Precio_Total: 18
+}
+]);
+
+db.Insumos.insertOne([
+  {
+	Fecha_de_Compra: ISODate("2016-05-18T16:00:00Z"),
+	Provedor:"Fierros S.A.C",
+	Materiales:[
+    {
+			nombre_material: "Tornillos",
+			cantidad: 1000,
+			unidad: "Kg",
+			precio_Unitario: 0.10
+    },
+    {
+			nombre_material: "Bisagras",
+			cantidad: 100,
+			unidad: "Kg",
+			precio_Unitario: 2,
+  }
+],
+		Precio_Total: 300
+  }
+]);
+
+db.Personal.insertMany([
+  {
+    nombre: "Carlos Gómez",
+    puesto: "Carpintero",
+    fechaIngreso: ISODate("2015-01-15"),
+    salario: 1500
+  },
+  {
+    nombre: "Ana Martínez",
+    puesto: "Supervisora",
+    fechaIngreso: ISODate("2015-06-04"),
+    salario: 2000
+  }
+]);
+
+db.Produccion.insertMany([
+  {
+    producto: "Armario X",
+    cantidadProducida: 50,
+    fechaProduccion: ISODate("2016-05-21"),
+    empleadosInvolucrados: ["Carlos Gómez", "Ana Martínez"]
+  },
+  {
+    producto: "Armario Y",
+    cantidadProducida: 30,
+    fechaProduccion: ISODate("2016-06-15"),
+    empleadosInvolucrados: ["Carlos Gómez"]
+  }
+]);
+
+*Consultas*
+
+db.materia_Prima.find({ fechaCompra: ISODate("2016-05-21") });
+
+db.Personal.find({ salario: { $gt: 1500 } });
+
+db.Produccion.find({ producto: "Armario Modelo X" });
+
+db.Insumos.find({ Proveedor: "Fierros S.A.C" });
