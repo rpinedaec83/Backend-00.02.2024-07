@@ -1,0 +1,10 @@
+{
+  "_id": {
+    "$oid": "66f08406ca53185bdb0f1142"
+  },
+  "id": "1",
+  "code": "E0001",
+  "firstName": "Juan Carlos",
+  "lastName": "Torres Perez",
+  "scheduleId": "1"
+}

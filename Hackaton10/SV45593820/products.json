@@ -1,0 +1,10 @@
+{
+  "_id": {
+    "$oid": "66f08e16ca53185bdb0f1145"
+  },
+  "id": "1",
+  "productName": "LIFT TABLE",
+  "requiredInputCode": [
+    1
+  ]
+}
