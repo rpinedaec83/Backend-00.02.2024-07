@@ -1,0 +1,10 @@
+{
+  "_id": {
+    "$oid": "66f080c8ca53185bdb0f113e"
+  },
+  "name": "Exotic Liquid",
+  "contact": "Charlotte Cooper",
+  "address": "49 Gilbert St.",
+  "phone": "(171) 555-2222",
+  "id": "1"
+}

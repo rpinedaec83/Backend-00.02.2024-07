@@ -1,0 +1,14 @@
+{
+  "_id": {
+    "$oid": "66f084c0ca53185bdb0f1143"
+  },
+  "id": "1",
+  "scheduleCode": "ESC001",
+  "weekdays": [
+    "MONDAY",
+    "TUESDAY",
+    "WEDNESDAY",
+    "THURSDAY",
+    "FRIDAY"
+  ]
+}

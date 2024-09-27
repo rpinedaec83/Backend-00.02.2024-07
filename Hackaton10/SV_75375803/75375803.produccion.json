@@ -1,0 +1,192 @@
+[{
+  "_id": 1,
+  "tipo_armario": "Armario grande",
+  "fecha_produccion": {
+    "$date": "2024-01-20T00:00:00.000Z"
+  },
+  "materia_prima_usada": [
+    {
+      "_id": 1,
+      "cantidad": 100
+    },
+    {
+      "_id": 3,
+      "cantidad": 50
+    }
+  ],
+  "insumos_usados": [
+    {
+      "_id": 1,
+      "cantidad": 1000
+    },
+    {
+      "_id": 2,
+      "cantidad": 300
+    },
+    {
+      "_id": 4,
+      "cantidad": 200
+    }
+  ],
+  "personal_asignado": [
+    {
+      "_id": 2,
+      "rol": "Supervisor",
+      "horas_usadas": 2
+    },
+    {
+      "_id": 1,
+      "rol": "Carpintero",
+      "horas_usadas": 2
+    },
+    {
+      "_id": 3,
+      "rol": "Carpintero",
+      "horas_usadas": 2
+    }
+  ]
+},
+{
+  "_id": 2,
+  "tipo_armario": "Armario mediano",
+  "fecha_produccion": {
+    "$date": "2024-01-21T00:00:00.000Z"
+  },
+  "materia_prima_usada": [
+    {
+      "_id": 2,
+      "cantidad": 80
+    },
+    {
+      "_id": 4,
+      "cantidad": 40
+    }
+  ],
+  "insumos_usados": [
+    {
+      "_id": 1,
+      "cantidad": 800
+    },
+    {
+      "_id": 3,
+      "cantidad": 200
+    },
+    {
+      "_id": 5,
+      "cantidad": 100
+    }
+  ],
+  "personal_asignado": [
+    {
+      "_id": 5,
+      "rol": "Supervisor",
+      "horas_usadas": 3
+    },
+    {
+      "_id": 4,
+      "rol": "Carpintero",
+      "horas_usadas": 3
+    },
+    {
+      "_id": 6,
+      "rol": "Carpintero",
+      "horas_usadas": 3
+    }
+  ]
+},
+{
+  "_id": 3,
+  "tipo_armario": "Armario pequeño",
+  "fecha_produccion": {
+    "$date": "2024-01-22T00:00:00.000Z"
+  },
+  "materia_prima_usada": [
+    {
+      "_id": 5,
+      "cantidad": 60
+    },
+    {
+      "_id": 3,
+      "cantidad": 30
+    }
+  ],
+  "insumos_usados": [
+    {
+      "_id": 1,
+      "cantidad": 500
+    },
+    {
+      "_id": 2,
+      "cantidad": 150
+    },
+    {
+      "_id": 4,
+      "cantidad": 100
+    }
+  ],
+  "personal_asignado": [
+    {
+      "_id": 8,
+      "rol": "Supervisor",
+      "horas_usadas": 2
+    },
+    {
+      "_id": 7,
+      "rol": "Carpintero",
+      "horas_usadas": 2
+    },
+    {
+      "_id": 3,
+      "rol": "Carpintero",
+      "horas_usadas": 2
+    }
+  ]
+},
+{
+  "_id": 4,
+  "tipo_armario": "Armario modular",
+  "fecha_produccion": {
+    "$date": "2024-01-23T00:00:00.000Z"
+  },
+  "materia_prima_usada": [
+    {
+      "_id": 1,
+      "cantidad": 120
+    },
+    {
+      "_id": 5,
+      "cantidad": 80
+    }
+  ],
+  "insumos_usados": [
+    {
+      "_id": 1,
+      "cantidad": 1000
+    },
+    {
+      "_id": 3,
+      "cantidad": 400
+    },
+    {
+      "_id": 5,
+      "cantidad": 150
+    }
+  ],
+  "personal_asignado": [
+    {
+      "_id": 2,
+      "rol": "Supervisor",
+      "horas_usadas": 4
+    },
+    {
+      "_id": 1,
+      "rol": "Carpintero",
+      "horas_usadas": 4
+    },
+    {
+      "_id": 6,
+      "rol": "Carpintero",
+      "horas_usadas": 4
+    }
+  ]
+}]

@@ -1,0 +1,100 @@
+use SV73641911
+
+db.createCollection("materia_prima")
+
+db.materia_prima.insertOne({
+  "fecha_de_compra": ISODate("2016-05-18T16:00:00Z"),
+  "proveedor": "Fierros SAC",
+  "materiales": [
+    {
+  		"nombre_material": "Clavos de 3",
+  		"cantidad": 2,
+  		"precio": 4
+  	},
+    {
+  		"nombre_material": "Clavos de 4",
+  		"cantidad": 3,
+  		"precio": 6
+    }
+  ],
+	"cantidad_total": 5,
+	"precio_total": 10
+})
+
+db.createCollection("insumos")
+
+db.insumos.insertOne({
+  "fecha_de_compra": ISODate("2016-05-19T14:00:00Z"),
+  "proveedor": "Carpinteros SAC",
+  "insumos": [
+    {
+  		"nombre_insumo": "Tripley",
+		"color": "blanco",
+  		"cantidad": 3,
+  		"precio": 30
+  	},
+    {
+  		"nombre_insumo": "Melamina",
+		"color": "blanco",
+  		"cantidad": 10,
+  		"precio": 150
+    }
+  ],
+	"cantidad_total": 13,
+	"precio_total": 180
+})
+
+db.createCollection("personal")
+
+db.personal.insertMany([
+    {
+		"nombre": "Pepe",
+		"apellido": "Gonzales",
+		"puesto": "carpintero",
+		"fecha_de_ingreso": ISODate("2016-05-20T09:00:00Z"),
+		"sueldo": 2000,
+		"hora_de_ingreso": ISODate("2016-05-20T09:00:00Z"),
+		"hora_de_salida": ISODate("2016-05-20T17:00:00Z")
+	},
+    {
+		"nombre": "Jorge",
+		"apellido": "Gomez",
+		"puesto": "carpintero",
+		"fecha_de_ingreso": ISODate("2016-05-20T09:00:00Z"),
+		"sueldo": 2000,
+		"hora_de_ingreso": ISODate("2016-05-20T09:00:00Z"),
+		"hora_de_salida": ISODate("2016-05-20T17:00:00Z")
+	},
+    {
+		"nombre": "Luis",
+		"apellido": "Perez",
+		"puesto": "Supervisor",
+		"fecha_de_ingreso": ISODate("2016-05-20T09:00:00Z"),
+		"sueldo": 3000,
+		"hora_de_ingreso": ISODate("2016-05-20T09:00:00Z"),
+		"hora_de_salida": ISODate("2016-05-20T17:00:00Z")
+	}
+])
+
+db.createCollection("produccion")
+
+db.produccion.insertMany([
+    {
+		"fecha_de_produccion": ISODate("2016-05-20T16:00:00Z"),
+		"producto": "repostero",
+		"cantidad_producida": 1,
+		"personal_asignado": [
+			ObjectId('66f04ced7b733d6f9ced5b0f'),
+			ObjectId('66f04ced7b733d6f9ced5b11')
+		]
+	},
+    {
+		"fecha_de_produccion": ISODate("2016-05-20T15:30:00Z"),
+		"producto": "velador",
+		"cantidad_producida": 2,
+		"personal_asignado": [
+			ObjectId('66f04ced7b733d6f9ced5b10'),
+			ObjectId('66f04ced7b733d6f9ced5b11')
+		]
+	}
+])

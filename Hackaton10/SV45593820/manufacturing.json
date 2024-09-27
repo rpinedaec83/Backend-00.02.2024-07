@@ -1,0 +1,12 @@
+{
+  "_id": {
+    "$oid": "66f08fabca53185bdb0f1148"
+  },
+  "id": "1",
+  "shortName": "FAC. LIFT TABLE",
+  "description": "Manufacture of a lifting table",
+  "requiredEmployeesCode": [
+    "E0001"
+  ],
+  "scheduleCode": "ESC001"
+}

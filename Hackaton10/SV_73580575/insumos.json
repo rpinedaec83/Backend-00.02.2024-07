@@ -1,0 +1,25 @@
+[{
+    "_id": {
+      "$oid": "66f0471a7b733d6f9ced5b0e"
+    },
+    "fecha_de_compra": {
+      "$date": "2016-05-19T14:00:00.000Z"
+    },
+    "proveedor": "Carpinteros SAC",
+    "insumos": [
+      {
+        "color": "blanco",
+        "cantidad": 3,
+        "precio": 30,
+        "nombre_insumo": "Tripley"
+      },
+      {
+        "color": "blanco",
+        "cantidad": 10,
+        "precio": 150,
+        "nombre_insumo": "Melamina"
+      }
+    ],
+    "cantidad_total": 13,
+    "precio_total": 180
+  }]

@@ -1,0 +1,55 @@
+[{
+  "_id": 1,
+  "nombre": "Tachuela",
+  "descripcion": "Tachuelas de acero inoxidable",
+  "cantidad": 6700,
+  "proveedor": "Ferretería Global",
+  "precio_por_unidad": 0.1,
+  "fecha_adquisicion": {
+    "$date": "2024-01-05T00:00:00.000Z"
+  }
+},
+{
+  "_id": 2,
+  "nombre": "Pegamento",
+  "descripcion": "Pegamento industrial",
+  "cantidad": 4550,
+  "proveedor": "Adhesivos del Sur",
+  "precio_por_unidad": 5,
+  "fecha_adquisicion": {
+    "$date": "2024-01-07T00:00:00.000Z"
+  }
+},
+{
+  "_id": 3,
+  "nombre": "Tornillos",
+  "descripcion": "Tornillos de 1 pulgada para madera",
+  "cantidad": 19400,
+  "proveedor": "Tornillos y Fijaciones S.A.",
+  "precio_por_unidad": 0.05,
+  "fecha_adquisicion": {
+    "$date": "2024-01-03T00:00:00.000Z"
+  }
+},
+{
+  "_id": 4,
+  "nombre": "Bisagras",
+  "descripcion": "Bisagras de acero para puertas de armarios",
+  "cantidad": 4700,
+  "proveedor": "Herrajes Modernos",
+  "precio_por_unidad": 1,
+  "fecha_adquisicion": {
+    "$date": "2024-01-08T00:00:00.000Z"
+  }
+},
+{
+  "_id": 5,
+  "nombre": "Manillas",
+  "descripcion": "Manillas de acero inoxidable",
+  "cantidad": 3750,
+  "proveedor": "Accesorios Industriales",
+  "precio_por_unidad": 2,
+  "fecha_adquisicion": {
+    "$date": "2024-01-11T00:00:00.000Z"
+  }
+}]

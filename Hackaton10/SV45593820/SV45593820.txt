@@ -1,0 +1,73 @@
+use SV45593820
+
+db.createCollection('suppliers')
+
+db.suppliers.insertOne({
+  name: 'Exotic Liquid',
+  contact: 'Charlotte Cooper',
+  address: '49 Gilbert St.',
+  phone: '(171) 555-2222'
+})
+
+db.createCollection('inputs')
+
+db.inputs.insertOne({
+  id: '1',
+  inputName: 'Chais',
+  supplierId: '1',
+  categoryId: '1',
+  quantity: 100,
+  price: 55
+})
+
+db.createCollection('categories')
+
+db.categories.insertOne({
+  id: '1',
+  categoryName: 'Wood',
+  description: 'Woods mapple'
+})
+
+db.createCollection('schedules')
+
+db.schedules.insertOne({
+  id: '1',
+  scheduleCode: 'ESC001',
+  weekdays: ['MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY'],
+  hours: 4
+})
+
+db.createCollection('employees')
+
+db.employees.insertOne({
+  id: '1',
+  code: 'E0001',
+  firstName: 'Juan Carlos',
+  lastName: 'Torres Perez'
+})
+
+db.employees.insertOne({
+  id: '2',
+  code: 'E0002',
+  firstName: 'LUIS',
+  lastName: 'QUISPE QUISPE'
+})
+
+db.createCollection('products')
+
+db.products.insertOne({
+  id: '1',
+  productName: 'LIFT TABLE',
+  requiredInputCode: ['1']
+})
+
+db.createCollection('manufacturing')
+
+db.manufacturing.insertOne({
+  id: '1',
+  shortName: 'MAN. LIFT TABLE',
+  description: 'Manufacture of lifting tables',
+  quantity: 5,
+  requiredEmployeesCode: ['E0001', 'E0002],
+  scheduleCode: 'ESC001'
+})

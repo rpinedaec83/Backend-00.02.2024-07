@@ -1,0 +1,60 @@
+[{
+  "_id": 1,
+  "nombre": "Melamina",
+  "descripcion": "Madera de Melamina alta densidad",
+  "color": "Blanco",
+  "cantidad": 780,
+  "proveedor": "Maderas Perú S.A.",
+  "precio_por_unidad": 20,
+  "fecha_adquisicion": {
+    "$date": "2024-01-15T00:00:00.000Z"
+  }
+},
+{
+  "_id": 2,
+  "nombre": "Cedro",
+  "descripcion": "Madera de Cedro tratada",
+  "color": "Rojo oscuro",
+  "cantidad": 720,
+  "proveedor": "Maderas Trujillo S.A.",
+  "precio_por_unidad": 45,
+  "fecha_adquisicion": {
+    "$date": "2024-01-10T00:00:00.000Z"
+  }
+},
+{
+  "_id": 3,
+  "nombre": "Pino",
+  "descripcion": "Madera de Pino resistente",
+  "color": "Natural",
+  "cantidad": 1120,
+  "proveedor": "Forestal del Norte",
+  "precio_por_unidad": 15,
+  "fecha_adquisicion": {
+    "$date": "2024-01-12T00:00:00.000Z"
+  }
+},
+{
+  "_id": 4,
+  "nombre": "Roble",
+  "descripcion": "Madera de Roble maciza",
+  "color": "Marrón oscuro",
+  "cantidad": 460,
+  "proveedor": "Maderas del Sur",
+  "precio_por_unidad": 60,
+  "fecha_adquisicion": {
+    "$date": "2024-01-18T00:00:00.000Z"
+  }
+},
+{
+  "_id": 5,
+  "nombre": "Nogal",
+  "descripcion": "Madera de Nogal para acabados",
+  "color": "Marrón claro",
+  "cantidad": 560,
+  "proveedor": "Maderas Finas S.A.",
+  "precio_por_unidad": 50,
+  "fecha_adquisicion": {
+    "$date": "2024-01-20T00:00:00.000Z"
+  }
+}]
