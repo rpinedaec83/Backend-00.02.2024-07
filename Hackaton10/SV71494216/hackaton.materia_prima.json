@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "66f07e6918fbfec4b18a8e19"
+  },
+  "proveedores": "Proveedor A",
+  "fecha_compra": "2024-05-25",
+  "items": [
+    {
+      "nombre": "Madera",
+      "cantidad": "100",
+      "unidad": "kg",
+      "precio_unitario": "12.5"
+    },
+    {
+      "nombre": "Fierro",
+      "cantidad": "60",
+      "unidad": "pieza",
+      "precio_unitario": "6.3"
+    },
+    {
+      "nombre": "Cemento",
+      "cantidad": "40",
+      "unidad": "kg",
+      "precio_unitario": "24"
+    }
+  ],
+  "total": 2588
+}]

@@ -1,0 +1,23 @@
+[{
+    "_id": {
+      "$oid": "66f035b47b733d6f9ced5b0d"
+    },
+    "fecha_de_compra": {
+      "$date": "2016-05-18T16:00:00.000Z"
+    },
+    "proveedor": "Fierros SAC",
+    "materiales": [
+      {
+        "nombre_material": "Clavos de 3",
+        "cantidad": 2,
+        "precio": 4
+      },
+      {
+        "nombre_material": "Clavos de 4",
+        "cantidad": 3,
+        "precio": 6
+      }
+    ],
+    "cantidad_total": 5,
+    "precio_total": 10
+  }]

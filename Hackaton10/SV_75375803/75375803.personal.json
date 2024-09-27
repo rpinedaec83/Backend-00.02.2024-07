@@ -1,0 +1,88 @@
+[{
+  "_id": 1,
+  "nombre": "Carlos Ramírez",
+  "rol": "Carpintero",
+  "horas_trabajadas": 6,
+  "salario_por_hora": 18,
+  "fecha_contratacion": {
+    "$date": "2023-11-20T00:00:00.000Z"
+  },
+  "equipo": "Taller 1"
+},
+{
+  "_id": 2,
+  "nombre": "Miguel Soto",
+  "rol": "Supervisor",
+  "horas_trabajadas": 6,
+  "salario_por_hora": 25,
+  "fecha_contratacion": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  },
+  "equipo": "Taller 1"
+},
+{
+  "_id": 3,
+  "nombre": "Ana Pérez",
+  "rol": "Carpintero",
+  "horas_trabajadas": 4,
+  "salario_por_hora": 18,
+  "fecha_contratacion": {
+    "$date": "2023-11-25T00:00:00.000Z"
+  },
+  "equipo": "Taller 2"
+},
+{
+  "_id": 4,
+  "nombre": "Jorge Paredes",
+  "rol": "Carpintero",
+  "horas_trabajadas": 3,
+  "salario_por_hora": 18,
+  "fecha_contratacion": {
+    "$date": "2023-12-05T00:00:00.000Z"
+  },
+  "equipo": "Taller 2"
+},
+{
+  "_id": 5,
+  "nombre": "Lucía Gonzales",
+  "rol": "Supervisor",
+  "horas_trabajadas": 3,
+  "salario_por_hora": 25,
+  "fecha_contratacion": {
+    "$date": "2023-11-15T00:00:00.000Z"
+  },
+  "equipo": "Taller 2"
+},
+{
+  "_id": 6,
+  "nombre": "Pedro Quispe",
+  "rol": "Carpintero",
+  "horas_trabajadas": 7,
+  "salario_por_hora": 18,
+  "fecha_contratacion": {
+    "$date": "2023-12-10T00:00:00.000Z"
+  },
+  "equipo": "Taller 3"
+},
+{
+  "_id": 7,
+  "nombre": "Sofía Salazar",
+  "rol": "Carpintero",
+  "horas_trabajadas": 2,
+  "salario_por_hora": 18,
+  "fecha_contratacion": {
+    "$date": "2023-12-15T00:00:00.000Z"
+  },
+  "equipo": "Taller 3"
+},
+{
+  "_id": 8,
+  "nombre": "Raúl Mejía",
+  "rol": "Supervisor",
+  "horas_trabajadas": 2,
+  "salario_por_hora": 25,
+  "fecha_contratacion": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  },
+  "equipo": "Taller 3"
+}]

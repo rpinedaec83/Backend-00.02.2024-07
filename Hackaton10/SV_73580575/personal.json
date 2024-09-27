@@ -1,0 +1,54 @@
+[{
+    "_id": {
+      "$oid": "66f04ced7b733d6f9ced5b0f"
+    },
+    "nombre": "Pepe",
+    "apellido": "Gonzales",
+    "puesto": "carpintero",
+    "fecha_de_ingreso": {
+      "$date": "2016-05-20T09:00:00.000Z"
+    },
+    "sueldo": 2000,
+    "hora_de_ingreso": {
+      "$date": "2016-05-20T09:00:00.000Z"
+    },
+    "hora_de_salida": {
+      "$date": "2016-05-20T17:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66f04ced7b733d6f9ced5b10"
+    },
+    "nombre": "Jorge",
+    "apellido": "Gomez",
+    "puesto": "carpintero",
+    "fecha_de_ingreso": {
+      "$date": "2016-05-20T09:00:00.000Z"
+    },
+    "sueldo": 2000,
+    "hora_de_ingreso": {
+      "$date": "2016-05-20T09:00:00.000Z"
+    },
+    "hora_de_salida": {
+      "$date": "2016-05-20T17:00:00.000Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "66f04ced7b733d6f9ced5b11"
+    },
+    "nombre": "Luis",
+    "apellido": "Perez",
+    "puesto": "Supervisor",
+    "fecha_de_ingreso": {
+      "$date": "2016-05-20T09:00:00.000Z"
+    },
+    "sueldo": 3000,
+    "hora_de_ingreso": {
+      "$date": "2016-05-20T09:00:00.000Z"
+    },
+    "hora_de_salida": {
+      "$date": "2016-05-20T17:00:00.000Z"
+    }
+  }]

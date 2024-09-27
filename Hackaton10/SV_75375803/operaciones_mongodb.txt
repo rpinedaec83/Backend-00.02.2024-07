@@ -1,0 +1,322 @@
+use 75375803
+
+db.materia_prima.insertMany([
+  { 
+    _id: 1, 
+    nombre: "Melamina", 
+    descripcion: "Madera de Melamina alta densidad", 
+    color: "Blanco", 
+    cantidad: 1000, 
+    proveedor: "Maderas Perú S.A.", 
+    precio_por_unidad: 20, 
+    fecha_adquisicion: ISODate("2024-01-15")
+  },
+  { 
+    _id: 2, 
+    nombre: "Cedro", 
+    descripcion: "Madera de Cedro tratada", 
+    color: "Rojo oscuro", 
+    cantidad: 800, 
+    proveedor: "Maderas Trujillo S.A.", 
+    precio_por_unidad: 45, 
+    fecha_adquisicion: ISODate("2024-01-10")
+  },
+  { 
+    _id: 3, 
+    nombre: "Pino", 
+    descripcion: "Madera de Pino resistente", 
+    color: "Natural", 
+    cantidad: 1200, 
+    proveedor: "Forestal del Norte", 
+    precio_por_unidad: 15, 
+    fecha_adquisicion: ISODate("2024-01-12")
+  },
+  { 
+    _id: 4, 
+    nombre: "Roble", 
+    descripcion: "Madera de Roble maciza", 
+    color: "Marrón oscuro", 
+    cantidad: 500, 
+    proveedor: "Maderas del Sur", 
+    precio_por_unidad: 60, 
+    fecha_adquisicion: ISODate("2024-01-18")
+  },
+  { 
+    _id: 5, 
+    nombre: "Nogal", 
+    descripcion: "Madera de Nogal para acabados", 
+    color: "Marrón claro", 
+    cantidad: 700, 
+    proveedor: "Maderas Finas S.A.", 
+    precio_por_unidad: 50, 
+    fecha_adquisicion: ISODate("2024-01-20")
+  }
+])
+
+
+db.insumos.insertMany([
+  { 
+    _id: 1, 
+    nombre: "Tachuela", 
+    descripcion: "Tachuelas de acero inoxidable", 
+    cantidad: 10000, 
+    proveedor: "Ferretería Global", 
+    precio_por_unidad: 0.1, 
+    fecha_adquisicion: ISODate("2024-01-05")
+  },
+  { 
+    _id: 2, 
+    nombre: "Pegamento", 
+    descripcion: "Pegamento industrial", 
+    cantidad: 5000, 
+    proveedor: "Adhesivos del Sur", 
+    precio_por_unidad: 5, 
+    fecha_adquisicion: ISODate("2024-01-07")
+  },
+  { 
+    _id: 3, 
+    nombre: "Tornillos", 
+    descripcion: "Tornillos de 1 pulgada para madera", 
+    cantidad: 20000, 
+    proveedor: "Tornillos y Fijaciones S.A.", 
+    precio_por_unidad: 0.05, 
+    fecha_adquisicion: ISODate("2024-01-03")
+  },
+  { 
+    _id: 4, 
+    nombre: "Bisagras", 
+    descripcion: "Bisagras de acero para puertas de armarios", 
+    cantidad: 5000, 
+    proveedor: "Herrajes Modernos", 
+    precio_por_unidad: 1, 
+    fecha_adquisicion: ISODate("2024-01-08")
+  },
+  { 
+    _id: 5, 
+    nombre: "Manillas", 
+    descripcion: "Manillas de acero inoxidable", 
+    cantidad: 4000, 
+    proveedor: "Accesorios Industriales", 
+    precio_por_unidad: 2, 
+    fecha_adquisicion: ISODate("2024-01-11")
+  }
+])
+
+db.personal.insertMany([
+  { 
+    _id: 1, 
+    nombre: "Carlos Ramírez", 
+    rol: "Carpintero", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 18, 
+    fecha_contratacion: ISODate("2023-11-20"),
+    equipo: "Taller 1"
+  },
+  { 
+    _id: 2, 
+    nombre: "Miguel Soto", 
+    rol: "Supervisor", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 25, 
+    fecha_contratacion: ISODate("2023-12-01"),
+    equipo: "Taller 1"
+  },
+  { 
+    _id: 3, 
+    nombre: "Ana Pérez", 
+    rol: "Carpintero", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 18, 
+    fecha_contratacion: ISODate("2023-11-25"),
+    equipo: "Taller 2"
+  },
+  { 
+    _id: 4, 
+    nombre: "Jorge Paredes", 
+    rol: "Carpintero", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 18, 
+    fecha_contratacion: ISODate("2023-12-05"),
+    equipo: "Taller 2"
+  },
+  { 
+    _id: 5, 
+    nombre: "Lucía Gonzales", 
+    rol: "Supervisor", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 25, 
+    fecha_contratacion: ISODate("2023-11-15"),
+    equipo: "Taller 2"
+  },
+  { 
+    _id: 6, 
+    nombre: "Pedro Quispe", 
+    rol: "Carpintero", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 18, 
+    fecha_contratacion: ISODate("2023-12-10"),
+    equipo: "Taller 3"
+  },
+  { 
+    _id: 7, 
+    nombre: "Sofía Salazar", 
+    rol: "Carpintero", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 18, 
+    fecha_contratacion: ISODate("2023-12-15"),
+    equipo: "Taller 3"
+  },
+  { 
+    _id: 8, 
+    nombre: "Raúl Mejía", 
+    rol: "Supervisor", 
+    horas_trabajadas: 0, 
+    salario_por_hora: 25, 
+    fecha_contratacion: ISODate("2023-12-01"),
+    equipo: "Taller 3"
+  }
+])
+
+db.produccion.insertMany([
+  {
+    _id: 1,
+    tipo_armario: "Armario grande",
+    fecha_produccion: ISODate("2024-01-20"),
+    materia_prima_usada: [
+      { _id: 1, cantidad: 100 },  // 100 unidades de Melamina
+      { _id: 3, cantidad: 50 }    // 50 unidades de Pino
+    ],
+    insumos_usados: [
+      { _id: 1, cantidad: 1000 },  // 1000 Tachuelas
+      { _id: 2, cantidad: 300 },   // 300 unidades de Pegamento
+      { _id: 4, cantidad: 200 }    // 200 Bisagras
+    ],
+    personal_asignado: [
+      { _id: 2, rol: "Supervisor", horas_usadas: 2 },  // Supervisor Miguel Soto
+      { _id: 1, rol: "Carpintero", horas_usadas: 2 },  // Carpintero Carlos Ramírez
+      { _id: 3, rol: "Carpintero", horas_usadas: 2 }   // Carpintero Ana Pérez
+    ]
+  },
+  {
+    _id: 2,
+    tipo_armario: "Armario mediano",
+    fecha_produccion: ISODate("2024-01-21"),
+    materia_prima_usada: [
+      { _id: 2, cantidad: 80 },  // 80 unidades de Cedro
+      { _id: 4, cantidad: 40 }   // 40 unidades de Roble
+    ],
+    insumos_usados: [
+      { _id: 1, cantidad: 800 },  // 800 Tachuelas
+      { _id: 3, cantidad: 200 },  // 200 Tornillos
+      { _id: 5, cantidad: 100 }   // 100 Manillas
+    ],
+    personal_asignado: [
+      { _id: 5, rol: "Supervisor", horas_usadas: 3 },  // Supervisor Lucía Gonzales
+      { _id: 4, rol: "Carpintero", horas_usadas: 3 },  // Carpintero Jorge Paredes
+      { _id: 6, rol: "Carpintero", horas_usadas: 3 }   // Carpintero Pedro Quispe
+    ]
+  },
+  {
+    _id: 3,
+    tipo_armario: "Armario pequeño",
+    fecha_produccion: ISODate("2024-01-22"),
+    materia_prima_usada: [
+      { _id: 5, cantidad: 60 },  // 60 unidades de Nogal
+      { _id: 3, cantidad: 30 }   // 30 unidades de Pino
+    ],
+    insumos_usados: [
+      { _id: 1, cantidad: 500 },  // 500 Tachuelas
+      { _id: 2, cantidad: 150 },  // 150 unidades de Pegamento
+      { _id: 4, cantidad: 100 }   // 100 Bisagras
+    ],
+    personal_asignado: [
+      { _id: 8, rol: "Supervisor", horas_usadas: 2 },  // Supervisor Raúl Mejía
+      { _id: 7, rol: "Carpintero", horas_usadas: 2 },  // Carpintero Sofía Salazar
+      { _id: 3, rol: "Carpintero", horas_usadas: 2 }   // Carpintero Ana Pérez
+    ]
+  },
+  {
+    _id: 4,
+    tipo_armario: "Armario modular",
+    fecha_produccion: ISODate("2024-01-23"),
+    materia_prima_usada: [
+      { _id: 1, cantidad: 120 },  // 120 unidades de Melamina
+      { _id: 5, cantidad: 80 }    // 80 unidades de Nogal
+    ],
+    insumos_usados: [
+      { _id: 1, cantidad: 1000 },  // 1000 Tachuelas
+      { _id: 3, cantidad: 400 },   // 400 Tornillos
+      { _id: 5, cantidad: 150 }    // 150 Manillas
+    ],
+    personal_asignado: [
+      { _id: 2, rol: "Supervisor", horas_usadas: 4 },  // Supervisor Miguel Soto
+      { _id: 1, rol: "Carpintero", horas_usadas: 4 },  // Carpintero Carlos Ramírez
+      { _id: 6, rol: "Carpintero", horas_usadas: 4 }   // Carpintero Pedro Quispe
+    ]
+  }
+])
+
+
+Descuento de materia_prima
+
+// Armario grande
+db.materia_prima.updateOne({ _id: 1 }, { $inc: { cantidad: -100 } });  // Melamina
+db.materia_prima.updateOne({ _id: 3 }, { $inc: { cantidad: -50 } });   // Pino
+
+// Armario mediano
+db.materia_prima.updateOne({ _id: 2 }, { $inc: { cantidad: -80 } });   // Cedro
+db.materia_prima.updateOne({ _id: 4 }, { $inc: { cantidad: -40 } });   // Roble
+
+// Armario pequeño
+db.materia_prima.updateOne({ _id: 5 }, { $inc: { cantidad: -60 } });   // Nogal
+db.materia_prima.updateOne({ _id: 3 }, { $inc: { cantidad: -30 } });   // Pino
+
+// Armario modular
+db.materia_prima.updateOne({ _id: 1 }, { $inc: { cantidad: -120 } });  // Melamina
+db.materia_prima.updateOne({ _id: 5 }, { $inc: { cantidad: -80 } });   // Nogal
+
+
+Descuento de insumos
+// Armario grande
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -1000 } });  // Tachuelas
+db.insumos.updateOne({ _id: 2 }, { $inc: { cantidad: -300 } });   // Pegamento
+db.insumos.updateOne({ _id: 4 }, { $inc: { cantidad: -200 } });   // Bisagras
+
+// Armario mediano
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -800 } });   // Tachuelas
+db.insumos.updateOne({ _id: 3 }, { $inc: { cantidad: -200 } });   // Tornillos
+db.insumos.updateOne({ _id: 5 }, { $inc: { cantidad: -100 } });   // Manillas
+
+// Armario pequeño
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -500 } });   // Tachuelas
+db.insumos.updateOne({ _id: 2 }, { $inc: { cantidad: -150 } });   // Pegamento
+db.insumos.updateOne({ _id: 4 }, { $inc: { cantidad: -100 } });   // Bisagras
+
+// Armario modular
+db.insumos.updateOne({ _id: 1 }, { $inc: { cantidad: -1000 } });  // Tachuelas
+db.insumos.updateOne({ _id: 3 }, { $inc: { cantidad: -400 } });   // Tornillos
+db.insumos.updateOne({ _id: 5 }, { $inc: { cantidad: -150 } });   // Manillas
+
+
+Actualización de horas de personal
+
+// Armario grande
+db.personal.updateOne({ _id: 2 }, { $inc: { horas_trabajadas: 2 } });  // Supervisor Miguel Soto
+db.personal.updateOne({ _id: 1 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Carlos Ramírez
+db.personal.updateOne({ _id: 3 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Ana Pérez
+
+// Armario mediano
+db.personal.updateOne({ _id: 5 }, { $inc: { horas_trabajadas: 3 } });  // Supervisor Lucía Gonzales
+db.personal.updateOne({ _id: 4 }, { $inc: { horas_trabajadas: 3 } });  // Carpintero Jorge Paredes
+db.personal.updateOne({ _id: 6 }, { $inc: { horas_trabajadas: 3 } });  // Carpintero Pedro Quispe
+
+// Armario pequeño
+db.personal.updateOne({ _id: 8 }, { $inc: { horas_trabajadas: 2 } });  // Supervisor Raúl Mejía
+db.personal.updateOne({ _id: 7 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Sofía Salazar
+db.personal.updateOne({ _id: 3 }, { $inc: { horas_trabajadas: 2 } });  // Carpintero Ana Pérez
+
+// Armario modular
+db.personal.updateOne({ _id: 2 }, { $inc: { horas_trabajadas: 4 } });  // Supervisor Miguel Soto
+db.personal.updateOne({ _id: 1 }, { $inc: { horas_trabajadas: 4 } });  // Carpintero Carlos Ramírez
+db.personal.updateOne({ _id: 6 }, { $inc: { horas_trabajadas: 4 } });  // Carpintero Pedro Quispe
+
