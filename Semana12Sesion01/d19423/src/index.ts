@@ -106,3 +106,54 @@ interface Rectangle {
   }
   printStatusCode(404);
   printStatusCode('404');
+
+
+  function getTime(): number {
+    return new Date().getTime();
+  }
+
+  function printHello(): void {
+    console.log('Hello!');
+  }
+
+  function multiply(a: number, b: number) {
+    return a * b;
+  }
+
+  function add(a: number, b: number, c?: number) {
+    return a + b + (c || 0);
+  }
+
+  function pow(value: number, exponent: number = 10) {
+    return value ** exponent;
+  }
+
+
+  function add2(a: number, b: number, ...rest: number[]) {
+    return a + b + rest.reduce((p, c) => p + c, 0);
+  }
+
+  let resultado = add2(2,4,3,4,5,6,7,8,9,9);
+
+  let x: unknown = 'hello';
+console.log((x as string).length);
+
+let w: unknown = 'hello';
+console.log((<string>w).length);
+
+class Person {
+    private name: string;
+  
+    public constructor(name: string) {
+      this.name = name;
+    }
+  
+    public getName(): string {
+      return this.name;
+    }
+  }
+  
+  const person = new Person("Jane");
+  console.log(person.getName()); // person.name isn't accessible from outside the class since it's private
+
+  
