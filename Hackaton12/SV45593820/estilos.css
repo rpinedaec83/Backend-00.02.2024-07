@@ -1,0 +1,21 @@
+#pokemons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  width: 810px;
+  margin: auto;
+}
+
+.pokemon {
+  width: 270px;
+  cursor: pointer;
+}
+
+.pokemon:hover {
+  background-color: lightgrey;
+}
+
+.controls {
+  text-align: center;
+}
