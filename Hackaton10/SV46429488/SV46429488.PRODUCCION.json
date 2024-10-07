@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "66f99832c5855f4d6579e2e9"
+  },
+  "Categoria": "Aglomerado",
+  "Costo": "45$",
+  "Precio": "75$",
+  "Stock": 80,
+  "Vendidos": 120,
+  "Entregados": 90
+},
+{
+  "_id": {
+    "$oid": "66f99832c5855f4d6579e2ea"
+  },
+  "Categoria": "Pino",
+  "Costo": "95$",
+  "Precio": "120$",
+  "Stock": 40,
+  "Vendidos": 90,
+  "Entregados": 80
+},
+{
+  "_id": {
+    "$oid": "66f99832c5855f4d6579e2eb"
+  },
+  "Categoria": "Cedro",
+  "Costo": "245$",
+  "Precio": "375$",
+  "Stock": 40,
+  "Vendidos": 30,
+  "Entregados": 30
+}]
