@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "66f0350ffa8c9e3d036ecdbc"
+  },
+  "Fecha_de_Compra": {
+    "$date": "2016-05-18T16:00:00.000Z"
+  },
+  "Provedor": "Fierros S.A.C",
+  "Materiales": [
+    {
+      "nombre_material": "Clavos de 3",
+      "cantidad": 2,
+      "precio": 4
+    },
+    {
+      "nombre_material": "Clavos de 4",
+      "cantidad": 3,
+      "precio": 6
+    }
+  ],
+  "cantidad_total": 5,
+  "Precio_total": 10
+},
+{
+  "_id": {
+    "$oid": "66f0495efa8c9e3d036ecdc1"
+  },
+  "Fecha_de_Compra": {
+    "$date": "2016-05-18T14:00:00.000Z"
+  },
+  "Proveedor": "Todo Melamines S.A",
+  "Materiales": {
+    "nombre_material": "Tablas de Melamine",
+    "cantidad": 4,
+    "unidad": "m3",
+    "precio_Unitario": 25
+  },
+  "Cantidad_Total": 4,
+  "Precio_Total": 100
+},
+{
+  "_id": {
+    "$oid": "66f0495efa8c9e3d036ecdc2"
+  },
+  "Fecha_de_Compra": {
+    "$date": "2016-05-18T15:30:00.000Z"
+  },
+  "Proveedor": "Pinturas Peru S.R.L",
+  "Materiales": {
+    "nombre_material": "Barniz",
+    "cantidad": 1,
+    "unidad": "Lt",
+    "precio_Unitario": 18
+  },
+  "Cantidad_Total": 1,
+  "Precio_Total": 18
+}]

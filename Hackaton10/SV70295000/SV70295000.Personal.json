@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "66f06fe8fa8c9e3d036ecdc7"
+  },
+  "nombre": "Carlos Gómez",
+  "puesto": "Carpintero",
+  "fechaIngreso": {
+    "$date": "2015-01-15T00:00:00.000Z"
+  },
+  "salario": 1500
+},
+{
+  "_id": {
+    "$oid": "66f06fe8fa8c9e3d036ecdc8"
+  },
+  "nombre": "Ana Martínez",
+  "puesto": "Supervisora",
+  "fechaIngreso": {
+    "$date": "2015-06-04T00:00:00.000Z"
+  },
+  "salario": 2000
+}]

@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "66f06b98fa8c9e3d036ecdc3"
+  },
+  "Fecha_de_Compra": {
+    "$date": "2016-05-18T16:00:00.000Z"
+  },
+  "Materiales": [
+    {
+      "nombre_material": "Tornillos",
+      "cantidad": 100,
+      "unidad": "Kg",
+      "precio_Unitario": 0.1
+    },
+    {
+      "Cantidad_Total": 1000,
+      "Precio_Total": 100
+    }
+  ],
+  "nombre_material": "Bisagras",
+  "cantidad": 100,
+  "unidad": "Kg",
+  "precio_Unitario": 2,
+  "Proveedor": "Fierros S.A.C"
+}]

@@ -1,0 +1,27 @@
+[{
+  "_id": {
+    "$oid": "66f07001fa8c9e3d036ecdc9"
+  },
+  "producto": "Armario X",
+  "cantidadProducida": 50,
+  "fechaProduccion": {
+    "$date": "2016-05-21T00:00:00.000Z"
+  },
+  "empleadosInvolucrados": [
+    "Carlos Gómez",
+    "Ana Martínez"
+  ]
+},
+{
+  "_id": {
+    "$oid": "66f07001fa8c9e3d036ecdca"
+  },
+  "producto": "Armario Y",
+  "cantidadProducida": 30,
+  "fechaProduccion": {
+    "$date": "2016-06-15T00:00:00.000Z"
+  },
+  "empleadosInvolucrados": [
+    "Carlos Gómez"
+  ]
+}]
