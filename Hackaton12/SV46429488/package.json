@@ -1,0 +1,18 @@
+{
+    "name": "sv46429488",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "nodemon index.js",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "http": "^0.0.1-security",
+        "url": "^0.11.3",
+        "nodemon": "^3.1.4"
+    }
+}
