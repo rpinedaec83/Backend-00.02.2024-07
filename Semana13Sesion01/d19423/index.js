@@ -8,6 +8,18 @@ app.use(bodyParser.json()) // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination (req, file, cb) {
+      cb(null, 'storage');
+  },
+  filename (req, file, cb) {
+      cb(null, file.originalname);
+  }
+})
+
+const upload = multer({storage});
+
 const port = process.env.PORT || 3000
 
 app.get('/', (req, res) => {
@@ -54,6 +66,18 @@ app.get('/getbody',(req,res)=>{
     console.log(req.body.nombre)
     res.send(req.body)
 })
+
+
+app.post('/upload', upload.single('image'), (req, res) => {
+  if(req.file) {
+      // I can access req.body from here if I want
+      res.json(req.file);
+  }
+  else throw 'error';
+});
+
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
