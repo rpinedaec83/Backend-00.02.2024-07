@@ -11,7 +11,7 @@ exports.crearUsuario = async (req, res) => {
   res.status(201).json(nuevoUsuario);
 };
 
-// Login
+
 exports.login = async (req, res) => {
   const { username, password } = req.body;
   const usuario = await Usuario.findOne({ username });
