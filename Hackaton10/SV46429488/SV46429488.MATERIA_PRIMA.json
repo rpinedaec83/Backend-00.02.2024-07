@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "66f99812c5855f4d6579e2e0"
+  },
+  "Descripcion": "Aglomerado",
+  "Costo": "6$",
+  "Unidad": "m2",
+  "Stock": 264,
+  "Fecha_Pedido": {
+    "$date": "2024-10-14T05:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66f99812c5855f4d6579e2e1"
+  },
+  "Descripcion": "Pino",
+  "Costo": "20$",
+  "Unidad": "m2",
+  "Stock": 128,
+  "Fecha_Pedido": {
+    "$date": "2024-11-30T05:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "66f99812c5855f4d6579e2e2"
+  },
+  "Descripcion": "Cedro",
+  "Costo": "30$",
+  "Unidad": "m2",
+  "Stock": 128,
+  "Fecha_Pedido": {
+    "$date": "2024-10-10T05:00:00.000Z"
+  }
+}]
