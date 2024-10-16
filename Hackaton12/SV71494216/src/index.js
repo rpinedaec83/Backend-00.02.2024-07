@@ -22,7 +22,7 @@ const servidor = http.createServer((req, res) => {
             const datos = JSON.parse(cuerpo)
 
             const nuevaCompra = {
-                // id: uuidv4(),
+                
                 nombre: datos.nombre,
                 descripcion: datos.descripcion,
                 fecha: datos.fecha,
