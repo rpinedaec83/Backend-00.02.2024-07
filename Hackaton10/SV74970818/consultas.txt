@@ -1,0 +1,141 @@
+use SV74970818
+
+// Creacion de Materia prima
+db.createCollection("materia_prima");
+
+db.materia_prima.insertMany([
+  {
+    tipo: "Madera de Roble",
+    color: "Marrón rojizo",
+    uso: "Fabricación de muebles robustos",
+    costo_total: 1500,
+    fecha: "2024-10-01"
+  },
+  {
+    tipo: "Madera de Pino",
+    color: "Amarillo claro",
+    uso: "Fabricación de muebles ligeros y paneles",
+    costo_total: 300,
+    fecha: "2024-10-10"
+  },
+  {
+    tipo: "Madera de Cedro",
+    color: "Marrón claro",
+    uso: "Carpintería de interiores, puertas, ventanas",
+    costo_total: 2000,
+    fecha: "2024-10-05"
+  }
+])
+
+//Creacion de insumos
+db.createCollection("insumos");
+
+db.insumos.insertMany([
+  {
+    tipo: "Clavos",
+    cantidad: 1000,
+    uso: "Montaje de estructuras de madera",
+    costo: 500
+  },
+  {
+    tipo: "Pintura",
+    cantidad: 50,
+    uso: "Acabado de armarios",
+    costo: 300
+  },
+  {
+    tipo: "Lijas",
+    cantidad: 100,
+    uso: "Acabado y alisado de madera",
+    costo: 150
+  },
+  {
+    tipo: "Tornillos",
+    cantidad: 500,
+    uso: "Montaje de piezas de metal y madera",
+    costo: 400
+  },
+  {
+    tipo: "Pegamento",
+    cantidad: 20,
+    uso: "Ensamblaje y refuerzo de piezas",
+    costo: 250
+  },
+  {
+    tipo: "Barniz",
+    cantidad: 30,
+    uso: "Protección y acabado de superficies de madera",
+    costo: 350
+  }
+])
+
+// Creacion de personal
+db.createCollection("personal");
+
+db.personal.insertMany([
+  {
+    nombre: "Juan Pérez",
+    dni: "12345678",
+    cargo: "Carpintero",
+    salario: 2000,
+    horas_semanal: 40,
+    proyectos: ["Armario Modelo A", "Mesa de Centro"]
+  },
+  {
+    nombre: "María Gómez",
+    dni: "87654321",
+    cargo: "Supervisora de Producción",
+    salario: 3000,
+    horas_semanal: 45,
+    proyectos: ["Control de producción Armario Modelo A"]
+  },
+  {
+    nombre: "Pedro Martínez",
+    dni: "11223344",
+    cargo: "Encargado de compras",
+    salario: 1800,
+    horas_semanal: 35,
+    proyectos: ["Compra de Materia Prima", "Compra de Insumos"]
+  }
+])
+
+// Creacion de Produccion
+db.createCollection("produccion");
+
+db.produccion.insertMany([
+  {
+    producto: "Armario Modelo A",
+    estado: "En progreso",
+    fecha_inicio: "2024-10-01",
+    materia_prima_usada: [
+      { tipo: "Madera Roble", cantidad: 200, unidad: "m²" },
+      { tipo: "Madera Pino", cantidad: 150, unidad: "m²" }
+    ],
+    insumos_usados: [
+      { tipo: "Clavos", cantidad: 500, unidad: "unidades" },
+      { tipo: "Lijas", cantidad: 30, unidad: "piezas" },
+      { tipo: "Pintura", cantidad: 10, unidad: "litros" }
+    ],
+    personal_asignado: [
+      { nombre: "Juan Pérez", cargo: "Carpintero" },
+      { nombre: "María Gómez", cargo: "Supervisora de Producción" }
+    ],
+  },
+  {
+    producto: "Mesa de Centro",
+    estado: "Completado",
+    fecha_inicio: "2024-09-15",
+    materia_prima_usada: [
+      { tipo: "Madera Pino", cantidad: 80, unidad: "m²" }
+    ],
+    insumos_usados: [
+      { tipo: "Tornillos", cantidad: 200, unidad: "unidades" },
+      { tipo: "Pegamento", cantidad: 5, unidad: "litros" }
+    ],
+    personal_asignado: [
+      { nombre: "Pedro Martínez", cargo: "Encargado de compras" }
+    ],
+  }
+])
+
+
