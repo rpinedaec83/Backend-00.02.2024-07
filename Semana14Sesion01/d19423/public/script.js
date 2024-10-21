@@ -56,8 +56,33 @@ function onClose(evt) {
 // Se invoca cuando se recibe un mensaje del servidor
 function onMessage(evt) {
     // Agregamos al textarea el mensaje recibido
-    var area=document.getElementById("mensajes")
-    area.innerHTML+=evt.data+ "\n";
+
+    objMessage = JSON.parse(evt.data);
+    let strContent = ``;
+    switch (objMessage.type) {
+        case "clima":
+            console.log(objMessage.content)
+            strContent= JSON2HTMLList(objMessage.content).innerHTML;
+            console.log(strContent.innerHTML)
+            break;
+    
+        default:
+            strContent=`${objMessage.content}`
+            break;
+    }
+    let strData = `
+    <div class="d-flex justify-content-start mb-4">
+    <div class="img_cont_msg">
+        <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+    </div>
+    <div class="msg_cotainer">
+         ${strContent}
+        <span class="msg_time">${moment().format('LT')}</span>
+    </div>
+</div>
+    `;
+    var area=document.getElementById("contenedorMensajes")
+    area.innerHTML+=strData;
 }
 
 // Se invoca cuando se presenta un error en el WebSocket
@@ -71,6 +96,45 @@ function enviarTexto(event){
     var campo=event.target.texto;
     // Enviamos el valor del campo al servidor
     doSend(campo.value);
+    var area=document.getElementById("contenedorMensajes")
+    let strData = `
+    <div class="d-flex justify-content-end mb-4">
+        <div class="msg_cotainer_send">
+            ${campo.value}
+            <span class="msg_time_send">${moment().format('LT')}</span>
+        </div>
+        <div class="img_cont_msg">
+            <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+        </div>
+    </div>
+    `;
+    area.innerHTML+=strData;
+
     // Vaciamos el campo
     campo.value="";
 }
+
+
+/**
+ * 
+ *                          <div class="d-flex justify-content-end mb-4">
+								<div class="msg_cotainer_send">
+									You are welcome
+									<span class="msg_time_send">9:05 AM, Today</span>
+								</div>
+								<div class="img_cont_msg">
+                                    <img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+								</div>
+							</div>
+
+
+                            <div class="d-flex justify-content-start mb-4">
+								<div class="img_cont_msg">
+									<img src="https://static.turbosquid.com/Preview/001292/481/WV/_D.jpg" class="rounded-circle user_img_msg">
+								</div>
+								<div class="msg_cotainer">
+									I am looking for your next templates
+									<span class="msg_time">9:07 AM, Today</span>
+								</div>
+							</div>
+ */
