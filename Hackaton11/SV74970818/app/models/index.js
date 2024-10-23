@@ -153,27 +153,18 @@ db.mascotas.belongsTo(db.propietarios, {
         foreignKey: "idPropietario",
         as: "mascotaPropietario",
     });
-// db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
-// db.comments = require("./comment.model.js")(sequelize, Sequelize);
-// db.tag = require("./tag.model.js")(sequelize, Sequelize);
-
-// db.tutorials.hasMany(db.comments, { as: "comments" });
-// db.comments.belongsTo(db.tutorials, {
-//     foreignKey: "tutorialId",
-//     as: "tutorial",
-// });
 
 
-// db.tag.belongsToMany(db.tutorials, {
-//     through: "tutorial_tag",
-//     as: "tutorials",
-//     foreignKey: "tag_id",
-// });
+db.vacunas.belongsToMany(db.mascotas, {
+    through: "mascota_vacuna",
+    as: "mascotas",
+    foreignKey: "idVacuna",
+});
 
-// db.tutorials.belongsToMany(db.tag, {
-//     through: "tutorial_tag",
-//     as: "tags",
-//     foreignKey: "tutorial_id",
-// });
+db.mascotas.belongsToMany(db.vacunas, {
+    through: "mascota_vacuna",
+    as: "vacunas",
+    foreignKey: "idMascota",
+});
 
 module.exports = db;
