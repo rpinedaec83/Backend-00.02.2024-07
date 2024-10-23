@@ -36,6 +36,24 @@ module.exports = app => {
     router.delete("/razas/:id", razas.delete);
     router.delete("/razas/", razas.deleteAll);
 
-    
+
+    const colores = require("../controllers/color.controller.js");
+    router.post("/colores/", colores.create);
+    router.get("/colores/", colores.findAll);
+    router.get("/colores/:id", colores.findOne);
+    router.put("/colores/:id", colores.update);
+    router.delete("/colores/:id", colores.delete);
+    router.delete("/colores/", colores.deleteAll);
+
+
+    const sexo = require("../controllers/sexo.controller.js");
+    router.post("/sexo/", sexo.create);
+    router.get("/sexo/", sexo.findAll);
+    router.get("/sexo/:id", sexo.findOne);
+    router.put("/sexo/:id", sexo.update);
+    router.delete("/sexo/:id", sexo.delete);
+    router.delete("/sexo/", sexo.deleteAll);
+
+
     app.use('/api', router);
 }

@@ -60,6 +60,29 @@ db.razas.belongsTo(db.usuarios, {
         as: "usuarioIdModificacion",
     });
 
+
+db.colores = require("./color.model.js")(sequelize, Sequelize);
+db.colores.belongsTo(db.usuarios, {
+        foreignKey: "usrCreacion",
+        as: "usuarioIdCreacion",
+    });
+db.colores.belongsTo(db.usuarios, {
+        foreignKey: "usrModificacion",
+        as: "usuarioIdModificacion",
+    });
+
+
+db.sexo = require("./sexo.model.js")(sequelize, Sequelize);
+db.sexo.belongsTo(db.usuarios, {
+        foreignKey: "usrCreacion",
+        as: "usuarioIdCreacion",
+    });
+db.sexo.belongsTo(db.usuarios, {
+        foreignKey: "usrModificacion",
+        as: "usuarioIdModificacion",
+    });
+
+
 // db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 // db.comments = require("./comment.model.js")(sequelize, Sequelize);
 // db.tag = require("./tag.model.js")(sequelize, Sequelize);
