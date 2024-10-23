@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Persistente</title>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div id="chat">
+        <div id="messages"></div>
+        <input id="messageInput" placeholder="Escribe un mensaje...">
+        <button onclick="sendMessage()">Enviar</button>
+    </div>
+    <script>
+        const socket = io();
+
+        function sendMessage() {
+            const message = document.getElementById('messageInput').value;
+            const user = 'Usuario'; 
+            socket.emit('newMessage', { message, user });
+            document.getElementById('messageInput').value = '';
+        }
+
+        socket.on('message', (msg) => {
+            const messageElement = document.createElement('div');
+            messageElement.innerText = `${msg.user}: ${msg.message}`;
+            messageElement.id = msg._id; // Asumir que tienes un ID
+            document.getElementById('messages').appendChild(messageElement);
+        });
+
+        // Funciones para editar y eliminar mensajes
+        function editMessage(id) {
+            const newMessage = prompt("Edita tu mensaje:");
+            if (newMessage) {
+                socket.emit('editMessage', { id, message: newMessage });
+            }
+        }
+
+        socket.on('messageUpdated', (data) => {
+            document.getElementById(data.id).innerText = `${data.user}: ${data.message}`;
+        });
+
+        function deleteMessage(id) {
+            socket.emit('deleteMessage', id);
+        }
+
+        socket.on('messageDeleted', (id) => {
+            const messageElement = document.getElementById(id);
+            if (messageElement) {
+                messageElement.remove();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "usuario_id": "123abc",
+    "nombre_usuario": "Deivid",
+    "mensajes": [
+      {
+        "mensaje_id": "1",
+        "mensaje_texto": "Hola, ¿cómo estás?",
+        "fecha_envio": "2024-10-19T15:23:00Z",
+        "editado": false
+      },
+      {
+        "mensaje_id": "2",
+        "mensaje_texto": "Este es el segundo mensaje",
+        "fecha_envio": "2024-10-19T15:25:00Z",
+        "editado": true
+      }
+    ],
+    "acciones_historial": [
+      {
+        "accion": "editar",
+        "mensaje_id": "2",
+        "fecha_accion": "2024-10-19T15:30:00Z"
+      }
+    ]
+  }
+  
