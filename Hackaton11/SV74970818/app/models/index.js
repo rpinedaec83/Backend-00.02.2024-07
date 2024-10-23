@@ -83,6 +83,26 @@ db.sexo.belongsTo(db.usuarios, {
     });
 
 
+db.nacionalidades = require("./nacionalidad.model.js")(sequelize, Sequelize);
+db.nacionalidades.belongsTo(db.usuarios, {
+        foreignKey: "usrCreacion",
+        as: "usuarioIdCreacion",
+    });
+db.nacionalidades.belongsTo(db.usuarios, {
+        foreignKey: "usrModificacion",
+        as: "usuarioIdModificacion",
+    });
+
+
+db.ubigeos = require("./ubigeo.model.js")(sequelize, Sequelize);
+db.ubigeos.belongsTo(db.usuarios, {
+        foreignKey: "usrCreacion",
+        as: "usuarioIdCreacion",
+    });
+db.ubigeos.belongsTo(db.usuarios, {
+        foreignKey: "usrModificacion",
+        as: "usuarioIdModificacion",
+    });
 // db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 // db.comments = require("./comment.model.js")(sequelize, Sequelize);
 // db.tag = require("./tag.model.js")(sequelize, Sequelize);

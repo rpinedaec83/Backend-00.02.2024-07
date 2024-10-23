@@ -55,5 +55,23 @@ module.exports = app => {
     router.delete("/sexo/", sexo.deleteAll);
 
 
+    const nacionalidades = require("../controllers/nacionalidad.controller.js");
+    router.post("/nacionalidades/", nacionalidades.create);
+    router.get("/nacionalidades/", nacionalidades.findAll);
+    router.get("/nacionalidades/:id", nacionalidades.findOne);
+    router.put("/nacionalidades/:id", nacionalidades.update);
+    router.delete("/nacionalidades/:id", nacionalidades.delete);
+    router.delete("/nacionalidades/", nacionalidades.deleteAll);
+
+
+    const ubigeos = require("../controllers/ubigeo.controller.js");
+    router.post("/ubigeos/", ubigeos.create);
+    router.get("/ubigeos/", ubigeos.findAll);
+    router.get("/ubigeos/:id", ubigeos.findOne);
+    router.put("/ubigeos/:id", ubigeos.update);
+    router.delete("/ubigeos/:id", ubigeos.delete);
+    router.delete("/ubigeos/", ubigeos.deleteAll);
+
+
     app.use('/api', router);
 }
