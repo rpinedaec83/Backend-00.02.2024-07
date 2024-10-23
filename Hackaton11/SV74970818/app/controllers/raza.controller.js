@@ -1,6 +1,6 @@
 const db = require("../models");
 const Op = db.Sequelize.Op;
-const Especie = db.especies;
+const Raza = db.razas;
 
 exports.create = (req, res) => {
     // Validate request
@@ -10,24 +10,24 @@ exports.create = (req, res) => {
         });
         return;
     }
-    const especie = {
+    const raza = {
         descripcion: req.body.descripcion,
         activo: req.body.activo ? req.body.activo : true,
         usrCreacion: req.body.usrCreacion,
         usrModificacion: req.body.usrModificacion ? req.body.usrModificacion : null
     };
-    Especie.create(especie).then(data => {
+    Raza.create(raza).then(data => {
             res.send(data);
         })
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while creating the Especie."
+                    err.message || "Some error occurred while creating the Raza."
             });
         });
 };
 exports.findAll = (req, res) => {
-    Especie.findAll({
+    Raza.findAll({
     }, { where: {} })
         .then(data => {
             res.send(data);
@@ -35,7 +35,7 @@ exports.findAll = (req, res) => {
         .catch(err => {
             res.status(500).send({
                 message:
-                    err.message || "Some error occurred while retrieving especies."
+                    err.message || "Some error occurred while retrieving razas."
             });
         });
 };
@@ -43,19 +43,19 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    Especie.findByPk(id)
+    Raza.findByPk(id)
         .then(data => {
             if (data) {
                 res.send(data);
             } else {
                 res.status(404).send({
-                    message: `Cannot find Especie with id=${id}.`
+                    message: `Cannot find Raza with id=${id}.`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error retrieving Especie with id=" + id
+                message: "Error retrieving Raza with id=" + id
             });
         });
 };
@@ -63,62 +63,62 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
     const id = req.params.id;
 
-    Especie.update(req.body, {
+    Raza.update(req.body, {
         where: { id: id }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Especie was updated successfully."
+                    message: "Raza was updated successfully."
                 });
             } else {
                 res.send({
-                    message: `Cannot update Especie with id=${id}. Maybe Especie was not found or req.body is empty!`
+                    message: `Cannot update Raza with id=${id}. Maybe Raza was not found or req.body is empty!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Error updating Especie with id=" + id
+                message: "Error updating Raza with id=" + id
             });
         });
 };
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    Especie.destroy({
+    Raza.destroy({
         where: { id: id }
     })
         .then(num => {
             if (num == 1) {
                 res.send({
-                    message: "Especie was deleted successfully!"
+                    message: "Raza was deleted successfully!"
                 });
             } else {
                 res.send({
-                    message: `Cannot delete Especie with id=${id}. Maybe Especie was not found!`
+                    message: `Cannot delete Raza with id=${id}. Maybe Raza was not found!`
                 });
             }
         })
         .catch(err => {
             res.status(500).send({
-                message: "Could not delete Especie with id=" + id
+                message: "Could not delete Raza with id=" + id
             });
         });
 };
 
 exports.deleteAll = (req, res) => {
-    Especie.destroy({
+    Raza.destroy({
       where: {},
       truncate: false
     })
       .then(nums => {
-        res.send({ message: `${nums} Especies were deleted successfully!` });
+        res.send({ message: `${nums} Razas were deleted successfully!` });
       })
       .catch(err => {
         res.status(500).send({
           message:
-            err.message || "Some error occurred while removing all especies."
+            err.message || "Some error occurred while removing all razas."
         });
       });
 };

@@ -4,7 +4,7 @@ const Vacuna = db.vacunas;
 
 exports.create = (req, res) => {
     // Validate request
-    if (!req.body.username) {
+    if (!req.body.descripcion) {
         res.status(400).send({
             message: "Content can not be empty!"
         });

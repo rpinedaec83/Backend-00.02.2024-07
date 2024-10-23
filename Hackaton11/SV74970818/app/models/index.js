@@ -38,12 +38,24 @@ db.vacunas.belongsTo(db.usuarios, {
         as: "usuarioIdModificacion",
     });
 
+
 db.especies = require("./especie.model.js")(sequelize, Sequelize);
 db.especies.belongsTo(db.usuarios, {
         foreignKey: "usrCreacion",
         as: "usuarioIdCreacion",
     });
 db.especies.belongsTo(db.usuarios, {
+        foreignKey: "usrModificacion",
+        as: "usuarioIdModificacion",
+    });
+
+
+db.razas = require("./raza.model.js")(sequelize, Sequelize);
+db.razas.belongsTo(db.usuarios, {
+        foreignKey: "usrCreacion",
+        as: "usuarioIdCreacion",
+    });
+db.razas.belongsTo(db.usuarios, {
         foreignKey: "usrModificacion",
         as: "usuarioIdModificacion",
     });
