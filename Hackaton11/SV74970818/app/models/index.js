@@ -103,6 +103,56 @@ db.ubigeos.belongsTo(db.usuarios, {
         foreignKey: "usrModificacion",
         as: "usuarioIdModificacion",
     });
+
+
+db.propietarios = require("./propietario.model.js")(sequelize, Sequelize);
+db.propietarios.belongsTo(db.usuarios, {
+        foreignKey: "usrCreacion",
+        as: "usuarioIdCreacion",
+    });
+db.propietarios.belongsTo(db.usuarios, {
+        foreignKey: "usrModificacion",
+        as: "usuarioIdModificacion",
+    });
+db.propietarios.belongsTo(db.ubigeos, {
+        foreignKey: "idUbigeo",
+        as: "ubigeoPropietario",
+    });
+db.propietarios.belongsTo(db.nacionalidades, {
+        foreignKey: "idNacionalidad",
+        as: "nacionalidadPropietario",
+    });
+
+
+db.mascotas = require("./mascota.model.js")(sequelize, Sequelize);
+db.mascotas.belongsTo(db.usuarios, {
+        foreignKey: "usrCreacion",
+        as: "usuarioIdCreacion",
+    });
+db.mascotas.belongsTo(db.usuarios, {
+        foreignKey: "usrModificacion",
+        as: "usuarioIdModificacion",
+    });
+db.mascotas.belongsTo(db.especies, {
+        foreignKey: "idEspecie",
+        as: "mascotaEspecie",
+    });
+db.mascotas.belongsTo(db.razas, {
+        foreignKey: "idRaza",
+        as: "mascotaRaza",
+    });
+db.mascotas.belongsTo(db.colores, {
+        foreignKey: "idColor",
+        as: "mascotaColor",
+    });
+db.mascotas.belongsTo(db.sexo, {
+        foreignKey: "idSexo",
+        as: "mascotaSexo",
+    });
+db.mascotas.belongsTo(db.propietarios, {
+        foreignKey: "idPropietario",
+        as: "mascotaPropietario",
+    });
 // db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 // db.comments = require("./comment.model.js")(sequelize, Sequelize);
 // db.tag = require("./tag.model.js")(sequelize, Sequelize);

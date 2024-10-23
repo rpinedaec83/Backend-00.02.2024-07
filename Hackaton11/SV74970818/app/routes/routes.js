@@ -73,5 +73,23 @@ module.exports = app => {
     router.delete("/ubigeos/", ubigeos.deleteAll);
 
 
+    const propietarios = require("../controllers/propietario.controller.js");
+    router.post("/propietarios/", propietarios.create);
+    router.get("/propietarios/", propietarios.findAll);
+    router.get("/propietarios/:id", propietarios.findOne);
+    router.put("/propietarios/:id", propietarios.update);
+    router.delete("/propietarios/:id", propietarios.delete);
+    router.delete("/propietarios/", propietarios.deleteAll);
+
+
+    const mascotas = require("../controllers/mascota.controller.js");
+    router.post("/mascotas/", mascotas.create);
+    router.get("/mascotas/", mascotas.findAll);
+    router.get("/mascotas/:id", mascotas.findOne);
+    router.put("/mascotas/:id", mascotas.update);
+    router.delete("/mascotas/:id", mascotas.delete);
+    router.delete("/mascotas/", mascotas.deleteAll);
+
+
     app.use('/api', router);
 }
