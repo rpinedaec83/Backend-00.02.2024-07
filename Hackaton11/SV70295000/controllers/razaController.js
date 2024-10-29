@@ -1,53 +1,68 @@
-const Raza = require('../models/raza');
+const Raza = require('../models/Raza'); // Asegúrate de que la ruta sea correcta
 
-exports.getRazas = async (req, res) =>{
-    try{
-        const razas = await Raza.findAll();
-        res.json(razas);
-    }catch (error){
-        res.status(500).json({error: 'Error al obtener las razas'});
-    }
+// Crear una nueva raza
+exports.createRaza = async (req, res) => {
+  try {
+    const nuevaRaza = await Raza.create(req.body);
+    res.status(201).json(nuevaRaza);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.createRaza = async (req,res) => {
-    const {descripcion} = req.body;
-    try{
-        const NuevaRaza = await Raza.create({descripcion});
-        res.status(201).json(NuevaRaza);
-    }catch (error) {
-        res.status(500).json({error: 'Error al crear una nueva raza'});
-    }
+// Obtener todas las razas
+exports.getAllRazas = async (req, res) => {
+  try {
+    const razas = await Raza.findAll();
+    res.status(200).json(razas);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-exports.updateRaza = async (req,res) => {
-    const {id} = req.params;
-    const {descripcion} = req.body;
-    try{
-        const raza = await Raza.findByPk(id);
-        if (!raza) {
-            return res.status(404).json({ error: 'Raza no encontrada'});
-        }
-        raza.descripcion = descripcion;
-        await raza.save();
-        res.json(raza);
-    }catch (error){
-        res.status(500).json({error: 'Error al actualizar la raza'});
+// Obtener una raza por ID
+exports.getRazaById = async (req, res) => {
+  try {
+    const raza = await Raza.findByPk(req.params.id);
+    if (raza) {
+      res.status(200).json(raza);
+    } else {
+      res.status(404).json({ error: 'Raza no encontrada' });
     }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-
-exports.deleteRaza = async (req,res) => {
-    const {id} = req.params;
-    try {
-        const raza = await Raza.findByPk(id);
-        if (!raza) {
-            return res.status(404).json({error: 'Error al encontrar la raza'});
-        }
-        await raza.destroy();
-        res.status(204).json();
-    }catch (error){
-        res.status(500).json({error: 'Error al elminiar la raza'});
+// Actualizar una raza
+exports.updateRaza = async (req, res) => {
+  try {
+    const [updated] = await Raza.update(req.body, {
+      where: { id: req.params.id }
+    });
+    if (updated) {
+      const updatedRaza = await Raza.findByPk(req.params.id);
+      res.status(200).json(updatedRaza);
+    } else {
+      res.status(404).json({ error: 'Raza no encontrada' });
     }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 };
 
-//
+// Eliminar una raza
+exports.deleteRaza = async (req, res) => {
+  try {
+    const deleted = await Raza.destroy({
+      where: { id: req.params.id }
+    });
+    if (deleted) {
+      res.status(204).send();
+    } else {
+      res.status(404).json({ error: 'Raza no encontrada' });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
