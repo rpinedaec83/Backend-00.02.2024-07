@@ -24,6 +24,9 @@ AuthorizationRouter.routesConfig(app);
 const UsersRouter = require('./users/routes.config');
 UsersRouter.routesConfig(app);
 
+const CursosRouter = require('./cursos/routes.config');
+CursosRouter.routesConfig(app);
+
 app.listen(PORT, function () {
     console.log('app listening at port %s', PORT);
 });
