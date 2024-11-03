@@ -27,6 +27,9 @@ UsersRouter.routesConfig(app);
 const CursosRouter = require('./cursos/routes.config');
 CursosRouter.routesConfig(app);
 
+const OrdenesRouter = require('./ordenes/routes.config');
+OrdenesRouter.routesConfig(app);
+
 app.listen(PORT, function () {
     console.log('app listening at port %s', PORT);
 });
