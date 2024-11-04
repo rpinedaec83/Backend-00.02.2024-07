@@ -1,4 +1,8 @@
 {
     "livePreview.defaultPreviewPath": "/Semana03Sesion01/index.html",
+<<<<<<< HEAD
+    "terminal.integrated.allowMnemonics": true
+=======
     "liveServer.settings.port": 5501
+>>>>>>> fuentes/main
 }
