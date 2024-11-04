@@ -13,7 +13,7 @@ const salesRoutes = require("../modules/sales/route")
 class Server {
   constructor() {
     this.app = express();
-    this.port = process.env.PORT || 4002;
+    this.port = process.env.PORT || 8080;
     this.server = http.createServer(this.app);
     this.usersPath = "/users";
     this.authPath = "/auth";
