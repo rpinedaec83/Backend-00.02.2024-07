@@ -6,9 +6,13 @@ const paymentRoutes = require('./routes/paymentRoutes');
 
 app.use(express.json());
 app.use('/auth', authRoutes);
+
 app.use('/payments', paymentRoutes);
+
 
 const port = config.port;
 app.listen(port, () => {
     console.log(`Servidor corriendo en el puerto ${port}`);
 });
+
+
