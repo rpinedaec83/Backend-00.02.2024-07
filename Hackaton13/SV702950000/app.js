@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 app.use('/api/cursos', CursosRoutes);
 app.use('/api', ordenesRoutes);
 app.use('/api', ordenesRoutes);
+app.use('/api', cuponesRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Servidor corriendo en el puerto "${PORT}"`));
