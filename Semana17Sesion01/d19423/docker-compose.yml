@@ -16,7 +16,7 @@ services:
     environment:
       DB_SCHEMA: postgres
       DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_PASSWORD: Z@rverus11
       DB_HOST: postgres  # Se mantiene como el nombre del servicio de postgres
       DB_PORT: 5432
       DB_SSL: false
