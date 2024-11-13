@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+    ports: 
+      - '3306:3306'
+    volumes:
+      - addressbook-db:/var/lib/mysql/data
+
+  addressbook:
+    build:
+      context: .
+    environment:
+      DB_SCHEMA: mysql
+      DB_USER: mysql
+      DB_PASSWORD: mysql
+      DB_HOST: mysql  # Se mantiene como el nombre del servicio de mysql
+      DB_PORT: 3306
+      DB_SSL: false
+    depends_on:
+      - mysql
+    ports:
+      - '9000:9000'
+
+volumes:
+  addressbook-db:
